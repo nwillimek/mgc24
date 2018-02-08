@@ -1,0 +1,27 @@
+{
+    "version"           : "2.0.2",
+    "name"              : "derreibach",
+    "description"       : "derreibach",
+    "author"            : "Frontend Studios GmbH",
+    "license"           : "AGPL-3.0",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "shortDescription"  : {"de": "derreibach","en":"derreibach"},
+    "authorIcon"        : "icon_author_xs.png",
+    "categories"        : ["3518"],
+    "email"             : "dev@frontend-studios.de",
+    "phone"             : "+49 40 851 792 84 30",
+    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "frontend studios"],
+    "type"              : "theme",
+    "require"           : ["Ceres", "IO"],
+    "namespace"         : "derreibach",
+    "serviceProvider"   : "derreibach\\Providers\\derreibachServiceProvider",
+    "dataProviders"     :
+    [
+      {
+        "key":"derreibach\\Containers\\derreibach",
+        "name":"derreibach",
+        "description":"derreibach"
+      }
+    ]
+}
