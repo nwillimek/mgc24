@@ -30,12 +30,12 @@
 @import "ceres/plugins/owl-carousel";
 
 // Components
-@import "ceres/components/anicon";
 @import "ceres/components/component-base";
 @import "ceres/components/accordion";
 @import "ceres/components/alerts";
 @import "ceres/components/featured-category";
 @import "ceres/components/featured-sale-new";
+@import "ceres/components/anicon";
 
 // Forms
 @import "ceres/forms/input-groups";
@@ -76,8 +76,11 @@
 @import "ceres/views/Category/category-list";
 @import "ceres/views/Category/category-list-controls";
 @import "ceres/views/Home/home";
+@import "ceres/views/Home/marketing-homepage";
 @import "ceres/views/Checkout/checkout";
 @import "ceres/views/Item/single-item";
 @import "ceres/views/ItemList/loading-animation";
 @import "ceres/views/StaticPages/static-pages";
 @import "ceres/views/MyAccount/my-account";
+
+@import "custom";

@@ -1,12 +1,12 @@
 {
-    "version"           : "2.0.2",
-    "name"              : "derreibach",
-    "description"       : "derreibach",
+    "version"           : "2.2.1",
+    "name"              : "meingartencenter24",
+    "description"       : "meingartencenter24",
     "author"            : "Frontend Studios GmbH",
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
-    "shortDescription"  : {"de": "derreibach","en":"derreibach"},
+    "shortDescription"  : {"de": "meingartencenter24","en":"meingartencenter24"},
     "authorIcon"        : "icon_author_xs.png",
     "categories"        : ["3518"],
     "email"             : "dev@frontend-studios.de",
@@ -14,14 +14,14 @@
     "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "frontend studios"],
     "type"              : "theme",
     "require"           : ["Ceres", "IO"],
-    "namespace"         : "derreibach",
-    "serviceProvider"   : "derreibach\\Providers\\derreibachServiceProvider",
+    "namespace"         : "meingartencenter24",
+    "serviceProvider"   : "meingartencenter24\\Providers\\meingartencenter24ServiceProvider",
     "dataProviders"     :
     [
       {
-        "key":"derreibach\\Containers\\derreibach",
-        "name":"derreibach",
-        "description":"derreibach"
+        "key":"meingartencenter24\\Containers\\meingartencenter24",
+        "name":"meingartencenter24",
+        "description":"meingartencenter24"
       }
     ]
 }
