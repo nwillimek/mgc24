@@ -19,43 +19,49 @@ body {
 
 .top-bar {
 	background-color: #f2f2f2;
-		.brand-wrapper {
-    		position: relative;
-			.navbar-brand {
-				padding: 0;
-			}
-		}
-		#searchBox2 {
-	    padding: 0;
-	    position: relative;
-	    top: 0;
-	    background-color: unset;
-	    width: 38%;
-	    right: unset;
-	    left: 0;
-	    margin-right: 2rem;
-	    display: block;
-	    flex: 1 0 auto;
-	    .search-box-inner {
-	      padding: 0;
-	      margin-top: .15rem;
-	        .search-box-shadow-frame {
-	          box-shadow: none;
-	        }
-	        .search-input {
-	          padding:.2rem 1rem;
-	          &::placeholder {
-	            font-size: .75rem;
-	          }
-	      }
-	    }
+	&.spacer {		
+    position: relative;
+    visibility: hidden;
 	}
-
+	.brand-wrapper {
+		position: relative;
+		.navbar-brand {
+			padding: 0;
+		}
+	}
+	#searchBox2 {
+    padding: 0;
+    position: relative;
+    top: 0;
+    background-color: unset;
+    width: 38%;
+    right: unset;
+    left: 0;
+    margin-right: 2rem;
+    display: block;
+    flex: 1 0 auto;
+    .search-box-inner {
+      padding: 0;
+      margin-top: .15rem;
+        .search-box-shadow-frame {
+          box-shadow: none;
+        }
+        .search-input {
+          padding:.2rem 1rem;
+          	&::placeholder {
+            	font-size: .75rem;
+          	}
+      	}	
+	}
+	}
 	.toggle-basket-preview {
 		color:#575756;
 	}
 }
 .wrapper-main {
+	#page-body {	    	    
+	    margin-top: unset;
+    }
 	.navbar {
 		background-color:#e6e6e6;
 		border-bottom: none;
