@@ -67,15 +67,33 @@ body {
 		border-bottom: none;
 		#mainNavbarCollapsable {
 			ul{
-			&.mainmenu {
-				> li {
-					padding-bottom: 3px;
-					> a {
+				&.mainmenu {
+					> li {
 						padding: .75rem 1rem;
+						> a {
+							padding-bottom: .25rem;
+							}
+						&:hover {
+							background-color: #3c3c3b;
+							> a {
+								border-bottom: 1px solid $brand-primary;
+							}
 						}
-					&:hover {
-						background-color: #3c3c3b;
-					}
+						> ul {
+							background-color: #3c3c3b;	
+							> li {
+								padding: .75rem 1rem;
+								> a {
+									padding-bottom: .25rem;
+									}
+								&:hover {
+									background-color: #3c3c3b;
+									> a {
+										border-bottom: 1px solid $brand-primary;
+									}
+								}		
+							}
+						}	
 					}
 				}
 			}
