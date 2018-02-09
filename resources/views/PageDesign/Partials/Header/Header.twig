@@ -44,31 +44,7 @@
 </div>
 
 <header class="top-bar">
-    <div class="container-max p-y-1">
-        <div class="row">
-            {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-                <div class="col-md-6 hidden-sm-down">  
-                    <span class="m-r-1">10% Neukundenrabatt sichern</span><span class="m-r-1">Versandkostenfrei ab 20€</span><span>2% Rabatt (Vorkasse)</span>
-                </div>          
-                <div class="col-xs-12 col-md-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <i class="fa fa-phone">&nbsp;</i> <span> <a href="tel:+4951142038888">0511 - 42038888</a></span>
-                        </div>
-                        <div class="col-xs-4">
-                            <i class="fa fa-envelope">&nbsp;</i> <span> <a href="mailto:info@meingartencenter24.de">Kontakt</a></span>
-                        </div>
-                        <div class="col-xs-4">
-                            <ul id="controlsList" class="controls-list list-inline">
-                                <li class="list-inline-item control-user">
-                                    <user-login-handler template="#vue-user-login-handler"
-                                            :user-data="{{ services.customer.getContact() | json_encode() }}"></user-login-handler>
-                                </li>                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        </div>
+    <div class="container-max p-y-1">        
         <div class="row">
             <div class="col-xs-9 col-sm-4">
                 <div class="brand-wrapper">
