@@ -1,0 +1,7 @@
+{% import "plantocaps::Category.Macros.CategoryTree" as Tree %}
+
+{% set lang = services.sessionStorage.getLang() %}
+
+<ul class="mainmenu pull-lg-right m-r-3">
+    {{ Tree.get_nav_bar(categories, "") }}
+</ul>
