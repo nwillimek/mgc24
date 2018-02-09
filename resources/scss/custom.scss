@@ -1,3 +1,8 @@
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .top-top-bar {
 	background-color:#3c3c3b;
 	padding: .5rem 0;
@@ -14,6 +19,12 @@
 
 .top-bar {
 	background-color: #f2f2f2;
+		.brand-wrapper {
+    		position: relative;
+			.navbar-brand {
+				padding: 0;
+			}
+		}
 		#searchBox2 {
 	    padding: 0;
 	    position: relative;
@@ -39,13 +50,30 @@
 	      }
 	    }
 	}
+
 	.toggle-basket-preview {
 		color:#575756;
 	}
 }
-
-.navbar {
-	background-color:#e6e6e6;
+.wrapper-main {
+	.navbar {
+		background-color:#e6e6e6;
+		border-bottom: none;
+		#mainNavbarCollapsable {
+			ul{
+			&.mainmenu {
+				> li {
+					padding-bottom: 3px;
+					> a {
+						padding: .75rem 1rem;
+						}
+					&:hover {
+						background-color: #3c3c3b;
+					}
+					}
+				}
+			}
+		}
+	}
 }
-
 

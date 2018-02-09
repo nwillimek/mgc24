@@ -18,18 +18,18 @@
     <div class="container-max">
         <div class="row">
             {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
-            <div class="col-md-6 hidden-sm-down">  
+            <div class="col-md-12 col-lg-7 hidden-md-down text-xs-center">  
                 <span class="m-r-1">10% Neukundenrabatt sichern</span><span class="m-r-1">Versandkostenfrei ab 20€</span><span>2% Rabatt (Vorkasse)</span>
             </div>          
-            <div class="col-xs-12 col-md-6">
-                <div class="row">
-                    <div class="col-xs-4">
+            <div class="col-md-12 col-lg-5">
+                <div class="row text-lg-right text-md-center">
+                    <div class="col-xs-4 col-lg-6">
                         <i class="fa fa-phone">&nbsp;</i> <span> <a href="tel:+4951142038888">0511 - 42038888</a></span>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-4 col-lg-3">
                         <i class="fa fa-envelope">&nbsp;</i> <span> <a href="mailto:info@meingartencenter24.de">Kontakt</a></span>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-4 col-lg-3">
                         <ul id="controlsList" class="controls-list list-inline">
                             <li class="list-inline-item control-user">
                                 <user-login-handler template="#vue-user-login-handler"
@@ -96,3 +96,11 @@
 {% endif %}
 
 <mobile-navigation :navigation-tree-data="{{ categories | json_encode }}" current-category-id="{{ category.id }}" template="#vue-mobile-navigation"></mobile-navigation>
+
+<div class="container-max page-header">
+    <div class="row">
+        <div id="searchBox" class="hidden-lg-up cmp cmp-search-box collapse {% if services.template.isSearch() %} in {% endif %}">
+            <item-search template="#vue-item-search"></item-search>
+        </div>
+    </div>
+</div>
