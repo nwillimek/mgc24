@@ -54,15 +54,22 @@ body {
         }
         .search-input {
           padding:.2rem 1rem;
+          background-color: #e6e6e6;
           	&::placeholder {
             	font-size: .75rem;
+            	color:#575756;
           	}
       	}	
 	}
+	.search-submit {
+	    background: $brand-primary;
+	    color: $white;
+	    transition: all .3s;
 	}
 	.toggle-basket-preview {
 		color:#575756;
 	}
+}
 }
 .wrapper-main {
 	#page-body {	    	    
