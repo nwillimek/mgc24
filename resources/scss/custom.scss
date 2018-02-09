@@ -1,0 +1,44 @@
+.top-top-bar {
+	background-color:#3c3c3b;
+	span, i {
+		color:white;
+		a {
+			color:white;
+		}
+	}
+}
+
+.top-bar {
+	background-color: #f2f2f2;
+		#searchBox2 {
+	    padding: 0;
+	    position: relative;
+	    top: 0;
+	    background-color: unset;
+	    width: 38%;
+	    right: unset;
+	    left: 0;
+	    margin-right: 2rem;
+	    display: block;
+	    flex: 1 0 auto;
+	    .search-box-inner {
+	      padding: 0;
+	      margin-top: .15rem;
+	        .search-box-shadow-frame {
+	          box-shadow: none;
+	        }
+	        .search-input {
+	          padding:.2rem 1rem;
+	          &::placeholder {
+	            font-size: .75rem;
+	          }
+	      }
+	    }
+	}
+}
+
+.navbar {
+	background-color:#e6e6e6;
+}
+
+
