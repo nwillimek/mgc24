@@ -18,6 +18,10 @@ body {
 		> li {
 			a {
 				padding:0;
+				font-size: 1rem;
+					&:hover {
+						background-color: unset;
+					}
 				}
 			}	
 	}
@@ -36,40 +40,40 @@ body {
 		}
 	}
 	#searchBox2 {
-    padding: 0;
-    position: relative;
-    top: 0;
-    background-color: unset;
-    width: 38%;
-    right: unset;
-    left: 0;
-    margin-right: 2rem;
-    display: block;
-    flex: 1 0 auto;
-    .search-box-inner {
-      padding: 0;
-      margin-top: .15rem;
-        .search-box-shadow-frame {
-          box-shadow: none;
-        }
-        .search-input {
-          padding:.2rem 1rem;
-          background-color: #e6e6e6;
-          	&::placeholder {
-            	font-size: .75rem;
-            	color:#575756;
-          	}
-      	}	
-	}
-	.search-submit {
-	    background: $brand-primary;
-	    color: $white;
-	    transition: all .3s;
+	    padding: 0;
+	    position: relative;
+	    top: 0;
+	    background-color: unset;
+	    width: 38%;
+	    right: unset;
+	    left: 0;
+	    margin-right: 2rem;
+	    display: block;
+	    flex: 1 0 auto;
+	    .search-box-inner {
+	      padding: 0;
+	      margin-top: .15rem;
+	        .search-box-shadow-frame {
+	          box-shadow: none;
+	        }
+	        .search-input {
+	          padding:.2rem 1rem;
+	          background-color: #e6e6e6;
+	          	&::placeholder {
+	            	font-size: .75rem;
+	            	color:#575756;
+	          	}
+	      	}	
+		}
+		.search-submit {
+		    background: $brand-primary;
+		    color: $white;
+		    transition: all .3s;
+		}	
 	}
 	.toggle-basket-preview {
 		color:#575756;
 	}
-}
 }
 .wrapper-main {
 	#page-body {	    	    
@@ -85,11 +89,12 @@ body {
 						padding: .75rem 1rem;
 						> a {
 							padding: .25rem;
+							color: #3c3c3b;
 							}
 						&:hover {
 							background-color: #3c3c3b;
 							> a {
-								border-bottom: 1px solid $brand-primary;
+								border-bottom: 2px solid $brand-primary;
 							}
 						}
 						> ul {
@@ -102,7 +107,7 @@ body {
 								&:hover {
 									background-color: #3c3c3b;
 									> a {
-										border-bottom: 1px solid $brand-primary;
+										border-bottom: 2px solid $brand-primary;
 									}
 								}		
 							}

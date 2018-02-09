@@ -1,8 +1,7 @@
 <script type="x/template" id="vue-item-search">
     <div class="search-box-inner">
         <div class="search-box-shadow-frame">
-            <input type="search" class="search-input" placeholder="Suchen ..." v-model="currentSearchString" @keyup.enter="search()"
-                   {% if not services.template.isSearch() %}autofocus{% endif %}>
+            <input type="search" class="search-input" placeholder="Suchen ..." v-model="currentSearchString" @keyup.enter="search()">
             <button class="search-submit" type="submit" @click="search()">
                 <i class="fa fa-search sm-up"></i>
             </button>
