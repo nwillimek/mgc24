@@ -1,13 +1,15 @@
 <div class="parallax-img-container">
-	<div class="container">
+	<div class="container-max">
 		<div class="row">
 			<div class="col-xs-12 col-sm-4">				
 				<img src="/documents/{{ category.details[0].imagePath }}" class="img-fluid">								
 			</div>		
 			<div class="col-xs-12 col-sm-8">
-				<div class="parallax-text-container">
-					<h1 class="h2 p-t-2 p-b-1 category-title">{{ category.details[0].name | raw }}</h1>
-					{{ category.details[0].description | raw }}
+				<div class="parallax-text-wrapper">
+					<div class="parallax-text-container">
+						<h1 class="h2 p-t-2 p-b-1 category-title">{{ category.details[0].name | raw }}</h1>
+						{{ category.details[0].description | raw }}
+					</div>
 				</div>
 			</div>		
 		</div>
