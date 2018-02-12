@@ -27,10 +27,10 @@ class meingartencenter24ServiceProvider extends ServiceProvider
     {
         //twig replacement
         provide template to use for homepage
-        // $eventDispatcher->listen('IO.tpl.category.item.partials.', function(TemplateContainer $container, $templateData) {
-        //     $container->setTemplate("meingartencenter24::Category.Item.Partials.CategoryParallaxImage.twig");
-        //     return false;
-        // });
+        $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
+            $container->setTemplate("meingartencenter24::Category.Item.CategoryItem");
+            return false;
+        });
 
 
         //partial replacement
