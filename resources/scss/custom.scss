@@ -90,6 +90,7 @@ body {
 						> a {
 							padding: .25rem;
 							color: #3c3c3b;
+							border-bottom: 2px solid transparent;
 							}
 						&:hover {
 							background-color: #3c3c3b;
@@ -104,6 +105,7 @@ body {
 								padding: .75rem 1rem;
 								> a {
 									padding: 0 0 .25rem 0;
+									border-bottom: 2px solid transparent;
 									}
 								&:hover {
 									background-color: #3c3c3b;
