@@ -141,7 +141,7 @@ body {
 // Footer start
 .footer {
 	ul {
-	    list-style-image: url('{{ plugin_path('meingartencenter24') }}/images/leaf.png');
+	    // list-style-image: url("{{ plugin_path('meingartencenter24') }}/images/leaf.png");
 	}
 	.bckgr {
 		background-color:#3c3c3b;
