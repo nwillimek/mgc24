@@ -2,7 +2,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
+// Header Start
 .top-top-bar {
 	background-color:#3c3c3b;
 	padding: .5rem 0;
@@ -121,4 +121,30 @@ body {
 		}
 	}
 }
+// Header end
 
+// Parallax Start
+.parallax-img-container {
+    height: auto;
+    max-width:100%;
+    
+    &[style^='background-image'] {
+        width: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-attachment: unset;
+		background-position: unset;
+		padding-bottom:60%;
+		max-width: none;
+		position: relative;
+
+        // @include media-breakpoint-up(sm) {
+        //     padding-bottom:60%;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        //     height: 400px;
+        // }        
+    }
+}
+// Parallax End
