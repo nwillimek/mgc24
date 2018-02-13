@@ -8,9 +8,6 @@ body {
 	}
 }
 
-
-
-
 .page-content {
 	background-color: white;	
 }
@@ -142,11 +139,29 @@ body {
 // Header end
 
 // Footer start
-footer {
+.footer {
 	ul {
 	    list-style-image: url('{{ plugin_path('meingartencenter24') }}/images/leaf.png');
 	}
+	.bckgr {
+		background-color:#3c3c3b;
+		p, a {
+			color: white;	
+		}
+	}
+	.payment, .delivery {
+		display: block;
+	 img {
+	    display: inline-block;
+	    position: relative;
+		}
+	}
+	.info {
+		display: block;
+		margin-bottom: 2rem;
+	}
 }
+
 // Footer end
 
 
