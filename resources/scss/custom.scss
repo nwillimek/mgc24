@@ -1,6 +1,10 @@
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: white;
+}
+.page-content {
+	background-color: white;	
 }
 // Header Start
 .top-top-bar {
@@ -75,7 +79,13 @@ body {
 		color:#575756;
 	}
 }
+
 .wrapper-main {
+	> nav {
+		&.container-max {
+			top: unset;	
+		}
+	}
 	#page-body {	    	    
 	    margin-top: unset;
     }
