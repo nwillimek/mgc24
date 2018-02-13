@@ -158,3 +158,62 @@ body {
     }
 }
 // Parallax End
+
+// CategoryListItem / CategoryListItem start
+.cmp-product-thumb {
+	.crossprice {
+		font-size: .85rem;
+		font-weight: 700;
+		color: black;
+		position:relative;
+	 		&:before { 			
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 3px solid;
+			border-color: red;
+			transform: rotate(-5deg);
+			position: absolute;
+ 		}
+	}
+	.price {
+	    color: black;		
+		font-size: 1.25rem;		
+	}
+	.thumb-description {
+		position: relative;
+		display: flex;
+		text-overflow: ellipsis;
+		max-height: 3.5rem;
+		overflow: hidden;
+		font-weight: normal;
+		margin-bottom: .5rem;
+		color:grey;
+	}
+}
+
+
+// CategoryListItem / CategoryListItem end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

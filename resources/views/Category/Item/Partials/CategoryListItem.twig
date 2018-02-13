@@ -90,8 +90,8 @@
             <a href="{{ itemUrl }}" class="thumb-title small">
                 {{ item.data.texts | itemName(configItemName) }}
             </a>
-            <a href="{{ itemUrl }}"  class="thumb-description small">>
-                {{ item.data.texts.description }}
+            <a href="{{ itemUrl }}"  class="thumb-description small">
+                {{ item.data.texts.description | raw }}
             </a>
             <div class="thumb-meta">
                 {{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}
@@ -130,12 +130,6 @@
                 item-url="{{ itemUrl }}">
             </add-to-basket>
 
-            <span class="vat-porto-info small text-muted">
-                * {{ trans("Ceres::Template.itemInclVAT") }} {{ trans("Ceres::Template.itemExclusive") }}
-                <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
-            </span>
-
-            
             {# {% if tags > 0 %}
                 <div class="m-t-1 tag-list">
                     {% for tag in tags %}
