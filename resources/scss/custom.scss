@@ -125,7 +125,7 @@ body {
 
 // Parallax Start
 .parallax-img-container {
-    height: auto;
+    height: unset !important;
     max-width:100%;
     
     &[style^='background-image'] {
