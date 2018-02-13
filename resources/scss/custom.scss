@@ -145,7 +145,7 @@ body {
 	}
 	.bckgr {
 		background-color:#3c3c3b;
-		p, a {
+		p, a, h2, h5, span {
 			color: white;	
 		}
 	}
@@ -184,15 +184,7 @@ body {
 		background-position: unset;
 		padding-bottom:60%;
 		max-width: none;
-		position: relative;
-
-        // @include media-breakpoint-up(sm) {
-        //     padding-bottom:60%;
-        // }
-
-        // @include media-breakpoint-up(md) {
-        //     height: 400px;
-        // }        
+		position: relative;       
     }
 }
 // Parallax End
