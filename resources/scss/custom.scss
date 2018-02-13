@@ -2,7 +2,15 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: white;
+	> #vue-app,
+	> #vue-error {
+		background-color: white;
+	}
 }
+
+
+
+
 .page-content {
 	background-color: white;	
 }
@@ -133,6 +141,21 @@ body {
 }
 // Header end
 
+// Footer start
+footer {
+	ul {
+	    list-style-image: url('{{ plugin_path('meingartencenter24') }}/images/leaf.png');
+	}
+}
+// Footer end
+
+
+
+
+
+
+
+
 // Parallax Start
 .parallax-img-container {
     height: unset !important;
@@ -161,6 +184,12 @@ body {
 
 // CategoryListItem / CategoryListItem start
 .cmp-product-thumb {
+	.thumb-title {
+		font-weight: 700;
+		line-height: 1.5em;
+		color: black;
+		font-size: 1rem;
+	}
 	.crossprice {
 		font-size: .85rem;
 		font-weight: 700;
@@ -191,11 +220,45 @@ body {
 		margin-bottom: .5rem;
 		color:grey;
 	}
+	.special-tags {	    
+	    padding: 0;
+	    .tag {
+	    	box-shadow: none;
+	    	border-radius: 0px;
+			margin-left: 1px;
+	    }
+	}
 }
 
 
 // CategoryListItem / CategoryListItem end
 
+
+// SingleItem start
+.single {
+	.crossprice {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: black;
+		position:relative;
+	 		&:before { 			
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 3px solid;
+			border-color: red;
+			transform: rotate(-5deg);
+			position: absolute;
+ 		}
+	}
+	.price {
+	    color: black;		
+		font-size: 2rem;		
+	}
+}
+
+// SingleItem end
 
 
 

@@ -1,0 +1,124 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set numberOfCols = config('Ceres.footer.number_of_cols') %}
+{% set colSize = (12 / (numberOfCols + 1)) %}
+{% set displayedCategories = [] %}
+{% set numberOfFeatures = config('Ceres.footer.number_of_features') %}
+{% set topButtonPosition = config('Ceres.footer.to_top_button') %}
+
+<div class="footer">
+
+    <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+
+    <div class="to-top hidden-md-up" v-scroll-to-top>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+
+    <div class="container-fluid bckgr">
+        <div class="container-max text-xs-center">
+            <h2>Abonnieren sie unseren mgc24 Newsletter*</h2>
+            <h5>Profitieren Sie von Sonderangeboten und Gutscheinen, die Sie exklusiv in unserem newsletter erhalten. *Abmeldung jederzeit möglich!</h5>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <input id="" name="vorname" placeholder="Vorname" class="nl_mail" type="text">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="" name="nachname" placeholder="Nachname" class="nl_mail" type="text">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <input id="" name="email" placeholder="E-Mail Adresse" type="text"> <button type="submit" class="nl_btn">absenden</button>
+                </div>
+            </div>
+            <h5>Newsletter abbestellen</h5>
+        </div>
+    </div>
+    
+
+    <div class="container-max">
+        <h2 class="text-xs-center">Über meingartencenter24.de</h2>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <p>Stanze zählt seit 1872 als Gartencenter zu den traditionsreichsten Unternehmen in Deutschland.
+                    2001 eröffnete Stanze in Hemmingen bei Hannover Deutschlands erstes Bellandris
+                    Gartencenter. Das Erlebniskonzept hat sich innerhalb kurzer Zeit durchgesetzt und Stanze zum
+                    bekanntesten und beliebtesten Gartencenter in der Region Hannover gemacht. Mehrfach wurde
+                    Stanze dafür ausgezeichnet. Sehen Sie dazu auch unseren Film, indem wir unser Gartencenter
+                    vorstellen.</p>
+                    <p>Früh erkannte Stanze die Bedeutung des Internets auch für Gartencenter und eröffnete 2006 als
+                    eines der ersten Gartencenter in Deutschland einen Online Shop mit Vollsortiment. Unter dem
+                    Namen MeinGartencenter24.de wird ein riesiges Sortiment für alle Gartenliebhaber angeboten.
+                    Die lange Erfahrung und die hohe Fachkompetenz spiegeln sich darin wieder.</p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <b>Ihre Vorteile</b>
+                <ul>
+                    <li>2% Rabatt bei Zahlung per Vorkasse</li>
+                    <li>versandkostenfreie Lieferung ab 20 € Warenkorbwert</li>
+                    <li>sicherer Datentransfer durch SSL-Verschlüsselung</li>
+                    <li>Trusted Shops zertifiziertes Einkaufserlebnis</li>
+                    <li>zertifizierter Weber Grill Partner</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bckgr">
+        <div class="container-max">            
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <p>Hotline: <a href="tel:+4951142038888">0511–42038888</a><br />
+                    Mo. – Fr.: 8 – 18 Uhr<br />
+                    Sa.: 9 – 15 Uhr<br />
+                    E-Mail: <a href="mailto:info@meingartencenter24.de">info@meingartencenter24.de</a></p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <span class="payment">
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/paypal.png" alt="PayPal" class="img-fluid" />
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/klarna-sofort.png" alt="Sofort Überweisung" class="img-fluid" />
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/amazon-pay.png" alt="AmazonPay" class="img-fluid" />
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/mastercard.png" alt="Mastercard" class="img-fluid" />
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/visa.png" alt="Visa" class="img-fluid" />
+                    </span>
+                    <span class="delivery text-xs-center">
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/post-germany.png" alt="Deutsche Post" class="img-fluid" />
+                        <img src="{{ plugin_path('meingartencenter24') }}/images/dhl.png" alt="DHL" class="img-fluid" />                        
+                    </span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 info">
+                    <span>Zertifizierter idealo Partner <span><img src="{{ plugin_path('meingartencenter24') }}/images/idealo.png" alt="Idealo" class="img-fluid" /></span></span>
+                    <span>Trusted Shops Guarantee<span><img src="{{ plugin_path('meingartencenter24') }}/images/trusted.png" alt="Trusted" class="img-fluid" /></span></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 info">
+                    <span>BIO zertifiziert nach DE-ÖKO-013<span><img src="{{ plugin_path('meingartencenter24') }}/images/oeko.png" alt="Idealo" class="img-fluid" /></span></span>
+                    <span>Zertifizierter Weber Grill Partner<span><img src="{{ plugin_path('meingartencenter24') }}/images/weber.png" alt="Weber Grill" class="img-fluid" /></span></span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- </div> -->

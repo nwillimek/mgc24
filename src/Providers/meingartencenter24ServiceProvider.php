@@ -34,7 +34,8 @@ class meingartencenter24ServiceProvider extends ServiceProvider
 
         //partial replacement
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            $partial->set('header', 'meingartencenter24::PageDesign.Partials.Header.Header');            
+            $partial->set('header', 'meingartencenter24::PageDesign.Partials.Header.Header');
+            $partial->set('footer', 'meingartencenter24::PageDesign.Partials.Footer');
             $partial->set('page-design', 'meingartencenter24::PageDesign.PageDesign');
 
         }, self::EVENT_LISTENER_PRIORITY);
