@@ -5,8 +5,16 @@ body {
 	> #vue-app,
 	> #vue-error {
 		background-color: white;
+		&.open-right {
+			.wrapper-right {
+		  		z-index: 1070;
+			}
+		}
 	}
 }
+
+
+
 
 .page-content {
 	background-color: white;	
@@ -189,6 +197,16 @@ body {
 			    max-height: 50px;
 			}
 		}	
+	}
+	.copyright {
+	    font-size: .85rem;
+	    display: block;
+	    color: white;	    
+	    small {
+		    font-size: .75rem;
+		    display: block;
+		    margin: 1rem 0;
+		}
 	}
 }
 
