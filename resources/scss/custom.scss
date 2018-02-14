@@ -176,9 +176,16 @@ body {
 	    max-width: 60px;
 		}
 	}
-	.info {
-		display: block;
-		margin-bottom: 2rem;
+	.info {		
+		span {
+		    min-height: 115px;
+		    display: block;
+			.img-fluid {
+			    display: block;
+			    margin: 0.25rem auto 2rem auto;
+			    max-height: 50px;
+			}
+		}	
 	}
 }
 
