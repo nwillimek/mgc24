@@ -17,10 +17,7 @@
 
                 <!-- ITEM DETAIL -->
                 <div class="col-md-5 single-rightside m-t-1" v-stick-in-parent>
-                    <div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
-                        ${ currentVariation.item.manufacturer.externalName }
-                    </div>
-
+                    
                     <h1 class="h2 title">
                         <span v-if="currentVariation.variation.name != ''">
                             ${ currentVariation.variation.name }
@@ -42,6 +39,11 @@
                             <b>{{ trans("Ceres::Template.itemNumber") }}</b>
                             <span>${ currentVariation.variation.number }</span>
                         </span>
+                        <span class="articlenumber small text-muted" v-if="currentVariation.filter.hasManufacturer">
+                            <b>Hersteller</b>
+                            <span>${ currentVariation.item.manufacturer.externalName }</span>
+                        </span>
+                        
                     </div>
 
                     <!-- Variation -->
@@ -119,6 +121,15 @@
                     </span>
 
                     <slot name="AdditionalContentAfterVAT"></slot>
+
+                    <div class="m-y-2" v-for="prop in currentVariation.properties">
+                        <div v-if="prop.property.id == 4">
+                            <h5>${ prop.property.names.name }}</h5>
+                            <p>${ prop.texts.value }}</p>
+                        </div>
+                    </div>
+
+
 
                 </div>
 
