@@ -42,16 +42,18 @@ class meingartencenter24ServiceProvider extends ServiceProvider
         
 
         //vue components replacement
-        $eventDispatcher->listen('IO.Component.Import', function(ComponentContainer $componentContainer) {         
+        
+        $eventDispatcher->listen('IO.Component.Import', function(ComponentContainer $componentContainer) { 
             if($componentContainer->getOriginComponentTemplate() == 'Ceres::Customer.Components.UserLoginHandler') 
             {
                 $componentContainer->setNewComponentTemplate('meingartencenter24::Customer.Components.UserLoginHandler');
             } 
-        }, self::EVENT_LISTENER_PRIORITY);
-
-        $eventDispatcher->listen('IO.Component.Import', function(ComponentContainer $componentContainer) { 
             if($componentContainer->getOriginComponentTemplate() == 'Ceres::ItemList.Components.CategoryItem') {
                     $componentContainer->setNewComponentTemplate('meingartencenter24::ItemList.Components.CategoryItem');
+            }
+            if($componentContainer->getOriginComponentTemplate() == 'Ceres::Item.Components.SingleItem') 
+            {
+                $componentContainer->setNewComponentTemplate('meingartencenter24::Item.Components.SingleItem');
             } 
         }, self::EVENT_LISTENER_PRIORITY);
 
