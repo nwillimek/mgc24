@@ -28,7 +28,9 @@
                     </h1>
 
                     {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
-                        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''">${ currentVariation.texts.shortDescription }</p>
+                        % autoescape false %}                        
+                            <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''">${ currentVariation.texts.shortDescription }</p>
+                        {% endautoescape %}
                     {% endif %}
 
                     <hr>
@@ -125,12 +127,12 @@
 
                 <!-- ITEM DESCRIPTION -->
                 <div class="col-md-7 m-y-3">
-                    <h1> Beschreibung</h1>
+                    <h2> Beschreibung</h2>
                     <div class="" :id="'details-' + currentVariation.variation.id" role="tabpanel">
                         <div class="m-y-2" v-html="currentVariation.texts.description">
                         </div>
                     </div>
-                    <h1> technische Daten</h1>
+                    <h2> technische Daten</h2>
                     <div class="" :id="'data-' + currentVariation.variation.id" role="tabpanel">
                         <div class="m-y-2" v-html="currentVariation.texts.technicalData">
                         </div>

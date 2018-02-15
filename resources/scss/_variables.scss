@@ -133,17 +133,18 @@ $link-hover-color:      darken($link-color, 15%) !default;
 //
 // Settings for the `<body>` element.
 
+ @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif:'Open Sans', Helvetica, Arial, sans-serif !default;
 $font-family-helvetica: $font-family-sans-serif !default;
-$font-family-serif:     Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:     'Comfortaa', cursive !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:      $font-family-sans-serif !default;
-$font-family-heading:   $font-family-base;
+$font-family-heading:   $font-family-serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 14px !default;
