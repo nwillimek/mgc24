@@ -5,11 +5,7 @@ body {
 	> #vue-app,
 	> #vue-error {
 		background-color: white;
-		&.open-right {
-			.wrapper-right {
-		  		z-index: 1071;
-			}
-		}
+		
 	}
 }
 
