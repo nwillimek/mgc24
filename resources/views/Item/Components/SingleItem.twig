@@ -125,12 +125,13 @@
 
                 <!-- ITEM DESCRIPTION -->
                 <div class="col-md-7 m-y-3">
-                    
-                    <div class="h1" :id="'details-' + currentVariation.variation.id" role="tabpanel">
+                    <h1> Beschreibung</h1>
+                    <div class="" :id="'details-' + currentVariation.variation.id" role="tabpanel">
                         <div class="m-y-2" v-html="currentVariation.texts.description">
                         </div>
                     </div>
-                    <div class="h1" :id="'data-' + currentVariation.variation.id" role="tabpanel">
+                    <h1> technische Daten</h1>
+                    <div class="" :id="'data-' + currentVariation.variation.id" role="tabpanel">
                         <div class="m-y-2" v-html="currentVariation.texts.technicalData">
                         </div>
                     </div>
