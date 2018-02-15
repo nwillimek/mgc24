@@ -22,7 +22,6 @@
                         <span v-if="currentVariation.variation.name != ''">
                             ${ currentVariation.variation.name }
                         </span>
-
                         <span v-else>
                             ${ currentVariation.texts | itemName({{configItemName}}) }
                         </span>
@@ -126,137 +125,23 @@
 
                 <!-- ITEM DESCRIPTION -->
                 <div class="col-md-7 m-y-3">
-                    <ul class="nav nav-tabs" role="tablist">
-                        {% if 'item.description' in itemData or 'all' in itemData %}
-                            <li class="nav-item" v-if="currentVariation.texts.description !== ''">
-                                <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id"
-                                role="tab">{{ trans("Ceres::Template.itemDescription") }}</a>
-                            </li>
-                        {% endif %}
-
-                        {% if 'item.technical_data' in itemData or 'all' in itemData %}
-                            <li class="nav-item" v-if="currentVariation.texts.technicalData !== ''">
-                                <a class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id"
-                                role="tab">{{ trans("Ceres::Template.itemTechnicalData") }}</a>
-                            </li>
-                        {% endif %}
-
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#assessments-details"
-                            role="tab">{{ trans("Ceres::Template.itemMoreDetails") }}</a>
-                        </li>
-
-                        <slot name="AddDetailTabs"></slot>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" :id="'details-' + currentVariation.variation.id" role="tabpanel">
-                            <div class="m-y-2" v-html="currentVariation.texts.description">
-                            </div>
+                    
+                    <div class="h1" :id="'details-' + currentVariation.variation.id" role="tabpanel">
+                        <div class="m-y-2" v-html="currentVariation.texts.description">
                         </div>
-                        <div class="tab-pane" :id="'data-' + currentVariation.variation.id" role="tabpanel">
-                            <div class="m-y-2" v-html="currentVariation.texts.technicalData">
-                            </div>
+                    </div>
+                    <div class="h1" :id="'data-' + currentVariation.variation.id" role="tabpanel">
+                        <div class="m-y-2" v-html="currentVariation.texts.technicalData">
                         </div>
+                    </div>
 
-                        <div class="tab-pane" id="assessments-details" role="tabpanel">
-                            <div class="m-y-2">
-                                <table class="table table-striped table-hover table-sm">
-                                    <tbody>
-                                    {% if 'item.id' in itemData or 'all' in itemData %}
-                                        <tr>
-                                            <td>{{ trans("Ceres::Template.itemId") }}</td>
-                                            <td>${ currentVariation.item.id }</td>
-                                        </tr>
-                                    {% endif %}
+                    
+                        
 
-                                    {% if 'item.condition' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== ''">
-                                            <td>{{ trans("Ceres::Template.itemCondition") }}</td>
-                                            <td>${ currentVariation.item.condition.names.name }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.age_rating' in itemData or 'all' in itemData %}
-                                        <tr>
-                                            <td>{{ trans("Ceres::Template.itemAge") }}</td>
-                                            <td>{{ trans("Ceres::Template.itemFSK", {"age": item.documents[0].data.item.ageRestriction }) }}</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if ('item.external_id' in itemData or 'all' in itemData) %}
-                                        <tr v-if="currentVariation.variation.externalId !== ''">
-                                            <td>{{ trans("Ceres::Template.itemExternalVariationId") }}</td>
-                                            <td>${ currentVariation.variation.externalId }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if ('item.variation_model' in itemData or 'all' in itemData) %}
-                                        <tr v-if="currentVariation.variation.model !== ''">
-                                            <td>{{ trans("Ceres::Template.itemModel") }}</td>
-                                            <td>${ currentVariation.variation.model }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.manufacturer' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.filter.hasManufacturer && currentVariation.item.manufacturer.externalName !== ''">
-                                            <td>{{ trans("Ceres::Template.itemManufacturer") }}</td>
-                                            <td>${ currentVariation.item.manufacturer.externalName }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.producerCountry' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.item.producingCountry && currentVariation.item.producingCountry.names.name !== ''">
-                                            <td>{{ trans("Ceres::Template.itemManufacturingCountry") }}</td>
-                                            <td>${ currentVariation.item.producingCountry.names.name }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.variationBase_content' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.unit">
-                                            <td>{{ trans("Ceres::Template.itemContent") }}</td>
-                                            <td>${ currentVariation.unit.content } ${ currentVariation.unit.names.name }</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.weightG' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.variation.weightG !== ''">
-                                            <td>{{ trans("Ceres::Template.itemWeight") }}</td>
-                                            <td>${ currentVariation.variation.weightG } g</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if 'item.weightNetG' in itemData or 'all' in itemData %}
-                                        <tr v-if="currentVariation.variation.weightNetG !== ''">
-                                            <td>{{ trans("Ceres::Template.itemNetWeight") }}</td>
-                                            <td>${ currentVariation.variation.weightNetG } g</td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if ('item.variation_dimensions' in itemData or 'all' in itemData) %}
-                                        <tr>
-                                            <td>{{ trans("Ceres::Template.itemDimensions") }}</td>
-                                            <td>
-                                                <span>${ currentVariation.variation.lengthMM }</span>&times;<!--
-                                                --><span>${ currentVariation.variation.widthMM }</span>&times;<!--
-                                                --><span>${ currentVariation.variation.heightMM }</span> mm
-                                            </td>
-                                        </tr>
-                                    {% endif %}
-
-                                    {% if ('item.customs_tariff_number' in itemData or 'all' in itemData) %}
-                                        <tr v-if="currentVariation.item.customsTariffNumber !== ''">
-                                            <td>{{ trans("Ceres::Template.itemCustomsTariffNumber") }}</td>
-                                            <td>${ currentVariation.item.customsTariffNumber }</td>
-                                        </tr>
-                                    {% endif %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        
 
                         <slot name="AddDetailTabsContent"></slot>
-                    </div>
+                    
                 </div>
             </div>
             <!-- ./ITEM DESCRIPTION -->
