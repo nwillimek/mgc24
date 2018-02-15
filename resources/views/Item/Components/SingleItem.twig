@@ -16,9 +16,10 @@
                 </div>
 
                 <!-- ITEM DETAIL -->
-                <div class="col-md-5 single-rightside m-t-1" v-stick-in-parent>                    
-                    <span>Dieser Artikel ist von weiteren Rabattaktionen ausgeschlossen.<br />
-                    Speditionsversand</span>
+                <div class="col-md-5 single-rightside m-t-1" v-stick-in-parent>
+                    <div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
+                        ${ currentVariation.item.manufacturer.externalName }
+                    </div>
 
                     <h1 class="h2 title">
                         <span v-if="currentVariation.variation.name != ''">
@@ -41,22 +42,7 @@
                             <b>{{ trans("Ceres::Template.itemNumber") }}</b>
                             <span>${ currentVariation.variation.number }</span>
                         </span>
-                        <span class="articlenumber small text-muted">
-                            <b>Hersteller</b>                        
-                            <span>${ currentVariation.item.manufacturer.externalName }</span>
-                        </span>
-                        
                     </div>
-
-                    <div class="m-b-3">
-                        <b>2% Rabatt bei Vorkasse</b>
-                        <b>Kostenfreier Versand ab 20 Euro (Deutschlandweit) - Abfrage ?</b>                        
-                    </div>
-                    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
-                        <div class="row">
-                            <add-to-wish-list template="#vue-add-to-wish-list" :variation-id="currentVariation.variation.id" :is-active="isInWishList"></add-to-wish-list>
-                        </div>
-                    {% endif %}
 
                     <!-- Variation -->
                     <div class="row m-b-1" v-if="variations.length > 0">
@@ -73,9 +59,11 @@
                     <graduated-prices template="#vue-graduated-prices"></graduated-prices>
 
                     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
-                        <span class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">                            
-                                ${ currentVariation.prices.rrp.price.formatted }                            
-                        </span>
+                        <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">
+                            <del class="text-muted small">
+                                ${ currentVariation.prices.rrp.price.formatted }
+                            </del>
+                        </div>
                     {% endif %}
 
                     <span class="price h1">
@@ -114,6 +102,11 @@
                         <slot name="AfterAddToBasket"></slot>
                     </div>
 
+                    {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
+                        <div class="row">
+                            <add-to-wish-list template="#vue-add-to-wish-list" :variation-id="currentVariation.variation.id" :is-active="isInWishList"></add-to-wish-list>
+                        </div>
+                    {% endif %}
                 <!-- ./ITEM DETAIL -->
 
                     <slot name="AdditionalContentAfterAddToBasket"></slot>
