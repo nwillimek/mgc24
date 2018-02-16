@@ -6,7 +6,7 @@
 <script type="x/template" id="vue-single-item">
     <div>
         <div class="single container-max page-content">
-            <div class="row m-t-3">
+            <div class="row">
                 <div class="col-md-7 single-leftside">
                     <div class="row">
                         <div class="col-xs-12">
@@ -43,8 +43,20 @@
                         <span class="articlenumber small text-muted" v-if="currentVariation.filter.hasManufacturer">
                             <b>Hersteller</b>
                             <span>${ currentVariation.item.manufacturer.externalName }</span>
-                        </span>
-                        
+                        </span>                        
+                    </div>
+                    <div class="base-price text-muted m-y-1" v-if="currentVariation.unit && !(currentVariation.unit.unitOfMeasurement === 'C62' && currentVariation.unit.content === 1)">
+                        <div>
+                            {{ trans("Ceres::Template.itemContent") }}
+                            <span>${ currentVariation.unit.content }</span>
+                            <span>${ currentVariation.unit.names.name }</span>
+                        </div>
+                        <div v-if="currentVariation.variation.mayShowUnitPrice">
+                            {{ trans("Ceres::Template.itemUnitPrice") }}
+                            <span class="base-price-value">
+                                ${ variationGraduatedPrice.basePrice }
+                            </span>
+                        </div>
                     </div>
 
                     <!-- Variation -->
@@ -62,11 +74,9 @@
                     <graduated-prices template="#vue-graduated-prices"></graduated-prices>
 
                     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
-                        <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">
-                            <del class="text-muted small">
-                                ${ currentVariation.prices.rrp.price.formatted }
-                            </del>
-                        </div>
+                        <span class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">                            
+                            ${ currentVariation.prices.rrp.price.formatted }                            
+                        </span>
                     {% endif %}
 
                     <span class="price h1">
@@ -77,19 +87,7 @@
                         <span :content="currentVariation.prices.default.currency"></span>
                     </span>
 
-                    <div class="base-price text-muted m-y-1" v-if="currentVariation.unit && !(currentVariation.unit.unitOfMeasurement === 'C62' && currentVariation.unit.content === 1)">
-                        <div>
-                            {{ trans("Ceres::Template.itemContent") }}
-                            <span>${ currentVariation.unit.content }</span>
-                            <span>${ currentVariation.unit.names.name }</span>
-                        </div>
-                        <div v-if="currentVariation.variation.mayShowUnitPrice">
-                            {{ trans("Ceres::Template.itemUnitPrice") }}
-                            <span class="base-price-value">
-                                ${ variationGraduatedPrice.basePrice }
-                            </span>
-                        </div>
-                    </div>
+                    
 
                     <slot name="AfterPrice"></slot>
 

@@ -45,6 +45,7 @@ body {
 	}
 	.brand-wrapper {
 		position: relative;
+		padding:0;
 		.navbar-brand {
 			padding: 0;
 			img {
@@ -234,6 +235,9 @@ body {
 
 // CategoryListItem / CategoryListItem start
 .cmp-product-thumb {
+	.prices {    
+    	justify-content: flex-end;
+	}
 	.thumb-title {
 		font-weight: 700;
 		line-height: 1.5em;
@@ -291,7 +295,8 @@ body {
 	.articlenumber {
 		display:block;
 		b {
-			width:100px;
+			width: 115px;
+			display: inline-block;
 		}
 	}
 	.crossprice {
