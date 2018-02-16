@@ -199,6 +199,14 @@
         {{ get_filtered_tags() }}
 
         <script>
+        var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+        for(var i = 0; i < hashParams.length; i++){
+            var p = hashParams[i].split('=');
+            document.getElementById(p[0]).value = decodeURIComponent(p[1]);;
+        }
+        </script>
+
+        <script>
             var rootElement = document.getElementById("vue-app");
             var errorElement = document.getElementById("vue-error");
 
