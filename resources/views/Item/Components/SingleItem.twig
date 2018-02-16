@@ -128,8 +128,10 @@
     
                  <div class="m-y-2" v-for="prop in currentVariation.properties">
                      <div v-if="prop.property.id == 5">
-                        <h5>${ prop.property.names.name }</h5>
-                        <p><a :href="prop.texts.value"> Linktext</a></p>
+                        <h5><b>${ prop.property.names.name }</b></h5>
+                        <a :href="prop.texts.value" target="_blank" class="item-files">
+                            <img src="{{ plugin_path('meingartencenter24') }}/images/Adobe_PDF_file_icon_32x32" alt="${ prop.property.names.name }">
+                        </a>
                      </div>
                  </div>
 
