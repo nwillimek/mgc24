@@ -166,16 +166,7 @@ body {
 // Header end
 
 // Footer start
-.footer {	
-	img {
-		@include media-breakpoint-up(sm){
-			filter: grayscale(100%);
-		    transition: all 0.5s ease;
-				&:hover {
-					filter: grayscale(0%);
-				}
-			}
-		}
+.footer {		
 	.bckgr {
 		background-color:#3c3c3b;
 		p, a, h2, h5, span {
@@ -187,7 +178,14 @@ body {
 	 img {
 	    display: inline-block;
 	    position: relative;
-	    max-width: 60px;	    
+	    max-width: 60px;
+	    @include media-breakpoint-up(md){
+			filter: grayscale(100%);
+		    transition: all 0.5s ease;
+				&:hover {
+					filter: grayscale(0%);
+				}
+			}	    
 		}
 	}
 	.payment {
