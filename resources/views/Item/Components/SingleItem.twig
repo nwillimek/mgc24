@@ -45,6 +45,7 @@
                             <span>${ currentVariation.item.manufacturer.externalName }</span>
                         </span>                        
                     </div>
+
                     <div class="base-price text-muted m-y-1" v-if="currentVariation.unit && !(currentVariation.unit.unitOfMeasurement === 'C62' && currentVariation.unit.content === 1)">
                         <div>
                             {{ trans("Ceres::Template.itemContent") }}
@@ -120,6 +121,15 @@
                     </span>
 
                     <slot name="AdditionalContentAfterVAT"></slot>
+    
+                 <div class="m-y-2" v-for="prop in currentVariation.properties">
+                     <div v-if="prop.property.id == 4">
+                        <h5>${ prop.property.names.name }</h5>
+                        <p>${ prop.texts.value }</p>
+                     </div>
+                 </div>
+
+
 
                 </div>
 
