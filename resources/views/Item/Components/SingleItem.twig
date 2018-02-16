@@ -111,10 +111,6 @@
                     {% endif %}
                 <!-- ./ITEM DETAIL -->
                     
-                    <div class="item-information">
-                        <a href="https://fes.plentymarkets-cloud01.com/contact#txt_subject=some_text&txt_message=more%20text"><b>?</b> Fragen zum Artikel? </a>
-                    </div>
-
                     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
                     <hr>
@@ -141,24 +137,41 @@
 
                 <!-- ITEM DESCRIPTION -->
                 <div class="col-md-7 m-y-3">
-                    <h2> Beschreibung</h2>
-                    <div class="" :id="'details-' + currentVariation.variation.id" role="tabpanel">
-                        <div class="m-y-2" v-html="currentVariation.texts.description">
-                        </div>
-                    </div>
-                    <h2> technische Daten</h2>
-                    <div class="" :id="'data-' + currentVariation.variation.id" role="tabpanel">
-                        <div class="m-y-2" v-html="currentVariation.texts.technicalData">
-                        </div>
-                    </div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        {% if 'item.description' in itemData or 'all' in itemData %}
+                            <li class="nav-item" v-if="currentVariation.texts.description !== ''">
+                                <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id"
+                                role="tab">{{ trans("Ceres::Template.itemDescription") }}</a>
+                            </li>
+                        {% endif %}
 
-                    
-                        
+                        {% if 'item.technical_data' in itemData or 'all' in itemData %}
+                            <li class="nav-item" v-if="currentVariation.texts.technicalData !== ''">
+                                <a class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id"
+                                role="tab">{{ trans("Ceres::Template.itemTechnicalData") }}</a>
+                            </li>
+                        {% endif %}
 
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#assessments-details"
+                            role="tab">{{ trans("Ceres::Template.itemMoreDetails") }}</a>
+                        </li>
+
+                        <slot name="AddDetailTabs"></slot>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" :id="'details-' + currentVariation.variation.id" role="tabpanel">
+                            <div class="m-y-2" v-html="currentVariation.texts.description">
+                            </div>
+                        </div>
+                        <div class="tab-pane" :id="'data-' + currentVariation.variation.id" role="tabpanel">
+                            <div class="m-y-2" v-html="currentVariation.texts.technicalData">
+                            </div>
+                        </div>                        
 
                         <slot name="AddDetailTabsContent"></slot>
-                    
+                    </div>
                 </div>
             </div>
             <!-- ./ITEM DESCRIPTION -->
