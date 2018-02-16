@@ -168,10 +168,12 @@ body {
 // Footer start
 .footer {	
 	img {
-		filter: grayscale(100%);
-	    transition: all 0.5s ease;
-			&:hover {
-				filter: grayscale(0%);
+		@include media-breakpoint-up(sm){
+			filter: grayscale(100%);
+		    transition: all 0.5s ease;
+				&:hover {
+					filter: grayscale(0%);
+				}
 			}
 		}
 	.bckgr {
