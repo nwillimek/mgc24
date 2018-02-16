@@ -43,16 +43,18 @@
                                 </li>                
                             </ul>
                         </div>
-                        <div class="col-xs-4 col-sm-3 col-md-3">
-                            <li class="list-inline-item control-search hidden-md-up">
-                                <a class="anicon anicon-search-xcross" aria-label="toggle search"
-                                        data-toggle="collapse" href="#searchBox"
-                                        aria-expanded="{% if services.template.isSearch() %}true{% else %}false{% endif %}"
-                                        aria-controls="searchBox"
-                                        data-parent="#controlsList">
-                                    <span class="anicon-search-item" aria-hidden="true"></span>
-                                </a>
-                            </li>
+                        <div class="col-xs-4 col-sm-3 col-md-3 search-anicon">
+                            <ul>
+                                <li class="list-inline-item control-search hidden-md-up">
+                                    <a class="anicon anicon-search-xcross" aria-label="toggle search"
+                                            data-toggle="collapse" href="#searchBox"
+                                            aria-expanded="{% if services.template.isSearch() %}true{% else %}false{% endif %}"
+                                            aria-controls="searchBox"
+                                            data-parent="#controlsList">
+                                        <span class="anicon-search-item" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

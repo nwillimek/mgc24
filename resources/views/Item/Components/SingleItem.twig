@@ -110,6 +110,9 @@
                         </div>
                     {% endif %}
                 <!-- ./ITEM DETAIL -->
+                    <div class="item-information">
+                        <a href=""><b>?</b>Fragen zum Artikel? </a>
+                    </div>
 
                     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
@@ -123,9 +126,9 @@
                     <slot name="AdditionalContentAfterVAT"></slot>
     
                  <div class="m-y-2" v-for="prop in currentVariation.properties">
-                     <div v-if="prop.property.id == 4">
+                     <div v-if="prop.property.id == 5">
                         <h5>${ prop.property.names.name }</h5>
-                        <p>${ prop.property.valueTyp }</p>
+                        <p>${ prop.texts.value }</p>
                      </div>
                  </div>
 

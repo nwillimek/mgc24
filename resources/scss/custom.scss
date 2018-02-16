@@ -96,12 +96,13 @@ body {
 .anicon {
 	& > .anicon-search-item {        
         &:before {            
-            background: $brand-primary;
+            background: white;
+            top: 5px;
 		}
 		
         &:after {            
-            background: #f2f2f2;
-            border: 1px solid $brand-primary;            
+            background: #3c3c3b;
+            border: 1px solid white;            
         }
 	}
 }
