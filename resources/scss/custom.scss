@@ -195,6 +195,13 @@ body {
 			}
 		}	
 	}
+	.brands {
+	img {
+	    display: inline-block;
+	    margin: .25rem;
+	    max-width: 70px;
+		}
+	}
 	.copyright {
 	    font-size: .85rem;
 	    display: block;
