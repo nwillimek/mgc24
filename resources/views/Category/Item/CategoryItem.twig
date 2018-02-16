@@ -1,5 +1,5 @@
 {% extends getPartial('page-design') %}
-{% import "Ceres::Category.Macros.CategoryTree" as Tree %}
+{% import "meingartencenter24::Category.Macros.CategoryTree" as Tree %}
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set itemSort             = request.get("sorting") | default(config('Ceres.sort.defaultSorting')) %}
