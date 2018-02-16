@@ -112,7 +112,7 @@
                 <!-- ./ITEM DETAIL -->
                     
                     <div class="item-information">
-                        <a href=""><b>?</b>Fragen zum Artikel? </a>
+                        <a href=""><b>?</b> Fragen zum Artikel? </a>
                     </div>
 
                     <slot name="AdditionalContentAfterAddToBasket"></slot>
@@ -129,7 +129,7 @@
                  <div class="m-y-2" v-for="prop in currentVariation.properties">
                      <div v-if="prop.property.id == 5">
                         <h5>${ prop.property.names.name }</h5>
-                        <p><a href="https://fes.plentymarkets-cloud01.com${ prop.texts.value }"></a></p>
+                        <p><a :href="prop.texts.value"> Linktext</a></p>
                      </div>
                  </div>
 
