@@ -386,18 +386,6 @@ $menu-font-s-lg  		: 1em;
 $menu-font-f-lg  		: $font-family-serif;
 $menu-li-bg-hover		: $brand-primary;
 $menu-li-color-hover	: #3c3c3b;
-// bigmenu
-$menu-big-menu-bg 				: #3c3c3b;
-$menu-big-menu-li-bg			: transparent;
-$menu-big-menu-li-bg-hover		: #3c3c3b;
-$menu-big-menu-li-color			: $white;
-$menu-big-menu-li-color-hover	: $text-color;
-// megamenu
-$megamenu-bg 					: $white;
-$megamenu-color-top-btn			: $brand-primary;
-$megamenu-color-bottom-btn		: $black;
-$megamenu-btn-hover 			: darken($top-bar-basket-btn, 20%);
-$megamenu-btn-more 				: $gray;
 
 body.menu-is-visible { 
 	overflow-y : hidden;
@@ -422,35 +410,6 @@ body.menu-is-visible {
 		transform 	: translateX(0);
 	}
 
-	ul.breadcrumb {
-		background : $menu-breadcrumb-bg;
-		max-width  : initial;
-		font-size  : .8em;
-		padding    : 0 calc(15px + .5em) 0 15px;
-
-		li {
-			display : inline-block;
-			cursor 	: pointer;
-			padding : .8rem 0 .75rem;
-			&.btnClose {
-				float 		: right;
-				padding-top : .6em;
-				&:before {
-					content 	: "\f00d";
-					font-family : "FontAwesome";
-					font-size   : 1.2em;
-				}
-			}
-			&:not(:first-of-type) a:before {
-				content 		: "\f0da";
-				font-family 	: FontAwesome;
-				font-size 		: 1rem;
-				padding 		: 0 .3rem;
-			}
-			&:first-of-type a:before { display : none!important; };
-		}
-	}
-
 	ul.mainmenu {
 		list-style 	: none;
 		height 		: 100%;
@@ -465,19 +424,15 @@ body.menu-is-visible {
 			display: flex;
 			flex-wrap: wrap;
 			padding: .75rem 1rem;
-
+			border-bottom: 2px solid transparent;
 			a 	{
-				color 	: inherit;
 				display : inline-block;
 				padding : .25rem;
-				flex: 1 0 80%;				
-				border-bottom: 2px solid transparent;
+				flex: 1 0 80%;					
 			}
-			&:hover {				
+			&:hover {
 				a {
-					&:hover {
-						border-bottom: 2px solid $brand-primary;
-					}
+					border-bottom: 2px solid $brand-primary;
 				}
 			}
 
@@ -513,16 +468,7 @@ body.menu-is-visible {
 		}
 	}
 
-	@include media-breakpoint-up(sm){
-
-		ul.mainmenu {
-			li 	{
-				.nav-direction{
-					padding-right: calc(4px + .5em);
-				}
-			}
-		}
-	}
+	
 
 	@include media-breakpoint-up(lg){
 		background-color : transparent;
@@ -557,10 +503,12 @@ body.menu-is-visible {
 				}
 				>a {					
 					width:100%;
-					border-bottom: 2px solid transparent;
-						&:hover {
-							border-bottom: 2px solid $brand-primary;
-						}
+					border-bottom: 2px solid transparent;						
+				}
+				&:hover {
+					a {
+						border-bottom: 2px solid $brand-primary;
+					}
 				}
 				>ul {
 					display 		: flex;
@@ -616,8 +564,7 @@ body.menu-is-visible {
 						visibility 		: visible;
 						opacity 		: 1;
 						transition 		: all .1s ease;
-					}
-					border-bottom: 2px solid $brand-primary;
+					}					
 
 				}
 				&.ddown>a { transition: all 0s; }
