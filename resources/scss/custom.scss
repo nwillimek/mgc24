@@ -498,12 +498,7 @@ body.menu-is-visible {
 				>a {					
 					width:100%;
 					border-bottom: 2px solid transparent;						
-				}
-				&:hover {					
-					a {
-						border-bottom: 2px solid $brand-primary;
-					}
-				}
+				}				
 				>ul {
 					display 		: flex;
 					flex-wrap		: wrap;
