@@ -430,12 +430,6 @@ body.menu-is-visible {
 				padding : .25rem;
 				flex: 1 0 80%;					
 			}
-			&:hover {
-				a {
-					border-bottom: 2px solid $brand-primary;
-				}
-			}
-
 			.nav-direction{
 				padding: 1rem;
 				flex: 1 0 20%;
@@ -505,7 +499,7 @@ body.menu-is-visible {
 					width:100%;
 					border-bottom: 2px solid transparent;						
 				}
-				&:hover {
+				&:hover {					
 					a {
 						border-bottom: 2px solid $brand-primary;
 					}
@@ -516,7 +510,7 @@ body.menu-is-visible {
 					visibility 		: hidden;
 					opacity 		: 0;
 					transition 		: all .1s ease;
-					background 		: $menu-big-menu-bg;
+					background 		: #3c3c3b;
 					height 			: auto;
 					top 			: 100%;
 					text-align 		: center;
@@ -545,10 +539,11 @@ body.menu-is-visible {
 							top 	 : 0;
 						}
 
-						&:hover {
-							background  	: $menu-big-menu-li-bg-hover;
-							color 			: $menu-big-menu-li-color;
+						&:hover {							
 							text-decoration : none;							
+							a {
+								border-bottom: 2px solid $brand-primary;
+							}
 						}
 
 						>a {
@@ -559,7 +554,9 @@ body.menu-is-visible {
 
 				&:hover {					
 					color 			 : $menu-li-color-hover;
-					transition 		 : all .1s ease;					
+					transition 		 : all .1s ease;
+					background-color:#3c3c3b;
+					color:white;					
 					>ul {
 						visibility 		: visible;
 						opacity 		: 1;
