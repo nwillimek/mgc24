@@ -647,8 +647,26 @@ body.menu-is-visible {
 
 
 
-
-
+// availability-preview start
+.availability-preview {
+	bottom: 0;
+	color: $brand-primary;
+	padding: 0 .25rem;
+	font-size: .75rem;
+	left: unset;
+	position: relative;
+	width: 80%;
+	display:none;
+	margin: .75rem auto 0 auto;
+	text-align: center;
+   
+	&.availability-1 {color:$availability_1;}
+	&.availability-2 {color:$availability_2;}
+	&.availability-3 {color:$availability_3;}
+	&.availability-4 {color:$availability_4;}
+	&.availability-5 {color:$availability_5;}
+}
+// availability-preview end
 
 
 
