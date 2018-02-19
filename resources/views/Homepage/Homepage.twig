@@ -21,6 +21,24 @@
     <title>{{ config("Ceres.header.company_name") }}</title>
 {% endblock %}
 
+
+
+{% set homepageImageFirstSlide  = config("meingartencenter24.homepage.homepageImageFirstSlide") %}
+{% set homepageProductLinkFirstSlide  = config("meingartencenter24.homepage.homepageProductLinkFirstSlide") %}
+{% set homepageProductNameFirstSlide  = config("meingartencenter24.homepage.homepageProductNameFirstSlide") %}
+
+{% set homepageImageSecondSlide  = config("meingartencenter24.homepage.homepageImageSecondSlide") %}
+{% set homepageProductLinkSecondSlide  = config("meingartencenter24.homepage.homepageProductLinkSecondSlide") %}
+{% set homepageProductNameSecondSlide  = config("meingartencenter24.homepage.homepageProductNameSecondSlide") %}
+
+{% set homepageImageThirdSlide  = config("meingartencenter24.homepage.homepageImageThirdSlide") %}
+{% set homepageProductLinkThirdSlide  = config("meingartencenter24.homepage.homepageProductLinkThirdSlide") %}
+{% set homepageProductNameThirdSlide = config("meingartencenter24.homepage.homepageProductNameThirdSlide") %}
+
+
+
+
+
 {% block PageBody %}
 
     {% if showDefaultHomepage == "true" %}
@@ -30,7 +48,69 @@
     {% else %}
         {% block ThemeHomepage %}
         <div class="home container-max">
-            hier steht der Inhalt
+            <div class="cmp cmp-hero">
+                <div class="hero-main">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
+                                    <img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
+                                    <div class="carousel-caption">
+                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameFirstSlide }}</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
+                                    <img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
+                                    <div class="carousel-caption">
+                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameSecondSlide }}</h1>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
+                                    <img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
+                                    <div class="carousel-caption">
+                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameThirdSlide }}</h1>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
+
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="icon-prev" aria-hidden="true"></span>
+                            <span class="sr-only">Zurück</span>
+                        </a>
+
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="icon-next" aria-hidden="true"></span>
+                            <span class="sr-only">Nächste</span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="hero-xtras">
+                    <a class="hero-category" href="{{ services.category.getURL(heroExtras1, lang) }}">
+                        <img class="img-fluid" src="/documents/{{ heroExtras1.details[0].imagePath }}" alt="{{ heroExtras1.details[0].name }}">
+                        <div class="hero-category-inner">
+                            <h2 class="hero-category-headline">
+                                <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ heroExtras1.details[0].name }}
+                            </h2>
+
+                        </div>
+                    </a>                    
+                </div>
+
+            </div>
         </div>
 
         {% endblock %}
