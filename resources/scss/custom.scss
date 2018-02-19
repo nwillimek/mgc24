@@ -385,7 +385,7 @@ $menu-color-lg 			: #3c3c3b;
 $menu-font-s-lg  		: 1em;
 $menu-font-f-lg  		: $font-family-serif;
 $menu-li-bg-hover		: $brand-primary;
-$menu-li-color-hover	: $white;
+$menu-li-color-hover	: #3c3c3b;
 // bigmenu
 $menu-big-menu-bg 				: #3c3c3b;
 $menu-big-menu-li-bg			: transparent;
@@ -606,10 +606,10 @@ body.menu-is-visible {
 					}
 				}
 
-				&:hover {
-					background-color : $menu-li-bg-hover;
+				&:hover {					
 					color 			 : $menu-li-color-hover;
 					transition 		 : all .1s ease;
+					border-bottom:	2px solid $brand-primary;		
 					>ul {
 						visibility 		: visible;
 						opacity 		: 1;
