@@ -594,6 +594,30 @@ body.menu-is-visible {
 
 // Homepage start
 .home {
+	#carousel-example-generic {
+		span {
+			font-size: 60px;
+			bottom: unset;
+			top: 50%;
+		}
+		.carousel-indicators {
+		    bottom: unset;
+		    top: 0;
+		}
+		.carousel-item {
+			.carousel-caption {
+			    bottom: 0;
+			    padding-bottom: 0;
+			    right: 0;
+			    left: 0;
+			    h1 {
+			    	display:block;
+			    	font-size:1.5rem;
+			    	padding: 1rem;
+			    }
+		    }
+		}
+	}
 	.static-headline {
 	    position: absolute;
 	    bottom: 1rem;
@@ -602,6 +626,21 @@ body.menu-is-visible {
 	    padding: 1rem;
 	    color: white;
 	    margin: 0;
+	}
+	#brands {
+		img {
+		filter: grayscale(100%);
+	    transition: all 0.5s ease;
+			&:hover {
+				filter: grayscale(0%);
+			}
+		}
+		.carousel-control {
+			width:5%;
+			.owl-single-item-control{
+				color: $brand-primary;
+			} 
+		}
 	}
 }
 // Homepage end
