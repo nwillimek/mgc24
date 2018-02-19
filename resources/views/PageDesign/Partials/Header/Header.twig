@@ -24,7 +24,7 @@
                 </div>          
                 <div class="col-md-12 col-lg-6">
                     <div class="row text-lg-right text-xs-center">
-                        <div class="col-xs-4 col-sm-3 col-md-2 text-xs-left">
+                        <div class="col-xs-2 col-sm-3 col-md-2 text-xs-left">
                             {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}                                
                                 <wish-list-count :init-ids="{{ services.wishList.getItemWishList() | json_encode }}"></wish-list-count>    
                             {% endif %}
@@ -43,7 +43,7 @@
                                 </li>                
                             </ul>
                         </div>
-                        <div class="col-xs-4 col-sm-3 hidden-md-up search-anicon">
+                        <div class="col-xs-2 col-sm-3 hidden-md-up search-anicon">
                             <ul>
                                 <li class="list-inline-item control-search">
                                     <a class="anicon anicon-search-xcross" aria-label="toggle search"
@@ -55,6 +55,11 @@
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="col-xs-4 hidden-sm-up">
+                            <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler hidden-lg-up" type="button">
+                                &#9776;
+                            </button>
                         </div>
                     </div>
                 </div>
