@@ -540,7 +540,9 @@ body.menu-is-visible {
 							right 	 : 0;
 							top 	 : 0;
 							&:hover {
-							    border: none !important;
+								a {
+							    	border: none !important;
+							    }
 							}
 						}
 

@@ -61,5 +61,45 @@
         "label"     : "Produkt-Name für den dritten Slide",
         "type"      : "text",
         "default"   : "Produktname"
-	}	
+	},	
+	{
+        "tab"       : "Homepage",
+        "key"       : "homepage.homeXtraImg",
+        "label"     : "Bildpfad für den rechten statischen Bereich",
+        "type"      : "text",
+        "default"   : "https://placekitten.com/g/325/475"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homeXtraLink",
+        "label"     : "Produkt-URL für den rechten statischen Bereich",
+        "type"      : "text",
+        "default"   : "/"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homeXtraText",
+        "label"     : "Produkt-Name für den rechten statischen Bereich",
+        "type"      : "text",
+        "default"   : "Produktname oder Text"
+	},
+	{
+       "tab"        : "Homepage",
+       "key"        : "Homepage.seotextID",
+       "label"      : "Kategorie für SEOText",
+       "type"       : "category_select"
+    },
+	{
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory1",
+        "label"     : "Artikel der ersten Kategorie unterhalb des SEO texts",
+        "type"      : "category_select"
+    },	
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory2",
+        "label"     : "Artikel der ersten Kategorie unterhalb der statischen Bilder",
+        "type"      : "category_select"
+    }
+
 ]

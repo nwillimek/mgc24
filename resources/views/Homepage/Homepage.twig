@@ -35,9 +35,36 @@
 {% set homepageProductLinkThirdSlide  = config("meingartencenter24.homepage.homepageProductLinkThirdSlide") %}
 {% set homepageProductNameThirdSlide = config("meingartencenter24.homepage.homepageProductNameThirdSlide") %}
 
+{% set homeXtraLink  = config("meingartencenter24.homepage.homeXtraLink") %}
+{% set homeXtraImg  = config("meingartencenter24.homepage.homeXtraImg") %}
+{% set homeXtraText = config("meingartencenter24.homepage.homeXtraText") %}
+
+{% set seotext = services.category.get(config("meingartencenter24.Homepage.seotextID"), lang) %}        
+
+{% set category1 = services.category.get(config("meingartencenter24.homepage.homepageCategory1"), lang) %}
+{% set category2 = services.category.get(config("meingartencenter24.homepage.homepageCategory2"), lang) %}
 
 
+{% set paginatedCategoryList1 =
+services.itemLoader.loadForTemplate(
+'Ceres::ItemList.ItemListView',
+itemLoaderPresets.categoryList,
+{'categoryId': category1.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
 
+{% set paginatedCategoryList2 =
+services.itemLoader.loadForTemplate(
+'Ceres::ItemList.ItemListView',
+itemLoaderPresets.categoryList,
+{'categoryId': category2.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
+
+
+{% set categoryList1 = paginatedCategoryList1.documents %}
+{% set categoryList2 = paginatedCategoryList2.documents %}                
+
+
+{{ component( "Ceres::ItemList.Components.ItemList") }}
+{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
 {% block PageBody %}
 
@@ -48,69 +75,122 @@
     {% else %}
         {% block ThemeHomepage %}
         <div class="home container-max">
-            <div class="cmp cmp-hero">
-                <div class="hero-main">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
-                                    <img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
-                                    <div class="carousel-caption">
-                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameFirstSlide }}</h1>
-                                    </div>
-                                </a>
+            <div class="row">
+                <div class="cmp cmp-hero">
+                    <div class="hero-main">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
+                                        <img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
+                                        <div class="carousel-caption">
+                                            <h1>{{ homepageProductNameFirstSlide }}</h1>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
+                                        <img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
+                                        <div class="carousel-caption">
+                                            <h1>{{ homepageProductNameSecondSlide }}</h1>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
+                                        <img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
+                                        <div class="carousel-caption">
+                                            <h1>{{ homepageProductNameThirdSlide }}</h1>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
-                                    <img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
-                                    <div class="carousel-caption">
-                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameSecondSlide }}</h1>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
-                                    <img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
-                                    <div class="carousel-caption">
-                                        <h1><i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ homepageProductNameThirdSlide }}</h1>
-                                    </div>
-                                </a>
-                            </div>
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                            </ol>
+
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <span class="icon-prev" aria-hidden="true"></span>
+                                <span class="sr-only">Zurück</span>
+                            </a>
+
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <span class="icon-next" aria-hidden="true"></span>
+                                <span class="sr-only">Nächste</span>
+                            </a>
+
                         </div>
+                    </div>
 
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                        </ol>
 
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                            <span class="icon-prev" aria-hidden="true"></span>
-                            <span class="sr-only">Zurück</span>
-                        </a>
+                    <div class="hero-xtras">
+                        <a class="hero-category" href="{{ homeXtraLink }}">
+                            <img class="img-fluid" src="{{ homeXtraImg }}" alt="{{ homeXtraText }}">
+                            <div class="hero-category-inner">
+                                <h2 class="hero-category-headline"> {{ homeXtraText }} </h2>
 
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                            <span class="icon-next" aria-hidden="true"></span>
-                            <span class="sr-only">Nächste</span>
-                        </a>
-
+                            </div>
+                        </a>                    
                     </div>
                 </div>
-
-
-                <div class="hero-xtras">
-                    <a class="hero-category" href="{{ services.category.getURL(heroExtras1, lang) }}">
-                        <img class="img-fluid" src="/documents/{{ heroExtras1.details[0].imagePath }}" alt="{{ heroExtras1.details[0].name }}">
-                        <div class="hero-category-inner">
-                            <h2 class="hero-category-headline">
-                                <i class="fa fa-angle-double-right" aria-hidden="true"></i> {{ heroExtras1.details[0].name }}
-                            </h2>
-
-                        </div>
-                    </a>                    
-                </div>
-
             </div>
+            <div class="row">
+                <div class="m-y-3 clearfix">
+                    {% autoescape false %}
+                        {{ seotext.details[0].description }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="section-header m-b-1">
+                    <h4>{{ category1.details[0].name }}</h4>
+                    <a href="{{ services.category.getURL(category1, lang) }}" class="section-link-all">{{ trans("Ceres::Template.homepageShowAll") }}</a>
+                </div>
+                <div class="col-xs-12 col-lg-12">                    
+                    <ul class="product-list row grid">
+                        {% for item in categoryList1 %}
+                            <li class="col-xs-12 col-sm-6 col-md-3">
+                                {% include "Ceres::Category.Item.Partials.CategoryListItem" with { 'item': item, enableCarousel: false, 'tags': item.data.tags, 'showOrderProperties': false } %}
+                            </li>
+                        {% endfor %}
+                    </ul>                
+                </div>
+            </div> 
+
+
+
+            <div class="row">
+                <div class="section-header m-b-1">
+                    <h4>{{ category2.details[0].name }}</h4>
+                    <a href="{{ services.category.getURL(category2, lang) }}" class="section-link-all">{{ trans("Ceres::Template.homepageShowAll") }}</a>
+                </div>
+                <div class="col-xs-12 col-lg-12">                    
+                    <ul class="product-list row grid">
+                        {% for item in categoryList2 %}
+                            <li class="col-xs-12 col-sm-6 col-md-3">
+                                {% include "Ceres::Category.Item.Partials.CategoryListItem" with { 'item': item, enableCarousel: false, 'tags': item.data.tags, 'showOrderProperties': false } %}
+                            </li>
+                        {% endfor %}
+                    </ul>                
+                </div>
+            </div>  
+             
+        
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
         {% endblock %}
