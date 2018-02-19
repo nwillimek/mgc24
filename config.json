@@ -143,6 +143,463 @@
         "key"       : "homepage.homepageCategory2",
         "label"     : "Artikel der ersten Kategorie unterhalb der statischen Bilder",
         "type"      : "category_select"
-    }
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand1Img",
+        "label"     : "Bild-Pfad für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand1URL",
+        "label"     : "URL für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand1Text",
+        "label"     : "Marken-Name für Alt-Tag für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand2Img",
+        "label"     : "Bild-Pfad für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand2URL",
+        "label"     : "URL für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand2Text",
+        "label"     : "Marken-Name für Alt-Tag für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand3Img",
+        "label"     : "Bild-Pfad für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand3URL",
+        "label"     : "URL für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand3Text",
+        "label"     : "Marken-Name für Alt-Tag für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand4Img",
+        "label"     : "Bild-Pfad für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand4URL",
+        "label"     : "URL für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand4Text",
+        "label"     : "Marken-Name für Alt-Tag für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand5Img",
+        "label"     : "Bild-Pfad für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand5URL",
+        "label"     : "URL für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand5Text",
+        "label"     : "Marken-Name für Alt-Tag für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand6Img",
+        "label"     : "Bild-Pfad für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand6URL",
+        "label"     : "URL für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand6Text",
+        "label"     : "Marken-Name für Alt-Tag für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand7Img",
+        "label"     : "Bild-Pfad für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand7URL",
+        "label"     : "URL für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand7Text",
+        "label"     : "Marken-Name für Alt-Tag für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand8Img",
+        "label"     : "Bild-Pfad für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand8URL",
+        "label"     : "URL für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand8Text",
+        "label"     : "Marken-Name für Alt-Tag für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand9Img",
+        "label"     : "Bild-Pfad für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand9URL",
+        "label"     : "URL für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand9Text",
+        "label"     : "Marken-Name für Alt-Tag für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand10Img",
+        "label"     : "Bild-Pfad für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand10URL",
+        "label"     : "URL für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand10Text",
+        "label"     : "Marken-Name für Alt-Tag für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand11Img",
+        "label"     : "Bild-Pfad für die 11. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand11URL",
+        "label"     : "URL für die 11. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand11Text",
+        "label"     : "Marken-Name für Alt-Tag für die 11. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand12Img",
+        "label"     : "Bild-Pfad für die 12. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand12URL",
+        "label"     : "URL für die 12. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand12Text",
+        "label"     : "Marken-Name für Alt-Tag für die 12. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand13Img",
+        "label"     : "Bild-Pfad für die 13. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand13URL",
+        "label"     : "URL für die 13. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand13Text",
+        "label"     : "Marken-Name für Alt-Tag für die 13. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand14Img",
+        "label"     : "Bild-Pfad für die 14. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand14URL",
+        "label"     : "URL für die 14. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand14Text",
+        "label"     : "Marken-Name für Alt-Tag für die 14. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand15Img",
+        "label"     : "Bild-Pfad für die 15. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand15URL",
+        "label"     : "URL für die 15. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand15Text",
+        "label"     : "Marken-Name für Alt-Tag für die 15. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand16Img",
+        "label"     : "Bild-Pfad für die 16. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand16URL",
+        "label"     : "URL für die 16. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand16Text",
+        "label"     : "Marken-Name für Alt-Tag für die 16. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand17Img",
+        "label"     : "Bild-Pfad für die 17. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand17URL",
+        "label"     : "URL für die 17. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand17Text",
+        "label"     : "Marken-Name für Alt-Tag für die 17. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand18Img",
+        "label"     : "Bild-Pfad für die 18. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand18URL",
+        "label"     : "URL für die 18. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand18Text",
+        "label"     : "Marken-Name für Alt-Tag für die 18. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand19Img",
+        "label"     : "Bild-Pfad für die 19. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand19URL",
+        "label"     : "URL für die 19. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand19Text",
+        "label"     : "Marken-Name für Alt-Tag für die 19. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand20Img",
+        "label"     : "Bild-Pfad für die 20. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand20URL",
+        "label"     : "URL für die 20. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand20Text",
+        "label"     : "Marken-Name für Alt-Tag für die 20. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand21Img",
+        "label"     : "Bild-Pfad für die 21. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand21URL",
+        "label"     : "URL für die 21. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "brands",
+        "key"       : "brands.brand21Text",
+        "label"     : "Marken-Name für Alt-Tag für die 21. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ]

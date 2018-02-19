@@ -74,6 +74,91 @@
             {% set homepageStaticRightText  = config("meingartencenter24.homepage.homepageStaticRightText") %}
             {% set homepageStaticRightURL = config("meingartencenter24.homepage.homepageStaticRightURL") %}
 
+            {% set brand1URL  = config("meingartencenter24.brands.brand1URL") %}
+            {% set brand1Img  = config("meingartencenter24.brands.brand1Img") %}
+            {% set brand1Text  = config("meingartencenter24.brands.brand1Text") %}
+
+            {% set brand2URL  = config("meingartencenter24.brands.brand2URL") %}
+            {% set brand2Img  = config("meingartencenter24.brands.brand2Img") %}
+            {% set brand2Text  = config("meingartencenter24.brands.brand2Text") %}
+
+            {% set brand3URL  = config("meingartencenter24.brands.brand3URL") %}
+            {% set brand3Img  = config("meingartencenter24.brands.brand3Img") %}
+            {% set brand3Text  = config("meingartencenter24.brands.brand3Text") %}
+
+            {% set brand4URL  = config("meingartencenter24.brands.brand4URL") %}
+            {% set brand4Img  = config("meingartencenter24.brands.brand4Img") %}
+            {% set brand4Text  = config("meingartencenter24.brands.brand4Text") %}
+
+            {% set brand5URL  = config("meingartencenter24.brands.brand5URL") %}
+            {% set brand5Img  = config("meingartencenter24.brands.brand5Img") %}
+            {% set brand5Text  = config("meingartencenter24.brands.brand5Text") %}
+
+            {% set brand6URL  = config("meingartencenter24.brands.brand6URL") %}
+            {% set brand6Img  = config("meingartencenter24.brands.brand6Img") %}
+            {% set brand6Text  = config("meingartencenter24.brands.brand6Text") %}
+
+            {% set brand7URL  = config("meingartencenter24.brands.brand7URL") %}
+            {% set brand7Img  = config("meingartencenter24.brands.brand7Img") %}
+            {% set brand7Text  = config("meingartencenter24.brands.brand7Text") %}
+
+            {% set brand8URL  = config("meingartencenter24.brands.brand8URL") %}
+            {% set brand8Img  = config("meingartencenter24.brands.brand8Img") %}
+            {% set brand8Text  = config("meingartencenter24.brands.brand8Text") %}
+
+            {% set brand9URL  = config("meingartencenter24.brands.brand9URL") %}
+            {% set brand9Img  = config("meingartencenter24.brands.brand9Img") %}
+            {% set brand9Text  = config("meingartencenter24.brands.brand9Text") %}
+
+            {% set brand10URL  = config("meingartencenter24.brands.brand10URL") %}
+            {% set brand10Img  = config("meingartencenter24.brands.brand10Img") %}
+            {% set brand10Text  = config("meingartencenter24.brands.brand10Text") %}
+
+            {% set brand11URL  = config("meingartencenter24.brands.brand11URL") %}
+            {% set brand11Img  = config("meingartencenter24.brands.brand11Img") %}
+            {% set brand11Text  = config("meingartencenter24.brands.brand11Text") %}
+
+            {% set brand12URL  = config("meingartencenter24.brands.brand12URL") %}
+            {% set brand12Img  = config("meingartencenter24.brands.brand12Img") %}
+            {% set brand12Text  = config("meingartencenter24.brands.brand12Text") %}
+
+            {% set brand13URL  = config("meingartencenter24.brands.brand13URL") %}
+            {% set brand13Img  = config("meingartencenter24.brands.brand13Img") %}
+            {% set brand13Text  = config("meingartencenter24.brands.brand13Text") %}
+
+            {% set brand14URL  = config("meingartencenter24.brands.brand14URL") %}
+            {% set brand14Img  = config("meingartencenter24.brands.brand14Img") %}
+            {% set brand14Text  = config("meingartencenter24.brands.brand14Text") %}
+
+            {% set brand15URL  = config("meingartencenter24.brands.brand15URL") %}
+            {% set brand15Img  = config("meingartencenter24.brands.brand15Img") %}
+            {% set brand15Text  = config("meingartencenter24.brands.brand15Text") %}
+
+            {% set brand16URL  = config("meingartencenter24.brands.brand16URL") %}
+            {% set brand16Img  = config("meingartencenter24.brands.brand16Img") %}
+            {% set brand16Text  = config("meingartencenter24.brands.brand16Text") %}
+
+            {% set brand17URL  = config("meingartencenter24.brands.brand17URL") %}
+            {% set brand17Img  = config("meingartencenter24.brands.brand17Img") %}
+            {% set brand17Text  = config("meingartencenter24.brands.brand17Text") %}
+
+            {% set brand18URL  = config("meingartencenter24.brands.brand18URL") %}
+            {% set brand18Img  = config("meingartencenter24.brands.brand18Img") %}
+            {% set brand18Text  = config("meingartencenter24.brands.brand18Text") %}
+
+            {% set brand19URL  = config("meingartencenter24.brands.brand19URL") %}
+            {% set brand19Img  = config("meingartencenter24.brands.brand19Img") %}
+            {% set brand19Text  = config("meingartencenter24.brands.brand19Text") %}
+
+            {% set brand20URL  = config("meingartencenter24.brands.brand20URL") %}
+            {% set brand20Img  = config("meingartencenter24.brands.brand20Img") %}
+            {% set brand20Text  = config("meingartencenter24.brands.brand20Text") %}
+
+            {% set brand21URL  = config("meingartencenter24.brands.brand21URL") %}
+            {% set brand21Img  = config("meingartencenter24.brands.brand21Img") %}
+            {% set brand21Text  = config("meingartencenter24.brands.brand21Text") %}
+
+
             {{ component( "Ceres::ItemList.Components.ItemList") }}
             {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
             {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
@@ -199,45 +284,115 @@
                     </ul>                
                 </div>
             </div>  
-             
-            <div class="row">
+            
+            <div class="row m-b-3">
                 <div class="owl-carousel" id="brands">
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand1URL }}">
+                            <img src="{{ brand1Img }}" alt="{{ brand1Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand2URL }}">
+                            <img src="{{ brand2Img }}" alt="{{ brand2Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand3URL }}">
+                            <img src="{{ brand3Img }}" alt="{{ brand3Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand4URL }}">
+                            <img src="{{ brand4Img }}" alt="{{ brand4Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand5URL }}">
+                            <img src="{{ brand5Img }}" alt="{{ brand5Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand6URL }}">
+                            <img src="{{ brand6Img }}" alt="{{ brand6Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand7URL }}">
+                            <img src="{{ brand7Img }}" alt="{{ brand7Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand8URL }}">
+                            <img src="{{ brand8Img }}" alt="{{ brand8Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand9URL }}">
+                            <img src="{{ brand9Img }}" alt="{{ brand9Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand10URL }}">
+                            <img src="{{ brand10Img }}" alt="{{ brand10Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand11URL }}">
+                            <img src="{{ brand11Img }}" alt="{{ brand11Text }}" class="img-fluid">
+                        </a>
                     </div>
                     <div class="item">
-                        <img src="http://placehold.it/150x75" alt="" class="img-fluid">
+                        <a href="{{ brand12URL }}">
+                            <img src="{{ brand12Img }}" alt="{{ brand12Text }}" class="img-fluid">
+                        </a>
                     </div>
+                    <div class="item">
+                        <a href="{{ brand13URL }}">
+                            <img src="{{ brand13Img }}" alt="{{ brand13Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand14URL }}">
+                            <img src="{{ brand14Img }}" alt="{{ brand14Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand15URL }}">
+                            <img src="{{ brand15Img }}" alt="{{ brand15Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand16URL }}">
+                            <img src="{{ brand16Img }}" alt="{{ brand16Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand17URL }}">
+                            <img src="{{ brand17Img }}" alt="{{ brand17Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand18URL }}">
+                            <img src="{{ brand18Img }}" alt="{{ brand18Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand19URL }}">
+                            <img src="{{ brand19Img }}" alt="{{ brand19Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand20URL }}">
+                            <img src="{{ brand20Img }}" alt="{{ brand20Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="{{ brand21URL }}">
+                            <img src="{{ brand21Img }}" alt="{{ brand21Text }}" class="img-fluid">
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
 
