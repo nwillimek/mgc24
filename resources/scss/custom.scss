@@ -389,7 +389,7 @@ $menu-li-color-hover	: $white;
 // bigmenu
 $menu-big-menu-bg 				: #3c3c3b;
 $menu-big-menu-li-bg			: transparent;
-$menu-big-menu-li-bg-hover		: $brand-primary;
+$menu-big-menu-li-bg-hover		: #3c3c3b;
 $menu-big-menu-li-color			: $white;
 $menu-big-menu-li-color-hover	: $text-color;
 // megamenu
@@ -540,8 +540,8 @@ body.menu-is-visible {
 				display : inline-block;
 				width 	: auto;
 				position: static;
-				transition: all 300ms;
-				background-color: $menu-big-menu-bg;
+				transition: all 300ms;				
+				color:#3c3c3b;
 				&.isSearch {
 					position	: absolute;
 					right 		: 0;
@@ -551,8 +551,7 @@ body.menu-is-visible {
 						}
 					}
 				}
-				>a {
-					padding: 1.3rem 1rem;
+				>a {					
 					width:100%;
 					border-bottom: 2px solid transparent;
 						&:hover {
@@ -616,7 +615,7 @@ body.menu-is-visible {
 						opacity 		: 1;
 						transition 		: all .1s ease;
 					}
-					border-bottom: 2px solid brand-primary;
+					border-bottom: 2px solid $brand-primary;
 
 				}
 				&.ddown>a { transition: all 0s; }
