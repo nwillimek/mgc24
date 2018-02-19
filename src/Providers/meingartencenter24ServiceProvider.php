@@ -25,10 +25,14 @@ class meingartencenter24ServiceProvider extends ServiceProvider
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
     {
-        //twig replacement
-        //provide template to use for homepage
+        //twig replacement        
         $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
             $container->setTemplate("meingartencenter24::Category.Item.CategoryItem");
+            return false;
+        });
+
+        $eventDispatcher->listen('IO.tpl.home', function(TemplateContainer $container, $templateData) {
+            $container->setTemplate("meingartencenter24::Homepage.Homepage");
             return false;
         });
 
