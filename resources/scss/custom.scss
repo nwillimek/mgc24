@@ -470,11 +470,15 @@ body.menu-is-visible {
 				color 	: inherit;
 				display : inline-block;
 				padding : .25rem;
-				flex: 1 0 80%;
+				flex: 1 0 80%;				
 				border-bottom: 2px solid transparent;
+			}
+			&:hover {				
+				a {
 					&:hover {
 						border-bottom: 2px solid $brand-primary;
 					}
+				}
 			}
 
 			.nav-direction{
@@ -596,8 +600,7 @@ body.menu-is-visible {
 						&:hover {
 							background  	: $menu-big-menu-li-bg-hover;
 							color 			: $menu-big-menu-li-color;
-							text-decoration : none;
-							border-bottom: 2px solid $brand-primary;
+							text-decoration : none;							
 						}
 
 						>a {
@@ -608,8 +611,7 @@ body.menu-is-visible {
 
 				&:hover {					
 					color 			 : $menu-li-color-hover;
-					transition 		 : all .1s ease;
-					border-bottom:	2px solid $brand-primary;		
+					transition 		 : all .1s ease;					
 					>ul {
 						visibility 		: visible;
 						opacity 		: 1;
