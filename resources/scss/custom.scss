@@ -487,11 +487,23 @@ body.menu-is-visible {
 				color:#3c3c3b;				
 				>a {					
 					width:100%;
-					border-bottom: 2px solid transparent;						
+					border-bottom: 2px solid transparent;
 				}			
-				&:hover {
+				&:hover {					
 					a {
 						border-bottom: 2px solid $brand-primary;			
+					}
+					ul {
+						li {
+							a {
+								border-bottom: 2px solid transparent;
+							}
+							&:hover {
+								a {
+								border-bottom: 2px solid $brand-primary;				
+								}
+							}
+						}
 					}
 				}	
 				>ul {

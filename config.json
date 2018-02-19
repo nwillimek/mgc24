@@ -1,5 +1,5 @@
 [	
-{
+	{
         "tab"       : "Homepage",
         "key"       : "homepage.homepageImageFirstSlide",
         "label"     : "Bildpfad für den ersten Slide",
@@ -61,5 +61,5 @@
         "label"     : "Produkt-Name für den dritten Slide",
         "type"      : "text",
         "default"   : "Produktname"
-},	
+	}	
 ]
