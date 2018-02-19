@@ -584,22 +584,5 @@
         "label"     : "Marken-Name für Alt-Tag für die 21. Marke auf der Startseite",
         "type"      : "text",
         "default"   : "#"
-    },
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 ]
