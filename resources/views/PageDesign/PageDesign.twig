@@ -197,6 +197,50 @@
         {{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
 
         {{ get_filtered_tags() }}
+        
+        <script>
+        $( document ).ready(function() {
+        $('#brands').owlCarousel({
+            autoHeight       : true,
+            dots             : false,
+            items            : 4,
+            lazyLoad         : false,
+            loop             : true,
+            margin           : 10,
+            mouseDrag        : true,
+            nav              : true,
+            navClass         : [
+                "owl-single-item-nav left carousel-control list-control-special",
+                "owl-single-item-nav right carousel-control list-control-special"
+            ],
+            navContainerClass: "",
+            navText          : [
+                "<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>",
+                "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"
+            ],
+            smartSpeed       : 350,
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items            : 2,
+                        slideBy          : 2
+                    },
+                    // breakpoint from 544 up
+                    544 : {
+                        items            : 4,
+                        slideBy          : 4
+                    },
+                    // breakpoint from 768 up
+                    768 : {
+                        items            : 6,
+                        slideBy          : 6
+                    }
+                }
+            });
+        });
+        
+
+        </script>
 
         <script>
             var rootElement = document.getElementById("vue-app");

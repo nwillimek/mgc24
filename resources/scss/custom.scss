@@ -592,6 +592,20 @@ body.menu-is-visible {
 }
 
 
+// Homepage start
+.home {
+	.static-headline {
+	    position: absolute;
+	    bottom: 1rem;
+	    left: 2rem;
+	    background: $brand-primary;
+	    padding: 1rem;
+	    color: white;
+	    margin: 0;
+	}
+}
+// Homepage end
+
 
 
 
