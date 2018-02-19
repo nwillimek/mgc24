@@ -540,7 +540,9 @@ body.menu-is-visible {
 						}
 
 						&:hover {							
-							text-decoration : none;							
+							text-decoration : none;
+							background: transparent;
+							color: #fff;
 							a {
 								border-bottom: 2px solid $brand-primary;
 							}
