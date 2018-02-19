@@ -56,7 +56,8 @@ class meingartencenter24ServiceProvider extends ServiceProvider
             {
                 $componentContainer->setNewComponentTemplate('meingartencenter24::Customer.Components.UserLoginHandler');
             } 
-            if($componentContainer->getOriginComponentTemplate() == 'Ceres::ItemList.Components.CategoryItem') {
+            if($componentContainer->getOriginComponentTemplate() == 'Ceres::ItemList.Components.CategoryItem') 
+            {
                     $componentContainer->setNewComponentTemplate('meingartencenter24::ItemList.Components.CategoryItem');
             }
             if($componentContainer->getOriginComponentTemplate() == 'Ceres::Item.Components.SingleItem') 

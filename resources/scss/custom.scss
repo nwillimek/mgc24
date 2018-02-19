@@ -250,6 +250,33 @@ body {
 // Parallax End
 
 // CategoryListItem / CategoryListItem start
+.sidebar-categories {
+	.category-title {
+		background: #3c3c3b;
+		padding: .75rem 1rem;
+		text-transform: inherit;
+		color: white;
+		font-size: 1.25em;
+	}
+	ul {
+		li{
+			a {
+				&:hover {
+					color: white;
+					background-color: #3c3c3b;
+				}
+			}
+
+			&.active{
+				> a {
+					background: $brand-primary;
+					color:white;
+				}
+			} 
+		} 
+	}
+}
+
 .cmp-product-thumb {
 	.prices {    
     	justify-content: flex-end;
@@ -656,9 +683,10 @@ body.menu-is-visible {
 	left: unset;
 	position: relative;
 	width: 80%;
-	display:none;
+	display:block;
 	margin: .75rem auto 0 auto;
 	text-align: center;
+	font-weight: bold;
    
 	&.availability-1 {color:$availability_1;}
 	&.availability-2 {color:$availability_2;}
