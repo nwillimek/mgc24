@@ -21,51 +21,6 @@
     <title>{{ config("Ceres.header.company_name") }}</title>
 {% endblock %}
 
-
-
-{% set homepageImageFirstSlide  = config("meingartencenter24.homepage.homepageImageFirstSlide") %}
-{% set homepageProductLinkFirstSlide  = config("meingartencenter24.homepage.homepageProductLinkFirstSlide") %}
-{% set homepageProductNameFirstSlide  = config("meingartencenter24.homepage.homepageProductNameFirstSlide") %}
-
-{% set homepageImageSecondSlide  = config("meingartencenter24.homepage.homepageImageSecondSlide") %}
-{% set homepageProductLinkSecondSlide  = config("meingartencenter24.homepage.homepageProductLinkSecondSlide") %}
-{% set homepageProductNameSecondSlide  = config("meingartencenter24.homepage.homepageProductNameSecondSlide") %}
-
-{% set homepageImageThirdSlide  = config("meingartencenter24.homepage.homepageImageThirdSlide") %}
-{% set homepageProductLinkThirdSlide  = config("meingartencenter24.homepage.homepageProductLinkThirdSlide") %}
-{% set homepageProductNameThirdSlide = config("meingartencenter24.homepage.homepageProductNameThirdSlide") %}
-
-{% set homeXtraLink  = config("meingartencenter24.homepage.homeXtraLink") %}
-{% set homeXtraImg  = config("meingartencenter24.homepage.homeXtraImg") %}
-{% set homeXtraText = config("meingartencenter24.homepage.homeXtraText") %}
-
-{% set seotext = services.category.get(config("meingartencenter24.Homepage.seotextID"), lang) %}        
-
-{% set category1 = services.category.get(config("meingartencenter24.homepage.homepageCategory1"), lang) %}
-{% set category2 = services.category.get(config("meingartencenter24.homepage.homepageCategory2"), lang) %}
-
-
-{% set paginatedCategoryList1 =
-services.itemLoader.loadForTemplate(
-'Ceres::ItemList.ItemListView',
-itemLoaderPresets.categoryList,
-{'categoryId': category1.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
-
-{% set paginatedCategoryList2 =
-services.itemLoader.loadForTemplate(
-'Ceres::ItemList.ItemListView',
-itemLoaderPresets.categoryList,
-{'categoryId': category2.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
-
-
-{% set categoryList1 = paginatedCategoryList1.documents %}
-{% set categoryList2 = paginatedCategoryList2.documents %}                
-
-
-{{ component( "Ceres::ItemList.Components.ItemList") }}
-{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
-{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
-
 {% block PageBody %}
 
     {% if showDefaultHomepage == "true" %}
@@ -74,6 +29,52 @@ itemLoaderPresets.categoryList,
 
     {% else %}
         {% block ThemeHomepage %}
+                
+            {% set homepageImageFirstSlide  = config("meingartencenter24.homepage.homepageImageFirstSlide") %}
+            {% set homepageProductLinkFirstSlide  = config("meingartencenter24.homepage.homepageProductLinkFirstSlide") %}
+            {% set homepageProductNameFirstSlide  = config("meingartencenter24.homepage.homepageProductNameFirstSlide") %}
+
+            {% set homepageImageSecondSlide  = config("meingartencenter24.homepage.homepageImageSecondSlide") %}
+            {% set homepageProductLinkSecondSlide  = config("meingartencenter24.homepage.homepageProductLinkSecondSlide") %}
+            {% set homepageProductNameSecondSlide  = config("meingartencenter24.homepage.homepageProductNameSecondSlide") %}
+
+            {% set homepageImageThirdSlide  = config("meingartencenter24.homepage.homepageImageThirdSlide") %}
+            {% set homepageProductLinkThirdSlide  = config("meingartencenter24.homepage.homepageProductLinkThirdSlide") %}
+            {% set homepageProductNameThirdSlide = config("meingartencenter24.homepage.homepageProductNameThirdSlide") %}
+
+            {% set homeXtraLink  = config("meingartencenter24.homepage.homeXtraLink") %}
+            {% set homeXtraImg  = config("meingartencenter24.homepage.homeXtraImg") %}
+            {% set homeXtraText = config("meingartencenter24.homepage.homeXtraText") %}
+
+            {% set seotext = services.category.get(config("meingartencenter24.Homepage.seotextID"), lang) %}        
+
+            {% set category1 = services.category.get(config("meingartencenter24.homepage.homepageCategory1"), lang) %}
+            {% set category2 = services.category.get(config("meingartencenter24.homepage.homepageCategory2"), lang) %}
+
+
+            {% set paginatedCategoryList1 =
+            services.itemLoader.loadForTemplate(
+            'Ceres::ItemList.ItemListView',
+            itemLoaderPresets.categoryList,
+            {'categoryId': category1.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
+
+            {% set paginatedCategoryList2 =
+            services.itemLoader.loadForTemplate(
+            'Ceres::ItemList.ItemListView',
+            itemLoaderPresets.categoryList,
+            {'categoryId': category2.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
+
+
+            {% set categoryList1 = paginatedCategoryList1.documents %}
+            {% set categoryList2 = paginatedCategoryList2.documents %}                
+
+
+            {{ component( "Ceres::ItemList.Components.ItemList") }}
+            {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+            {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+
+
+
         <div class="home container-max">
             <div class="row">
                 <div class="cmp cmp-hero">
