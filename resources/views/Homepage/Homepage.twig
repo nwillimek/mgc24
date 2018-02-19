@@ -29,7 +29,7 @@
 
     {% else %}
         {% block ThemeHomepage %}
-                
+
             {% set homepageImageFirstSlide  = config("meingartencenter24.homepage.homepageImageFirstSlide") %}
             {% set homepageProductLinkFirstSlide  = config("meingartencenter24.homepage.homepageProductLinkFirstSlide") %}
             {% set homepageProductNameFirstSlide  = config("meingartencenter24.homepage.homepageProductNameFirstSlide") %}
@@ -51,7 +51,6 @@
             {% set category1 = services.category.get(config("meingartencenter24.homepage.homepageCategory1"), lang) %}
             {% set category2 = services.category.get(config("meingartencenter24.homepage.homepageCategory2"), lang) %}
 
-
             {% set paginatedCategoryList1 =
             services.itemLoader.loadForTemplate(
             'Ceres::ItemList.ItemListView',
@@ -64,10 +63,16 @@
             itemLoaderPresets.categoryList,
             {'categoryId': category2.id, 'page':1, 'items':12, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
 
-
             {% set categoryList1 = paginatedCategoryList1.documents %}
             {% set categoryList2 = paginatedCategoryList2.documents %}                
 
+            {% set homepageStaticLeftImg  = config("meingartencenter24.homepage.homepageStaticLeftImg") %}
+            {% set homepageStaticLeftText  = config("meingartencenter24.homepage.homepageStaticLeftText") %}
+            {% set homepageStaticLeftURL = config("meingartencenter24.homepage.homepageStaticLeftURL") %}
+
+            {% set homepageStaticRightImg  = config("meingartencenter24.homepage.homepageStaticRightImg") %}
+            {% set homepageStaticRightText  = config("meingartencenter24.homepage.homepageStaticRightText") %}
+            {% set homepageStaticRightURL = config("meingartencenter24.homepage.homepageStaticRightURL") %}
 
             {{ component( "Ceres::ItemList.Components.ItemList") }}
             {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
@@ -163,6 +168,21 @@
             </div> 
 
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <h4 class="static-headline">{{ homepageStaticLeftText }}</h4>
+                    <a href="{{ homepageStaticLeftURL }}">
+                        <img src="{{ homepageStaticLeftImg }}" class="img-fluid" alt="{{ homepageStaticLeftText }}">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <h4 class="static-headline">{{ homepageStaticRightText }}</h4>
+                    <a href="{{ homepageStaticRightURL }}">
+                        <img src="{{ homepageStaticRightImg }}" class="img-fluid" alt="{{ homepageStaticRightText }}">
+                    </a>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="section-header m-b-1">
@@ -180,15 +200,6 @@
                 </div>
             </div>  
              
-        
-
-
-
-
-
-
-
-
 
 
 

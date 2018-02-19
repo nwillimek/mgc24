@@ -4,7 +4,7 @@
         "key"       : "homepage.homepageImageFirstSlide",
         "label"     : "Bildpfad für den ersten Slide",
         "type"      : "text",
-        "default"   : "https://placeholdit.imgix.net/~text?txtsize=66&txt=700%C3%97400&w=700&h=400"
+        "default"   : "http://placehold.it/850x485"
     },
     {
         "tab"       : "Homepage",
@@ -25,7 +25,7 @@
         "key"       : "homepage.homepageImageSecondSlide",
         "label"     : "Bildpfad für den zweiten Slide",
         "type"      : "text",
-        "default"   : "https://placeholdit.imgix.net/~text?txtsize=66&txt=700%C3%97400&w=700&h=400"
+        "default"   : "http://placehold.it/850x485"
     },
     {
         "tab"       : "Homepage",
@@ -46,7 +46,7 @@
         "key"       : "homepage.homepageImageThirdSlide",
         "label"     : "Bildpfad für den dritten Slide",
         "type"      : "text",
-        "default"   : "https://placeholdit.imgix.net/~text?txtsize=66&txt=700%C3%97400&w=700&h=400"
+        "default"   : "http://placehold.it/850x485"
     },
     {
         "tab"       : "Homepage",
@@ -95,6 +95,49 @@
         "label"     : "Artikel der ersten Kategorie unterhalb des SEO texts",
         "type"      : "category_select"
     },	
+
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticLeftImg",
+        "label"     : "Bild-Pfad für den linken statischen Bereich 1/3",
+        "type"      : "text",
+        "default"   : "https://placekitten.com/g/400/300"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticLeftText",
+        "label"     : "Text für den linken statischen Bereich 1/3",
+        "type"      : "text",
+        "default"   : "Textinhalt"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticLeftURL",
+        "label"     : "URL für den linken statischen Bereich 1/3",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticRightImg",
+        "label"     : "Bild-Pfad für den rechten statischen Bereich 2/3",
+        "type"      : "text",
+        "default"   : "https://placekitten.com/g/800/300"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticRightText",
+        "label"     : "Text für den rechten statischen Bereich 2/3",
+        "type"      : "text",
+        "default"   : "Textinhalt"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageStaticRightURL",
+        "label"     : "URL für den rechten statischen Bereich 2/3",
+        "type"      : "text",
+        "default"   : "#"
+    },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageCategory2",
