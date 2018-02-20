@@ -27,6 +27,7 @@ body {
 	.search-anicon {
 		ul {
 			padding: 0;
+			margin: 0;
 		}
 	}
 	.navbar-toggler {
@@ -41,6 +42,7 @@ body {
 	#controlsList {
 		margin:0;
 		font-size: 1rem;
+		float: none;
 		> li {
 			a {
 				padding:0;
