@@ -239,6 +239,15 @@
             });
         });
         </script>
+        <script type="text/javascript">
+            $( "ul.mainmenu > li > ul > li" ).hover(function() {
+                $(this).siblings("li.menu-cat-img").find("img").attr("src", $( this ).find("a").attr( "data-img" ));
+            });
+
+            $( "ul.mainmenu > li > ul > li" ).mouseout(function() {
+                $(this).siblings("li.menu-cat-img").find("img").attr("src", $(this).parents("li").find("a").attr("data-img"));
+            });
+        </script>
 
         <script type="text/javascript">
             

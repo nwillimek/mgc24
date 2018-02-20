@@ -402,6 +402,9 @@ body {
 		font-size: 2rem;
 		font-family: $font-family-serif;
 	}
+	.prop-container {
+    	display: flex;
+	}
 }
 
 // SingleItem end
