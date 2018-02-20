@@ -27,7 +27,6 @@ body {
 	.search-anicon {
 		ul {
 			padding: 0;
-			margin: 0;
 		}
 	}
 	.navbar-toggler {
@@ -289,6 +288,20 @@ body {
 					background: $brand-primary;
 					color:white;
 				}
+				ul {
+					li {
+						a {
+							padding-left: 1.75rem;
+						}
+						ul {
+							li {
+								a {
+									padding-left: 2.5rem;
+								}
+							}
+						}	
+					}
+				}
 			} 
 		} 
 	}
@@ -349,8 +362,6 @@ body {
 	    }
 	}
 }
-
-
 // CategoryListItem / CategoryListItem end
 
 
@@ -362,6 +373,9 @@ body {
 			width: 115px;
 			display: inline-block;
 		}
+	}
+	.availability-preview {
+		display: none;
 	}
 	.crossprice {
 		font-size: 1.25rem;
