@@ -113,7 +113,7 @@
                     <slot name="AdditionalContentAfterVAT"></slot>
     
                  <div class="m-y-2" v-for="prop in currentVariation.properties">
-                     <div v-if="prop.property.group.id == 4" class="item-files">
+                     <div v-if="prop.property.id == 4" class="item-files">
                         <h5><b>${ prop.property.names.name }</b></h5>
                         <a :href="prop.texts.value" target="_blank">
                             <img src="{{ plugin_path('meingartencenter24') }}/images/Adobe_PDF_file_icon_32x32.png">
