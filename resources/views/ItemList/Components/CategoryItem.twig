@@ -50,11 +50,7 @@
                 <a :href="itemData | itemURL" class="thumb-title">
                     ${ texts | itemName({{ configItemName }}) }
                 </a>
-                <a href="{{ itemUrl }}"  class="thumb-description small">
-                {% autoescape false %} 
-                    ${ itemData.texts.description }
-                {% endautoescape %}
-                </a>
+                <a href="{{ itemUrl }}" class="thumb-description small" v-html="itemData.texts.description"></a>
                 <div class="thumb-meta">
                     <div class="prices">
                         <div v-if="itemData.prices.rrp && itemData.prices.rrp.price.value > 0" class="price-view-port">

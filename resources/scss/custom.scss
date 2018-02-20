@@ -183,7 +183,22 @@ body {
 // Header end
 
 // Footer start
-.footer {		
+.footer {	
+	#brands {
+		img {
+		filter: grayscale(100%);
+	    transition: all 0.5s ease;
+			&:hover {
+				filter: grayscale(0%);
+			}
+		}
+		.carousel-control {
+			width:5%;
+			.owl-single-item-control{
+				color: $brand-primary;
+			} 
+		}
+	}	
 	.bckgr {
 		background-color:#3c3c3b;
 		p, a, h2, h5, span {
@@ -699,21 +714,34 @@ body.menu-is-visible {
 	    color: white;
 	    margin: 0;
 	}
-	#brands {
-		img {
-		filter: grayscale(100%);
-	    transition: all 0.5s ease;
+	.section-header {
+	    padding: 1rem 1.5rem;
+	    border-bottom: 0;
+	    background: transparent;
+	    position: relative;
+	    h4 {
+	    	padding: 0;
+			margin: 0;
+			text-transform: initial;
+			font-size: 1.75rem;
+			color: #3c3c3b;
+			border-bottom:2px solid transparent;
+	    }
+	    .section-link-all {
+		    position: absolute;
+		    top: 50%;
+		    right: 1.5rem;
+		    transform: translateY(-50%);
+		    color: #3c3c3b;
+		    border-bottom:2px solid transparent;
+		}
+		a {
 			&:hover {
-				filter: grayscale(0%);
+				border-bottom:2px solid $brand-primary;
 			}
 		}
-		.carousel-control {
-			width:5%;
-			.owl-single-item-control{
-				color: $brand-primary;
-			} 
-		}
 	}
+
 }
 // Homepage end
 

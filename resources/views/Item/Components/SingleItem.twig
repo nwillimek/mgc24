@@ -114,7 +114,7 @@
     
                  <div class="m-y-2 prop-container">
                     <div v-if="prop.group.names.propertyGroupId == 4" class="item-files m-r-1 text-xs-center" v-for="prop in currentVariation.properties">
-                        <h5><b>${ prop.property.names.name }</b></h5>
+                        <h5><b><a :href="prop.texts.value" target="_blank">${ prop.property.names.name }</a></b></h5>
                         <a :href="prop.texts.value" target="_blank">
                             <img src="{{ plugin_path('meingartencenter24') }}/images/Adobe_PDF_file_icon_32x32.png">
                         </a>
