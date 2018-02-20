@@ -698,3 +698,16 @@ body.menu-is-visible {
 
 
 
+.top-bar {
+    background: #f5b335;
+    height: 170px!important;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+}
+
+.nav-up {
+    top: -170px;
+}
+
