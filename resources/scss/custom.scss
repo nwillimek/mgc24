@@ -14,13 +14,16 @@ body {
 }
 // Header Start
 .top-top-bar {
-	background-color:#3c3c3b;
+	
 	padding: .5rem 0;
 	span, i {
 		color:white;
 		a {
 			color:white;
 		}
+	}
+	.bckgr {
+		background-color:#3c3c3b;
 	}
 	#controlsList {
 		margin:0;
@@ -699,15 +702,8 @@ body.menu-is-visible {
 
 
 #MagicMenu {
-    background: #f5b335;
-    height: 170px!important;
+    height: 133px!important;
     position: fixed;
     top: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
+    transition: top 2s ease-in-out;    
 }
-
-.nav-up {
-    top: -170px;
-}
-
