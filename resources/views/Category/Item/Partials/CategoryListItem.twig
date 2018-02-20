@@ -139,7 +139,8 @@
                     {% endfor %}
                 </div>
             {% endif %} #}
-        </div>
+        </div>        
         <!-- ./ITEM DETAILS  -->
+        <div class="availability-preview availability-${item.variation.availability.id}" v-tooltip data-toggle="tooltip" data-placement="top" :title="item.variation.availability.names.name">
     </div>
 </article>
