@@ -423,6 +423,11 @@ body {
 	}
 	.prop-container {
     	display: flex;
+		.item-files {
+			a {
+				color: #3c3c3b;
+			}
+		}
 	}
 }
 
@@ -715,17 +720,19 @@ body.menu-is-visible {
 	    margin: 0;
 	}
 	.section-header {
-	    padding: 1rem 1.5rem;
+	    padding: 1rem 0rem;
 	    border-bottom: 0;
 	    background: transparent;
 	    position: relative;
 	    h4 {
-	    	padding: 0;
-			margin: 0;
-			text-transform: initial;
-			font-size: 1.75rem;
-			color: #3c3c3b;
-			border-bottom:2px solid transparent;
+	    	a {
+		    	padding: 0;
+				margin: 0;
+				text-transform: initial;
+				font-size: 1.75rem;
+				color: #3c3c3b;
+				border-bottom:2px solid transparent;
+			}
 	    }
 	    .section-link-all {
 		    position: absolute;

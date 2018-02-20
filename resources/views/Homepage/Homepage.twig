@@ -187,9 +187,11 @@
 
 
             <div class="row">
-                <div class="section-header m-b-1">
-                    <h4>{{ category2.details[0].name }}</h4>
-                    <a href="{{ services.category.getURL(category2, lang) }}" class="section-link-all">{{ trans("Ceres::Template.homepageShowAll") }}</a>
+                <div class="col-xs-12">
+                    <div class="section-header m-b-1">
+                        <h4><a href="{{ services.category.getURL(category2, lang) }}">{{ category2.details[0].name }}</a></h4>
+                        <a href="{{ services.category.getURL(category2, lang) }}" class="section-link-all">{{ trans("Ceres::Template.homepageShowAll") }}</a>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-lg-12">                    
                     <ul class="product-list row grid">
