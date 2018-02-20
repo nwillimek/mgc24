@@ -24,6 +24,20 @@ body {
 			}
 		}
 	}
+	.search-anicon {
+		ul {
+			padding: 0;
+		}
+	
+	.navbar-toggler {
+		position: relative;
+		right: 0;
+		transform: translate(0,-50%);
+		margin-top: .5rem;
+		color: white;
+		padding: 0;
+	}
+	
 	#controlsList {
 		margin:0;
 		font-size: 1rem;
@@ -99,7 +113,6 @@ body {
 	& > .anicon-search-item {        
         &:before {            
             background: white;
-            top: 5px;
 		}
 		
         &:after {            
@@ -280,6 +293,10 @@ body {
 }
 
 .cmp-product-thumb {
+	.mobile-text-only {
+		font-size: .85rem;
+		margin: 0; 
+	}
 	.prices {    
     	justify-content: flex-end;
 	}
@@ -313,7 +330,7 @@ body {
 	}
 	.thumb-description {
 		position: relative;
-		display: flex;
+		display: inline-block;
 		text-overflow: ellipsis;
 		max-height: 3.5rem;
 		overflow: hidden;
@@ -684,7 +701,7 @@ body.menu-is-visible {
 	font-size: .75rem;
 	left: unset;
 	position: relative;
-	width: 80%;
+	width: 100%;
 	display:block;
 	margin: .75rem auto 0 auto;
 	text-align: center;
