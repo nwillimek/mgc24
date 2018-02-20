@@ -13,17 +13,16 @@ body {
 	background-color: white;	
 }
 // Header Start
-.top-top-bar {
-	
-	padding: .5rem 0;
-	span, i {
-		color:white;
-		a {
-			color:white;
-		}
-	}
+.top-top-bar {		
 	.bckgr {
 		background-color:#3c3c3b;
+		padding: .5rem 0;
+		span, i {
+			color:white;
+			a {
+				color:white;
+			}
+		}
 	}
 	#controlsList {
 		margin:0;
@@ -702,8 +701,5 @@ body.menu-is-visible {
 
 
 #MagicMenu {
-    height: 133px!important;
-    position: fixed;
-    top: 0;
     transition: top 2s ease-in-out;    
 }
