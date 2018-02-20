@@ -1,9 +1,7 @@
 {{ component( "Ceres::Item.Components.QuantityInput" ) }}
 
 <script type="x/template" id="vue-add-to-basket">
-    <div class="availability-preview" :class="'availability-' + item.variation.availability.id">
-        <span>${ item.variation.availability.names.name }</span>
-    </div>
+
     <div>
 
         <div :class="{'no-pointer-events': waiting}" class="add-to-basket-lg-container hidden-md-down" v-if="!showQuantity && useLargeScale && canBeAddedToBasket"
@@ -14,6 +12,10 @@
         <div class="add-to-basket-lg-container hidden-md-down" v-if="!showQuantity && useLargeScale && !canBeAddedToBasket"
              v-tooltip data-toggle="tooltip" data-placement="top" title="{{ trans("Ceres::Template.showItem") }}" @click="directToItem()">
             <i class="fa fa-arrow-right fa-lg mobile-icon-right"></i>
+        </div>
+
+        <div class="availability-preview" :class="'availability-' + item.variation.availability.id">
+            <span>${ item.variation.availability.names.name }</span>
         </div>
 
         <div class="category-list-view-port" v-if="showQuantity && !useLargeScale">
