@@ -355,6 +355,10 @@ body {
 		font-weight: normal;
 		margin-bottom: .5rem;
 		color:grey;
+		p {
+		    display: inline-block;
+		    margin: 0;
+		}
 	}
 	.special-tags {	    
 	    padding: 0;

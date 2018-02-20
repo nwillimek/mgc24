@@ -51,7 +51,9 @@
                     ${ texts | itemName({{ configItemName }}) }
                 </a>
                 <a href="{{ itemUrl }}"  class="thumb-description small">
-                    ${ itemData.texts.description | raw }
+                {% autoescape false %} 
+                    ${ itemData.texts.description }
+                {% endautoescape %}
                 </a>
                 <div class="thumb-meta">
                     <div class="prices">
