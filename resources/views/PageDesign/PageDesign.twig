@@ -198,7 +198,95 @@
 
         {{ get_filtered_tags() }}
         
-        
+        <script>
+        $( document ).ready(function() {
+        $('#brands').owlCarousel({
+            autoHeight       : true,
+            dots             : false,
+            items            : 4,
+            lazyLoad         : false,
+            loop             : true,
+            margin           : 10,
+            mouseDrag        : true,
+            nav              : true,
+            navClass         : [
+                "owl-single-item-nav left carousel-control list-control-special",
+                "owl-single-item-nav right carousel-control list-control-special"
+            ],
+            navContainerClass: "",
+            navText          : [
+                "<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>",
+                "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"
+            ],
+            smartSpeed       : 350,
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items            : 2,
+                        slideBy          : 2
+                    },
+                    // breakpoint from 544 up
+                    544 : {
+                        items            : 4,
+                        slideBy          : 4
+                    },
+                    // breakpoint from 768 up
+                    768 : {
+                        items            : 6,
+                        slideBy          : 6
+                    }
+                }
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $( "ul.mainmenu > li > ul > li" ).hover(function() {
+                $(this).siblings("li.menu-cat-img").find("img").attr("src", $( this ).find("a").attr( "data-img" ));
+            });
+
+            $( "ul.mainmenu > li > ul > li" ).mouseout(function() {
+                $(this).siblings("li.menu-cat-img").find("img").attr("src", $(this).parents("li").find("a").attr("data-img"));
+            });
+         });
+        </script>
+
+        <script type="text/javascript">
+            
+            var didScroll;
+            var lastScrollTop = 0;
+            var delta = 5;
+            var navbarHeight = $('#MagicMenu').outerHeight();
+
+            $(window).scroll(function(event){
+                didScroll = true;
+            });
+
+            setInterval(function() {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 250);
+
+            function hasScrolled() {
+                var st = $(this).scrollTop();
+                
+                // Make sure they scroll more than delta
+                if(Math.abs(lastScrollTop - st) <= delta)
+                    return;
+                
+                if (st > lastScrollTop && st > navbarHeight){                    
+                    $('#MagicMenu').fadeOut(500);
+                } else {                
+                    if(st + $(window).height() < $(document).height()) {
+                        $('#MagicMenu').fadeIn(500);
+                    }
+                }
+                
+                lastScrollTop = st;
+            }
+        </script>
 
         <script>
             var rootElement = document.getElementById("vue-app");
