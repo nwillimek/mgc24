@@ -130,6 +130,11 @@
                 item-url="{{ itemUrl }}">
             </add-to-basket>
 
+            <div>
+                {{ item.data.variation.availability.names.name }}
+                {{ item | json_encode() }}
+            </div>
+
             {# {% if tags > 0 %}
                 <div class="m-t-1 tag-list">
                     {% for tag in tags %}
