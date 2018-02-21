@@ -277,12 +277,6 @@ body {
 // Footer end
 
 
-
-
-
-
-
-
 // Parallax Start
 .parallax-img-container {
     height: unset !important;
@@ -294,12 +288,13 @@ body {
 		background-repeat: no-repeat;
 		background-attachment: unset;
 		background-position: unset;
-		padding-bottom:60%;
+		padding-bottom:50%;
 		max-width: none;
 		position: relative;       
     }
 }
 // Parallax End
+
 
 // CategoryListItem / CategoryListItem start
 .sidebar-categories {
@@ -349,7 +344,7 @@ body {
 		margin: 0; 
 	}
 	.thumb-content {
-		padding: .8rem 0;
+		padding: .8rem 0 0 0;
 	}
 	.prices {    
     	justify-content: flex-end;
@@ -462,13 +457,7 @@ body {
 // SingleItem end
 
 
-
-
-
-
-
-
-
+//Menu start
 nav.navbar ul.nav li.dropdown:hover .dropdown-menu {
 	display: block;
 	margin-top: 0px;
@@ -710,7 +699,7 @@ body.menu-is-visible {
 	}
 
 }
-
+//Menu end
 
 // Homepage start
 .home {
@@ -797,7 +786,7 @@ body.menu-is-visible {
 	position: relative;
 	width: 100%;
 	display:block;
-	margin: .75rem auto 0 auto;
+	margin: .25rem auto 0 auto;
 	text-align: center;
 	font-weight: bold;
    
