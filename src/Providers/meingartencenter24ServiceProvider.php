@@ -26,10 +26,10 @@ class meingartencenter24ServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
     {
         //twig replacement        
-        $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
-            $container->setTemplate("meingartencenter24::Category.Item.CategoryItem");
-            return false;
-        });
+        // $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
+        //     $container->setTemplate("meingartencenter24::Category.Item.CategoryItem");
+        //     return false;
+        // });
 
         $eventDispatcher->listen('IO.tpl.home', function(TemplateContainer $container, $templateData) {
             $container->setTemplate("meingartencenter24::Homepage.Homepage");
@@ -38,7 +38,7 @@ class meingartencenter24ServiceProvider extends ServiceProvider
 
         //partial replacement
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            // $partial->set('header', 'meingartencenter24::PageDesign.Partials.Header.Header');
+            $partial->set('header', 'meingartencenter24::PageDesign.Partials.Header.Header');
             $partial->set('footer', 'meingartencenter24::PageDesign.Partials.Footer');
             $partial->set('page-design', 'meingartencenter24::PageDesign.PageDesign');
 
