@@ -30,7 +30,7 @@ body {
 			margin:0;
 			.anicon  {
 				> .anicon-search-item {
-					&::after {
+					&::after, &::before {
 						top: 5px;
 					} 
 				}
@@ -242,7 +242,16 @@ body {
 			max-height: 50px;
 		}
 		.idealo {
-			margin-top:1.5rem;
+			margin-top:0;
+			@include media-breakpoint-up(sm){
+				margin-top:1.5rem;
+			}
+		}
+		.col-xs-6 {
+			margin-bottom:3rem;
+			@include media-breakpoint-up(sm){
+				margin-bottom:0rem;
+			}
 		}
 	}
 	.brands {
