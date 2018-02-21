@@ -56,10 +56,10 @@ class meingartencenter24ServiceProvider extends ServiceProvider
             {
                     $componentContainer->setNewComponentTemplate('meingartencenter24::ItemList.Components.CategoryItem');
             }
-            // if($componentContainer->getOriginComponentTemplate() == 'Ceres::Item.Components.SingleItem') 
-            // {
-            //     $componentContainer->setNewComponentTemplate('meingartencenter24::Item.Components.SingleItem');
-            // } 
+            if($componentContainer->getOriginComponentTemplate() == 'Ceres::Item.Components.SingleItem') 
+            {
+                $componentContainer->setNewComponentTemplate('meingartencenter24::Item.Components.SingleItem');
+            } 
         }, self::EVENT_LISTENER_PRIORITY);
 
     }
