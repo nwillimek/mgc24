@@ -73,10 +73,9 @@
                 <add-to-basket :item="itemData" :item-url="itemData | itemURL"></add-to-basket>                
             </div>
             <!-- ./ITEM DETAILS  -->
-            <div class="availability-preview availability-${item.variation.availability.id}" v-tooltip data-toggle="tooltip" data-placement="top"
-        :title="item.variation.availability.names.name">
-        <i class="fa fa-truck" aria-hidden="true"></i>
-        </div>
+            <div class="availability-preview" :class="'availability-' + item.variation.availability.id">
+                <span>${ item.variation.availability.names.name }</span>
+            </div>
         </div>
     </article>
 </script>
