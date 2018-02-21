@@ -2,6 +2,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: white;
+	color:#3c3c3b;
 	> #vue-app,
 	> #vue-error {
 		background-color: white;		
@@ -347,6 +348,9 @@ body {
 		font-size: .85rem;
 		margin: 0; 
 	}
+	.thumb-content {
+		padding: .8rem 0;
+	}
 	.prices {    
     	justify-content: flex-end;
     	display:block;
@@ -363,7 +367,7 @@ body {
 	.crossprice {
 		font-size: .85rem;
 		font-weight: 700;
-		color: black;
+		color: #3c3c3b;
 		position:relative;
 		font-family: $font-family-serif;
 	 		&:before { 			
@@ -770,6 +774,11 @@ body.menu-is-visible {
 			&:hover {
 				border-bottom:2px solid $brand-primary;
 			}
+		}
+	}
+	.product-list {
+		.col-xs-12 {
+			margin:0;
 		}
 	}
 
