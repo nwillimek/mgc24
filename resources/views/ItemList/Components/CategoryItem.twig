@@ -70,10 +70,13 @@
                         <span v-if="itemData.variation.mayShowUnitPrice">| ${ itemData.prices.default.basePrice }</span>
                     </div>
                 </div>
-                <add-to-basket :item="itemData" :item-url="itemData | itemURL"></add-to-basket>                
+                <add-to-basket :item="itemData" :item-url="itemData | itemURL"></add-to-basket>  
             </div>
+            <div class="availability-preview" :class="'availability-' + itemData.variation.availability.id">
+                ${ itemData.variation.availability.names.name }
+            </div>  
             <!-- ./ITEM DETAILS  -->
-            
+
         </div>
     </article>
 </script>
