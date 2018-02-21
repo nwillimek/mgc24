@@ -25,7 +25,7 @@
                     </div>          
                     <div class="col-md-12 col-lg-6">
                         <div class="row text-lg-right text-xs-center">
-                            <div class="col-xs-3 col-sm-3 col-md-2 text-xs-left">
+                            <div class="col-xs-3 col-sm-3 col-md-2">
                                 {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}                                
                                     <wish-list-count :init-ids="{{ services.wishList.getItemWishList() | json_encode }}"></wish-list-count>    
                                 {% endif %}

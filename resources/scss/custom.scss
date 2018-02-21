@@ -27,6 +27,14 @@ body {
 	.search-anicon {
 		ul {
 			padding: 0;
+			margin:0;
+			.anicon  {
+				> .anicon-search-item {
+					&::after {
+						top: 5px;
+					} 
+				}
+			}
 		}
 	}
 	.navbar-toggler {
@@ -332,6 +340,10 @@ body {
 	}
 	.prices {    
     	justify-content: flex-end;
+    	display:block;
+    	@include media-breakpoint-up(sm){
+    		display:flex;
+    	}
 	}
 	.thumb-title {
 		font-weight: 700;
@@ -358,8 +370,11 @@ body {
 	}
 	.price {
 	    color: black;		
-		font-size: 1.25rem;
-		font-family: $font-family-serif;		
+		font-size: 1rem;
+		font-family: $font-family-serif;
+		@include media-breakpoint-up(sm){
+			font-size: 1.25rem;
+		}		
 	}
 	.thumb-description {
 		position: relative;
