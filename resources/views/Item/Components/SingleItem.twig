@@ -1,5 +1,4 @@
 {% set itemData = config("Ceres.item.data") | split(', ') %}
-{% set configItemName = config("Ceres.item.name") %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 
@@ -19,11 +18,8 @@
                 <div class="col-md-5 single-rightside m-t-1" v-stick-in-parent>
                     
                     <h1 class="h2 title">
-                        <span v-if="currentVariation.variation.name != ''">
-                            ${ currentVariation.variation.name }
-                        </span>
-                        <span v-else>
-                            ${ currentVariation.texts | itemName({{configItemName}}) }
+                        <span>
+                            ${ currentVariation | itemName }
                         </span>
                     </h1>
 
@@ -65,8 +61,8 @@
                     <graduated-prices template="#vue-graduated-prices"></graduated-prices>
 
                     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
-                        <span class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">                            
-                            ${ currentVariation.prices.rrp.price.formatted }                            
+                        <span class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.price.value > 0">
+                            ${ currentVariation.prices.rrp.price.formatted }
                         </span>
                     {% endif %}
 
