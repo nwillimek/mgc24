@@ -79,6 +79,7 @@ $gray-lighter:          #dcdbd8 !default;
 $gray-lighter2:         #f4f4f4 !default;
 $gray-lightest:         #f7f7f9 !default;
 $gray-mgc:              #3c3c3b !default;
+$gray-lighter-mgc:      #e6e6e6 !default;
 
 $brand-primary:         #95be54 !default;
 $brand-secondary:       #BF0000 !default;
@@ -86,7 +87,7 @@ $brand-secondary:       #BF0000 !default;
 $brand-success:         #95be54 !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-danger:          $brand-secondary !default;
 
 $white:                 #fff;
 $black:                 #000;

@@ -170,7 +170,7 @@ body {
 	    margin-top: unset;
     }
 	.navbar {
-		background-color:#e6e6e6;
+		background-color:$gray-lighter-mgc;
 		border-bottom: none;
 	}
 	// 	#mainNavbarCollapsable {
@@ -438,6 +438,7 @@ body {
 	    	box-shadow: none;
 	    	border-radius: 0px;
 			margin-left: 0px;
+			&.bg-danger {background: $brand-secondary;}
 	    }
 	}
 	.mobile-width-button {
@@ -801,10 +802,10 @@ body.menu-is-visible {
 	    margin: 0;
 	}
 	.section-header {
-	    padding: 1rem 0rem;
 	    border-bottom: 0;
-	    background: transparent;
-	    position: relative;
+	    background: $gray-lighter-mgc;
+		position: relative;
+		margin-bottom: 1rem;
 	    h4 {
 	    	a {
 		    	padding: 0;
