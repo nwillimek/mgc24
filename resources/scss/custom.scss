@@ -124,7 +124,9 @@ body {
 	        .search-input {
 	          padding:.2rem 1rem;
 			  background-color: #e6e6e6;
-			  &:hover {background-color: $gray;}
+			  &:hover,
+			  &:active,
+			  &:focus {background-color: darken($gray-lighter-mgc, 5%);}
 	          	&::placeholder {
 	            	font-size: .75rem;
 	            	color:#575756;
@@ -852,7 +854,7 @@ body.menu-is-visible {
 	width: 100%;
 	display:block;
 	margin: .25rem auto 0 auto;
-	text-align: center;
+	text-align: right;
 	font-weight: bold;
    
 	&.availability-1 {color:$availability_1;}
