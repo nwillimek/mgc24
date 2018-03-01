@@ -19,7 +19,8 @@ body {
 	background-color: white;	
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: $font-family-heading;
 }
 
@@ -40,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 		.btn-secondary.disabled,
 		.btn-secondary:disabled {
 			background: $gray-lightest-mgc;
-			border-color: $gray-lightest-mgc;
+			border-color: $input-border-color;
 			// color: white;
 			// opacity: 1;
 		}
@@ -147,7 +148,10 @@ h1, h2, h3, h4, h5, h6 {
 		.search-submit {
 		    background: $brand-primary;
 		    color: $white;
-		    transition: all .3s;
+			transition: all .3s;
+			&:hover {
+				background: $gray-mgc;
+			}
 		}	
 	}
 	.toggle-basket-preview {
@@ -264,7 +268,9 @@ h1, h2, h3, h4, h5, h6 {
 	 img {
 	    display: inline-block;
 	    position: relative;
-	    max-width: 60px;
+		max-width: 60px;
+		margin-right:1.2rem;
+		margin-bottom:.5rem;
 	    @include media-breakpoint-up(md){
 			filter: grayscale(100%);
 		    transition: all 0.5s ease;
@@ -842,6 +848,7 @@ body.menu-is-visible {
 		a {
 			&:hover {
 				border-bottom:2px solid $brand-primary;
+				color: white;
 			}
 		}
 	}
