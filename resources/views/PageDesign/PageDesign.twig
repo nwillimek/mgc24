@@ -276,10 +276,10 @@
                     return;
                 
                 if (st > lastScrollTop && st > navbarHeight){                    
-                    $('#MagicMenu').fadeOut(500);
+                    $( "#MagicMenu" ).slideUp( "fast");
                 } else {                
                     if(st + $(window).height() < $(document).height()) {
-                        $('#MagicMenu').fadeIn(500);
+                        $( "#MagicMenu" ).slideDown( "fast");
                     }
                 }
                 
