@@ -9,8 +9,18 @@ body {
 		background-color: white;		
 	}
 }
+-moz-selection,
+::selection,
+::-moz-selection {
+	background: rgba(140, 191, 45, 0.5);
+	color: #32343a;
+}
 .page-content {
 	background-color: white;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family-heading;
 }
 
 //Buttons
@@ -29,10 +39,10 @@ body {
 		.btn-secondary,
 		.btn-secondary.disabled,
 		.btn-secondary:disabled {
-			background: $gray-mgc;
-			border-color: $gray-mgc;
-			color: white;
-			opacity: 1;
+			background: $gray-lightest-mgc;
+			border-color: $gray-lightest-mgc;
+			// color: white;
+			// opacity: 1;
 		}
 	}
 }
@@ -99,7 +109,8 @@ body {
 		.navbar-brand {
 			padding: 0;
 			img {
-			    max-height: 4rem;
+				height: 4rem;
+				max-height: 4rem;
 			    width: 100%;
 			}
 		}
@@ -141,6 +152,7 @@ body {
 	}
 	.toggle-basket-preview {
 		color:#575756;
+		font-size: 1.2rem;
 	}
 }
 
@@ -392,7 +404,7 @@ body {
 	.thumb-title {
 		font-weight: 700;
 		line-height: 1.5em;
-		color: black;
+		color: $gray-mgc;
 		font-size: 1rem;
 	}
 	.crossprice {
@@ -406,14 +418,15 @@ body {
 			left: 0;
 			top: 50%;
 			right: 0;
-			border-top: 3px solid;
+			border-top: 5px solid;
 			border-color: $brand-secondary;
 			transform: translateY(-50%) rotate(-5deg);
 			position: absolute;
+			opacity: .8;
  		}
 	}
 	.price {
-	    color: black;		
+	    color: $gray-mgc;		
 		font-size: 1rem;
 		font-family: $font-family-serif;
 		@include media-breakpoint-up(sm){
@@ -467,7 +480,7 @@ body {
 	.crossprice {
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: black;
+		color: $gray-mgc;
 		position:relative;
 		font-family: $font-family-serif;
 	 		&:before { 			
@@ -483,7 +496,7 @@ body {
  		}
 	}
 	.price {
-	    color: black;		
+	    color: $gray-mgc;		
 		font-size: 2rem;
 		font-family: $font-family-serif;
 	}
@@ -805,7 +818,7 @@ body.menu-is-visible {
 	}
 	.section-header {
 	    border-bottom: 0;
-	    background: $gray-lighter-mgc;
+	    background: $gray-mgc;
 		position: relative;
 		margin-bottom: 1rem;
 	    h4 {
@@ -814,7 +827,7 @@ body.menu-is-visible {
 				margin: 0;
 				text-transform: initial;
 				font-size: 1.75rem;
-				color: $gray-mgc;
+				color: white;
 				border-bottom:2px solid transparent;
 			}
 	    }
@@ -823,7 +836,7 @@ body.menu-is-visible {
 		    top: 50%;
 		    right: 1.5rem;
 		    transform: translateY(-50%);
-		    color: $gray-mgc;
+		    color: white;
 		    border-bottom:2px solid transparent;
 		}
 		a {
