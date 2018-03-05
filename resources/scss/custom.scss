@@ -75,10 +75,10 @@ h1, h2, h3, h4, h5, h6,
 	}
 	.navbar-toggler {
 		transform: translate(0,-50%);
-		margin-top: .3rem;
+		margin-top: .4rem;
 		color: white;
 		padding: 0;
-		font-size: 2rem;
+		font-size: 1.85rem;
 	}
 	
 	#controlsList {
@@ -605,7 +605,8 @@ body.menu-is-visible {
 			a 	{
 				display : inline-block;
 				padding : .25rem;
-				flex: 1 0 80%;					
+				flex: 1 0 80%;	
+				margin: 0 .5rem;				
 			}
 			.nav-direction{
 				padding: 1rem;
@@ -712,6 +713,7 @@ body.menu-is-visible {
 						min-width	: 150px;
 						text-align  : initial;
 						align-self 	: flex-start;
+						padding 	: 0;
 						
 						&.menu-cat-img {
 							position : absolute;
