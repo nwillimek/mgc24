@@ -506,6 +506,11 @@ h1, h2, h3, h4, h5, h6,
 		font-size: 2rem;
 		font-family: $font-family-serif;
 	}
+	.prop-headline {
+		background-color: $gray-lightest-mgc;
+		padding: .75rem;
+		margin-bottom: 1rem;
+	}
 	.prop-container {
     	display: flex;
 		.item-files {
