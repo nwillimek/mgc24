@@ -1,11 +1,9 @@
 {% set itemData = config("Ceres.item.data") | split(', ') %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
-{% set showPopUP = false %}
 
 <script type="x/template" id="vue-single-item">
     <div>
-        {{ itemData | json_encode() }}
         <div class="single container-max page-content p-t-3">
             <div class="row">
                 <div class="col-md-7 single-leftside">
@@ -86,7 +84,7 @@
                         </span>
                     </span>
 
-                    <div class="row m-y-1" data-pop="{{ showPopUP }}">
+                    <div class="row m-y-1" data-pop="${ currentVariation.properties }">
                         <slot name="BeforeAddToBasket"></slot>
                         <add-to-basket template="#vue-add-to-basket" v-if="currentVariation.filter.isSalable" :item="$store.state.item.variation.documents[0].data" :show-quantity="true"></add-to-basket>
                         <slot name="AfterAddToBasket"></slot>
