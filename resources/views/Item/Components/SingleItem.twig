@@ -110,7 +110,7 @@
     
                  <h3 class="m-t-2 text-xs-center prop-headline">Downloads</h3>   
                  <div class="m-b-3 prop-container">
-                    <div v-if="prop.group.names.propertyGroupId == 4" class="item-files m-r-2 text-xs-center" v-for="prop in currentVariation.properties">
+                    <div v-if="prop.group" class="item-files m-r-2 text-xs-center" v-for="prop in currentVariation.properties if prop.group.names.propertyGroupId == 4">
                         <h5><b><a :href="prop.texts.value" target="_blank">${ prop.property.names.name }</a></b></h5>
                         <a :href="prop.texts.value" target="_blank">
                             <img src="{{ plugin_path('meingartencenter24') }}/images/Adobe_PDF_file_icon_32x32.png">
