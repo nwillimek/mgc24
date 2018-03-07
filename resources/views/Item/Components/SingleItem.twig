@@ -84,7 +84,7 @@
                         </span>
                     </span>
 
-                    <div class="row m-y-1" data-pop="${ currentVariation.properties }">
+                    <div class="row m-y-1">
                         <slot name="BeforeAddToBasket"></slot>
                         <add-to-basket template="#vue-add-to-basket" v-if="currentVariation.filter.isSalable" :item="$store.state.item.variation.documents[0].data" :show-quantity="true"></add-to-basket>
                         <slot name="AfterAddToBasket"></slot>
