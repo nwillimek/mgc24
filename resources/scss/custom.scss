@@ -157,7 +157,14 @@ h1, h2, h3, h4, h5, h6,
 	            	color:#575756;
 	          	}
 	      	}
-			.search-input::-webkit-input-placeholder { line-height:normal!important; }
+
+			::-webkit-input-placeholder, 
+			::-moz-placeholder,
+			:-ms-input-placeholder,
+			:-moz-placeholder {
+				line-height:normal!important; 
+				color: pink;
+			}
 		}
 		.search-submit {
 		    background: $brand-primary;
