@@ -158,6 +158,10 @@ h1, h2, h3, h4, h5, h6,
 	          	}
 	      	}
 
+	      	input.search-input::placeholder {
+	      		line-height :normal!important; 
+	      		color 		: pink;
+	      	}
 			input.search-input::-webkit-input-placeholder, 
 			input.search-input::-moz-placeholder,
 			input.search-input:-ms-input-placeholder,
