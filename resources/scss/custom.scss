@@ -95,6 +95,18 @@ h1, h2, h3, h4, h5, h6,
 				}
 			}	
 	}
+
+	.container-max.p-y-1>.row {
+		display : table; 
+
+		>div[class*="col-"]{
+			display 		: table-cell;
+			float 			: none;
+			verttical-align : bottom;
+		}
+
+		.search-top>ul { margin-bottom :0; }
+	}
 }
 
 .top-bar {
@@ -134,8 +146,9 @@ h1, h2, h3, h4, h5, h6,
 	          box-shadow: none;
 	        }
 	        .search-input {
-	          padding:.2rem 1rem;
-			  background-color: #e6e6e6;
+	          padding 			: 0 1rem;
+			  background-color 	: #e6e6e6;
+
 			  &:hover,
 			  &:active,
 			  &:focus {background-color: darken($gray-lighter-mgc, 5%);}
@@ -143,7 +156,8 @@ h1, h2, h3, h4, h5, h6,
 	            	font-size: .75rem;
 	            	color:#575756;
 	          	}
-	      	}	
+	      	}
+			.search-input::placeholder {line-height:normal!important; }
 		}
 		.search-submit {
 		    background: $brand-primary;
