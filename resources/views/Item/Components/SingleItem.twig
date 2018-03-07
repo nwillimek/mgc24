@@ -84,7 +84,7 @@
                         </span>
                     </span>
 
-                    <div class="row m-y-1">
+                    <div class="row m-y-1" {% for prop in currentVariation.properties if prop.property.id==12 %}data-pop="true"{%endfor%} >
                         <slot name="BeforeAddToBasket"></slot>
                         <add-to-basket template="#vue-add-to-basket" v-if="currentVariation.filter.isSalable" :item="$store.state.item.variation.documents[0].data" :show-quantity="true"></add-to-basket>
                         <slot name="AfterAddToBasket"></slot>
@@ -95,7 +95,7 @@
                             <add-to-wish-list template="#vue-add-to-wish-list" :variation-id="currentVariation.variation.id" :is-active="isInWishList"></add-to-wish-list>
                         </div>
                     {% endif %}
-                <!-- ./ITEM DETAIL -->
+                    <!-- ./ITEM DETAIL -->
                     
                     <slot name="AdditionalContentAfterAddToBasket"></slot>
 
