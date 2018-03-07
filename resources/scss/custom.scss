@@ -149,34 +149,21 @@ h1, h2, h3, h4, h5, h6,
 	          padding 			: 0 1rem;
 			  background-color 	: #e6e6e6;
 
-			  &:hover,
-			  &:active,
-			  &:focus {background-color: darken($gray-lighter-mgc, 5%);}
+				&:hover,
+				&:active,
+				&:focus { background-color: darken($gray-lighter-mgc, 5%); }
 	          	&::placeholder {
-	            	font-size: .75rem;
-	            	color:#575756;
+	            	color 		: #575756;
+	            	font-size 	: .75rem;
+	            	line-height : 1.75!important;
 	          	}
 	      	}
-
-	      	input.search-input::placeholder {
-	      		line-height : inherit!important;
-	      		color 		: red!important;
-	      	}
-			input.search-input::-webkit-input-placeholder, 
-			input.search-input::-moz-placeholder,
-			input.search-input:-ms-input-placeholder,
-			input.search-input:-moz-placeholder {
-				line-height : inherit!important;
-				color 		: red!important;
-			}
 		}
 		.search-submit {
 		    background: $brand-primary;
 		    color: $white;
 			transition: all .3s;
-			&:hover {
-				background: $gray-mgc;
-			}
+			&:hover { background: $gray-mgc; }
 		}	
 	}
 	.toggle-basket-preview {
