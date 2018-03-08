@@ -173,24 +173,9 @@
                 <!-- ./SHIPPINGCOSTS MODAL -->
 
                 <!-- guidelines MODAL -->
-                <div id="guidelines-modal-wrapper">
-                    <div class="modal fade" id="guidelines" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <div class="modal-title h3">Pflanzenschutzrichtlinien</div>
-                                </div>
-                                <div class="modal-body">
-                                    {% set category = services.category.get(guidelinesId, lang) %}
-                                    {{ category.description }}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="dialog-guidelines" title="Pflanzenschutzrichtlinien">
+                    {% set category = services.category.get(guidelinesId, lang) %}
+                    <p>{{ category.description }}</p>
                 </div>
                 <!-- ./guidelines MODAL -->
 
@@ -341,25 +326,27 @@
         $(document).ready(function() {
             var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
-            var modal = $('#guidelines').modal({
+            var modal = $('#dialog-guidelines').dialog({
                 show    : false,
+                modal   : true,
+                width   : 400,
+                height  : "auto",
+                buttons : {
+                    "weiter" : function(){
+                        $(this).dialog("close");
+                        return true;
+                    }
+                }
             })
-
-            button.off("click");
-            button.on( "down", function(evt) { evt.preventDefault(); });
-            button.on( "mouseup", function(evt) {
-
+            button.on( "click", function(evt) { 
+                evt.preventDefault(); 
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
-                
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    modal.modal('show');
-                    modal.find(".btn-weiter").on("click", function(e){
+                    if(modal.dialog('show')){
                         component.addToBasket();
-                    });
-                } else { 
-                    component.addToBasket(); 
-                }
+                    }
+                } else { component.addToBasket(); }
             });
 
         });
