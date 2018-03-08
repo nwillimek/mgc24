@@ -349,11 +349,11 @@
                 $(button).css("display", "none");
                 $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
 
-                $(".btn-fake-basket").on("click", function(){
-                    modal.modal('show');
-                    modal.find(".btn-weiter").click(function(){
+                $(".btn-fake-basket").one("click", function(){
+                    modal.find(".btn-weiter").one("click", function(){
                         component.addToBasket();
                     });
+                    modal.modal('show');
                 });
             }
         });
