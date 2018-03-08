@@ -354,6 +354,9 @@
                         component.addToBasket();
                     });
                     modal.modal('show');
+                    modal.on('hidden.bs.modal', function () {
+                        modal.find(".btn-weiter").off("click");
+                    });
                 });
             }
         });
