@@ -319,7 +319,7 @@
 
             console.log("button: ", button);
 
-            $( "#dataTable tbody" ).on( "click", button, function(evt) {
+            $( "body" ).on( "click", button, function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
