@@ -343,23 +343,18 @@
             var modal = $('#guidelines').modal({
                 show    : false,
             })
-
-            button.off("click");
-            $("body").off("click", button);
-
-            button.on( "click", function(evt) {
-                evt.preventDefault();
-                var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
-                var canBeAdded = component.canBeAddedToBasket;
-                
-                if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                        modal.modal('show');
-                        // component.addToBasket();
-                } else { 
-                    component.addToBasket(); 
-                }
-            });
-
+            var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
+            var canBeAdded = component.canBeAddedToBasket;    
+            if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
+                $(button).css("display", "none");
+                $(".btn-fake-basket").css("display", "block");
+                $(".btn-fake-basket").on("click", function(){
+                    modal.modal('show');
+                    modal.find(".btn-weiter").click(function(){
+                        component.addToBasket();
+                    });
+                });
+            }
         });
         </script>
         <!-- FS_Changed  // END -->
