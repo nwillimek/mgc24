@@ -183,7 +183,10 @@
                                 </div>
                                 <div class="modal-body">
                                     {% set category = services.category.get(guidelinesId, lang) %}
-                                    {{ category | json_encode() }}
+
+                                    <div>{{ category.description }}</div>
+                                    <div>{{ category.0.description }}</div>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
@@ -193,7 +196,6 @@
                     </div>
                 </div>
                 <!-- ./guidelines MODAL -->
-
             </div>
         </div>
 
@@ -345,7 +347,7 @@
                 show    : false,
             })
 
-            button.on( "click", function(evt) {
+            $("body").on( "click", button, function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
