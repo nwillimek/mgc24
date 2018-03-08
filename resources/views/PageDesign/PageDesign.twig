@@ -348,17 +348,23 @@
             button.on( "click", function(evt) {
                 evt.preventDefault();
                 evt.stopPropagation();
-                
+                console.log("add2basket clic", evt);
+
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                     modal.modal('show');
                     modal.find(".btn-weiter").on("click", function(e){
-                        e.stopPropagation();
-                        component.addToBasket();
+                        console.log("btclicked", e);
+                        modal.on('hidden.bs.modal'), function(ev){
+                            console.log("close", ev);
+                            component.addToBasket();
+                        }
                     });
-                } else { component.addToBasket(); }
+                } else { 
+                    component.addToBasket(); 
+                }
             });
 
         });
