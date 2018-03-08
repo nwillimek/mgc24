@@ -185,7 +185,7 @@
                                     {% include category_template(guidelinesId, lang, services.webstoreConfig.getWebstoreConfig().webstoreId) ignore missing %}
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="return true;">Weiter</button>
+                                    <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +341,7 @@
             var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
             var modal = $('#guidelines').modal({
-                show: false
+                show    : false,
             })
             console.log("button: ", button);
 
@@ -351,8 +351,10 @@
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    if (modal.modal('show')){
-                        component.addToBasket();
+                        modal.modal('show');
+                        modal.find(".btn-weiter").on("click", function(){
+                            component.addToBasket();
+                        });
                     }
                 }else{ component.addToBasket(); }
             });
