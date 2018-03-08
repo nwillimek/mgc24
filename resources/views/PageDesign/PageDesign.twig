@@ -329,7 +329,7 @@
             var modal = $('#dialog-guidelines').modal({
                 show : false,
             })
-            $(body).on( "click", button, function(evt) { 
+            $("body").on( "click", button, function(evt) { 
                 evt.preventDefault(); 
                 console.log(evt);
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
