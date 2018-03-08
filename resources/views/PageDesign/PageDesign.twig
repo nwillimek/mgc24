@@ -351,12 +351,11 @@
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                        modal.modal('show');
-                        modal.find(".btn-weiter").on("click", function(){
-                            component.addToBasket();
-                        });
-                    }
-                }else{ component.addToBasket(); }
+                    modal.modal('show');
+                    modal.find(".btn-weiter").on("click", function(){
+                        component.addToBasket();
+                    });
+                } else { component.addToBasket(); }
             });
 
         });
