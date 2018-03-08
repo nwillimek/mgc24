@@ -318,14 +318,14 @@
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
 
             console.log("button: ", button);
-            
+
             $( "#dataTable tbody" ).on( "click", button, function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    if(alert("test"){
+                    if(alert("test")){
                         component.addToBasket();
                     }
                 }
