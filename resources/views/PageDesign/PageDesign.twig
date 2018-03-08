@@ -183,12 +183,9 @@
                                 </div>
                                 <div class="modal-body">
                                     {% set category = services.category.get(guidelinesId, lang) %}
-
-                                    <div>{{ category.description }}</div>
-                                    <div>{{ category.0.description }}</div>
-                                    <div>{{ category[0].description }}</div>
-                                    <div>{{ category | json_encode() }}</div>
-
+                                    <div>{{ category.description|raw }}</div>
+                                    <div>{{ category.details[0].description | raw }}</div>
+                                    <div>${ category.description }</div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
@@ -351,7 +348,7 @@
 
             button.off("click");
             $("body").off("click", button);
-            
+
             $("body").on( "click", button, function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
