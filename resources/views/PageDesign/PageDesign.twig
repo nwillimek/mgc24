@@ -347,12 +347,15 @@
 
             button.on( "click", function(evt) {
                 evt.preventDefault();
+                evt.stopPropagation();
+                
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                     modal.modal('show');
-                    modal.find(".btn-weiter").on("click", function(){
+                    modal.find(".btn-weiter").on("click", function(e){
+                        e.stopPropagation();
                         component.addToBasket();
                     });
                 } else { component.addToBasket(); }
