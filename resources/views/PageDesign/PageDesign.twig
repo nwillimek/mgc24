@@ -179,10 +179,11 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <div class="modal-title h3">{{ trans('Ceres::Template.guidelinesTitle') }}</div>
+                                    <div class="modal-title h3">Pflanzenschutzrichtlinien</div>
                                 </div>
                                 <div class="modal-body">
-                                    {% include category_template(guidelinesId, lang, services.webstoreConfig.getWebstoreConfig().webstoreId) ignore missing %}
+                                    {% set category = services.category.get(guidelinesId, lang) %}
+                                    {{ category.description }}
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
@@ -343,7 +344,6 @@
             var modal = $('#guidelines').modal({
                 show    : false,
             })
-            console.log("button: ", button);
 
             button.on( "click", function(evt) {
                 evt.preventDefault();
