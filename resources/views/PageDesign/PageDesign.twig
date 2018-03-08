@@ -314,12 +314,18 @@
         <!-- FS_Changed -->
         <script type="text/javascript">
         $(document).ready(function() {
-            var button = $(vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).$el).find(".fa-shopping-cart").parent("button");
-            $( "#dataTable tbody" ).on( "mouseup", button, function() {
-                var myProperties = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).item.properties.map((o) => {return o.property.id == 12});
-                var canBeAdded = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).canBeAddedToBasket;
+            var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
+            var button = $(component.$el).find(".fa-shopping-cart").parent("button");
+
+            $( "#dataTable tbody" ).on( "click", button, function(evt) {
+                evt.preventDefault();
+                var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
+                var canBeAdded = component.canBeAddedToBasket;
+                
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    alert("test");
+                    if(alert("test"){
+                        component.addToBasket();
+                    }
                 }
             });
 
