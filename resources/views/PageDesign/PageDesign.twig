@@ -319,7 +319,7 @@
 
             console.log("button: ", button);
 
-            $( "body" ).on( "click", button, function(evt) {
+            button.on( "click", function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
