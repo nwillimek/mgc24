@@ -186,6 +186,8 @@
 
                                     <div>{{ category.description }}</div>
                                     <div>{{ category.0.description }}</div>
+                                    <div>{{ category[0].description }}</div>
+                                    <div>{{ category | json_encode() }}</div>
 
                                 </div>
                                 <div class="modal-footer">
@@ -347,6 +349,9 @@
                 show    : false,
             })
 
+            button.off("click");
+            $("body").off("click", button);
+            
             $("body").on( "click", button, function(evt) {
                 evt.preventDefault();
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
