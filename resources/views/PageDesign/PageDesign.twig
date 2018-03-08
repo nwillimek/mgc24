@@ -347,7 +347,8 @@
             var canBeAdded = component.canBeAddedToBasket;    
             if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                 $(button).css("display", "none");
-                $(".btn-fake-basket").css("display", "block");
+                $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
+
                 $(".btn-fake-basket").on("click", function(){
                     modal.modal('show');
                     modal.find(".btn-weiter").click(function(){

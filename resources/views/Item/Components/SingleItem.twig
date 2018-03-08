@@ -88,10 +88,6 @@
                         <slot name="BeforeAddToBasket"></slot>
                         <add-to-basket template="#vue-add-to-basket" v-if="currentVariation.filter.isSalable" :item="$store.state.item.variation.documents[0].data" :show-quantity="true"></add-to-basket>
                         <slot name="AfterAddToBasket"></slot>
-                        <div class="btn btn-block btn-primary btn-fake-basket hidden-xs-up">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            {{ trans("Ceres::Template.addToBasket") }}
-                        </div>
                     </div>
 
                     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
