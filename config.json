@@ -584,5 +584,12 @@
         "label"     : "Marken-Name für Alt-Tag für die 21. Marke auf der Startseite",
         "type"      : "text",
         "default"   : "#"
+    },
+    {
+        "tab"       : "SingleItem",
+        "key"       : "singleitem.guidelinesId",
+        "label"     : "Pflanzenschutzrichtlinien Kategorie ID",
+        "type"      : "text",
+        "default"   : "484"
     }
 ]

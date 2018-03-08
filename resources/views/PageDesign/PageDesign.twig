@@ -19,6 +19,8 @@
 {% set fixNavBarPos = config("Ceres.header.fixed_navbar") %}
 {% set basketAddInformation = config("Ceres.basket.add_item_to_basket_confirm") %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
+{% set guidelinesId = config("meingartencenter24.singleitem.guidelinesId") %}
+
 
 {% if services.template.isCategory() or services.template.isItem() %}
     {% set categoryBreadcrumbs = services.category.getHierarchy() %}
@@ -169,6 +171,28 @@
                     </div>
                 </div>
                 <!-- ./SHIPPINGCOSTS MODAL -->
+
+                <!-- guidelines MODAL -->
+                <div id="guidelines-modal-wrapper">
+                    <div class="modal fade" id="guidelines" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="modal-title h3">{{ trans('Ceres::Template.guidelinesTitle') }}</div>
+                                </div>
+                                <div class="modal-body">
+                                    {% include category_template(guidelinesId, lang, services.webstoreConfig.getWebstoreConfig().webstoreId) ignore missing %}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="return true;">Weiter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./guidelines MODAL -->
+
             </div>
         </div>
 
@@ -316,7 +340,9 @@
         $(document).ready(function() {
             var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
-
+            var modal = $('#guidelines').modal({
+                show: false
+            })
             console.log("button: ", button);
 
             button.on( "click", function(evt) {
@@ -325,7 +351,7 @@
                 var canBeAdded = component.canBeAddedToBasket;
                 
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    if(alert("test")){
+                    if (modal.modal('show')){
                         component.addToBasket();
                     }
                 }else{ component.addToBasket(); }
