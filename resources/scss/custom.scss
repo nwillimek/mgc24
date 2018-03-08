@@ -98,11 +98,14 @@ h1, h2, h3, h4, h5, h6,
 
 	.container-max.p-y-1>.row {
 		display : table; 
+		width 	: 100%;
 
 		>div[class*="col-"]{
 			display 		: table-cell;
 			float 			: none;
 			vertical-align 	: middle;
+
+			&:last-of-type { text-align : right; }
 		}
 
 		.search-top>ul { margin-bottom :0; }
