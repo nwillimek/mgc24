@@ -249,7 +249,6 @@
             });
          });
         </script>
-
         <script type="text/javascript">
             
             var didScroll;
@@ -311,5 +310,21 @@
                 errorElement.parentNode.removeChild(errorElement);
             }
         </script>
+        
+        <!-- FS_Changed -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var button = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).$el.find(".fa-shopping-cart").parent("button");
+            $( "#dataTable tbody" ).on( "mouseup", button, function() {
+                var myProperties = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).item.properties.map((o) => {return o.property.id == 12});
+                var canBeAdded = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"} ).canBeAddedToBasket;
+                if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
+                    alert("test");
+                }
+            });
+
+        });
+        </script>
+        <!-- FS_Changed  // END -->
     </body>
 </html>
