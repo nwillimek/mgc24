@@ -183,9 +183,8 @@
                                 </div>
                                 <div class="modal-body">
                                     {% set category = services.category.get(guidelinesId, lang) %}
-                                    <div>{{ category.description|raw }}</div>
                                     <div>{{ category.details[0].description | raw }}</div>
-                                    <div>${ category.description }</div>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
