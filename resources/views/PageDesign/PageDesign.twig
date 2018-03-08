@@ -326,26 +326,18 @@
         $(document).ready(function() {
             var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
-            var modal = $('#dialog-guidelines').dialog({
-                show    : false,
-                modal   : true,
-                width   : 400,
-                height  : "auto",
-                buttons : {
-                    "weiter" : function(){
-                        $(this).dialog("close");
-                        return true;
-                    }
-                }
+            var modal = $('#dialog-guidelines').modal({
+                show : false,
             })
-            button.on( "click", function(evt) { 
+            $(body).on( "click", button, function(evt) { 
                 evt.preventDefault(); 
+                console.log(evt);
                 var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
                 var canBeAdded = component.canBeAddedToBasket;
                 if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                    if(modal.dialog('show')){
-                        component.addToBasket();
-                    }
+                    modal.dialog('show');
+                    //component.addToBasket();
+
                 } else { component.addToBasket(); }
             });
 
