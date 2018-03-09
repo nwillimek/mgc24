@@ -343,7 +343,7 @@
             var modal = $('#guidelines').modal({
                 show    : false,
             })
-            var myProperties = component.item.properties.map((o) => {return o.property.id == 12});
+            var myProperties = component.item.properties.map((o) => {return o.property.id == 3});
             var canBeAdded = component.canBeAddedToBasket;    
             if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                 $(button).css("display", "none");
