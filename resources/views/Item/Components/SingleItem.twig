@@ -108,8 +108,8 @@
 
                    <slot name="AdditionalContentAfterVAT"></slot>
                 
-                <template v-if="prop.property" v-for="prop in currentVariation.properties">
-                    <h3 v-if="prop.group.names.propertyGroupId == 4" class="m-t-2 text-xs-center prop-headline">Downloads</h3>   
+                <template v-if="prop.property" v-for="(prop, index) in currentVariation.properties">
+                    <h3 v-if="prop.group.names.propertyGroupId == 4" class="m-t-2 text-xs-center prop-headline" :data-index="index">Downloads</h3>   
                 </template>
                  <div class="m-b-3 prop-container">
                     <template v-if="prop.group" v-for="prop in currentVariation.properties">
