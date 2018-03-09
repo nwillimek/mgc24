@@ -915,12 +915,15 @@ body.menu-is-visible {
 #guidelines { 
 	.modal-dialog 	{ height : 90%; }
 	.modal-content 	{ 
-		height 		: 90%; 
-		overflow 	: hidden;
+		display 		: flex;
+		flex-direction 	: column;
+		height 			: 90%; 
+		overflow 		: hidden;
 	}
 	.modal-body {
 		display 	: inline-block;
-		height 		: 85%;
+		flex 		: 1 0 auto;
+		height 		: 20%;
 		overflow-y  : scroll;
 	}
 }
