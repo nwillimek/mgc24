@@ -174,15 +174,15 @@
 
                 <!-- guidelines MODAL -->
                 <div id="guidelines-modal-wrapper">
+                    {% set category = services.category.get(guidelinesId, lang) %}
                     <div class="modal fade" id="guidelines" tabindex="-1" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <div class="modal-title h3">{{ trans('Ceres::Template.guidelinesTitle') }}</div>
+                                    <div class="modal-title h3">{{ category.details[0].shortDescription | raw }}</div>
                                 </div>
                                 <div class="modal-body">
-                                    {% set category = services.category.get(guidelinesId, lang) %}
                                     <div>{{ category.details[0].description | raw }}</div>
                                 </div>
                                 <div class="modal-footer">
