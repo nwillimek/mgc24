@@ -106,9 +106,11 @@
                         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
                     </span>
 
-                    <slot name="AdditionalContentAfterVAT"></slot>
-    
-                 <h3 class="m-t-2 text-xs-center prop-headline">Downloads</h3>   
+                   <slot name="AdditionalContentAfterVAT"></slot>
+                
+                <template v-if="prop.property" v-for="prop in currentVariation.properties">
+                    <h3 v-if="prop.property.id == 26" class="m-t-2 text-xs-center prop-headline">Downloads</h3>   
+                </template>
                  <div class="m-b-3 prop-container">
                     <template v-if="prop.group" v-for="prop in currentVariation.properties">
                         <div v-if="prop.group.names.propertyGroupId == 4" class="item-files m-r-2 text-xs-center">
