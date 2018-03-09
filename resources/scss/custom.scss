@@ -911,6 +911,10 @@ body.menu-is-visible {
 
 
 // SIngle Item
+.prop-headline {
+	display : none;
+	&:first-of-type { display : block; }
+}
 .btn-fake-basket { margin : 0!important; }
 #guidelines { 
 	.modal-dialog 	{ height : 90%; }
