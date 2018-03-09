@@ -585,6 +585,222 @@
         "type"      : "text",
         "default"   : "#"
     },
+
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand1Img",
+        "label"     : "Bild-Pfad für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand1URL",
+        "label"     : "URL für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand1Text",
+        "label"     : "Marken-Name für Alt-Tag für die 1. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand2Img",
+        "label"     : "Bild-Pfad für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand2URL",
+        "label"     : "URL für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand2Text",
+        "label"     : "Marken-Name für Alt-Tag für die 2. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand3Img",
+        "label"     : "Bild-Pfad für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand3URL",
+        "label"     : "URL für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand3Text",
+        "label"     : "Marken-Name für Alt-Tag für die 3. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand4Img",
+        "label"     : "Bild-Pfad für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand4URL",
+        "label"     : "URL für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand4Text",
+        "label"     : "Marken-Name für Alt-Tag für die 4. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand5Img",
+        "label"     : "Bild-Pfad für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand5URL",
+        "label"     : "URL für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand5Text",
+        "label"     : "Marken-Name für Alt-Tag für die 5. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand6Img",
+        "label"     : "Bild-Pfad für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand6URL",
+        "label"     : "URL für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand6Text",
+        "label"     : "Marken-Name für Alt-Tag für die 6. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand7Img",
+        "label"     : "Bild-Pfad für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand7URL",
+        "label"     : "URL für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand7Text",
+        "label"     : "Marken-Name für Alt-Tag für die 7. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand8Img",
+        "label"     : "Bild-Pfad für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand8URL",
+        "label"     : "URL für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand8Text",
+        "label"     : "Marken-Name für Alt-Tag für die 8. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand9Img",
+        "label"     : "Bild-Pfad für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand9URL",
+        "label"     : "URL für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand9Text",
+        "label"     : "Marken-Name für Alt-Tag für die 9. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand10Img",
+        "label"     : "Bild-Pfad für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "http://placehold.it/150x75"
+    },
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand10URL",
+        "label"     : "URL für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },    
+    {
+        "tab"       : "footer",
+        "key"       : "footer.topbrand10Text",
+        "label"     : "Marken-Name für Alt-Tag für die 10. Marke auf der Startseite",
+        "type"      : "text",
+        "default"   : "#"
+    },
+
+
+
+
+
     {
         "tab"       : "SingleItem",
         "key"       : "singleitem.guidelinesId",
