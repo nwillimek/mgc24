@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6,
 		.search-top>ul { margin-bottom :0; }
 	}
 }
-.btn-fake-basket { margin : 0!important; }
+
 .top-bar {
 	background-color: #f2f2f2;
 	&.spacer {		
@@ -908,3 +908,33 @@ body.menu-is-visible {
 	&.availability-5 {color:$availability_5;}
 }
 // availability-preview end
+
+
+// SIngle Item
+.btn-fake-basket { margin : 0!important; }
+.guidelines { 
+	.modal-dialog 	{ height : 90%; }
+	.modal-content 	{ 
+		height 		: 90%; 
+		overflow 	: hidden;
+	}
+	.modal-body {
+		display 	: inline-block;
+		height 		: 85%;
+		overflow-y  : scroll;
+	}
+}
+.svg-blat {
+	list-style  : none;
+	margin 		: 0;
+	padding 	: 0;
+
+	li:before {
+		content 		: url('https://cdn02.plentymarkets.com/gxk2jxu70tl2/plugin/production/meingartencenter24/images/mgc-blatt.svg');
+		display 		: block;
+		height 			: 8px;
+		margin-right 	: 12px;
+		width 			: 8px;
+	}
+}
+// SIngle Item end
