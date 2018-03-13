@@ -6,6 +6,7 @@
 {{ component( "Ceres::Customer.Components.Login" ) }}
 {{ component( "Ceres::Customer.Components.Registration" ) }}
 {{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
+{{ component( "Ceres::PageDesign.Components.Popper" ) }}
 
 <!DOCTYPE html>
 
@@ -73,13 +74,17 @@
                 {% endblock %}                
             </div>
 
-            <div class="wrapper wrapper-right">
-                <basket-preview
-                    template="#vue-basket-preview"
-                    :basket-data="{{ services.basket.getBasketForTemplate() | json_encode() }}"
-                    :basket-items-data="{{ services.basket.getBasketItemsForTemplate('Ceres::Basket.Basket') | json_encode() }}">
-                </basket-preview>
-            </div>
+            {% if basket is not defined %}
+                {% set basket = services.basket.getBasketForTemplate() %}
+            {% endif %}
+            {% if config("Ceres.basket.preview_type") == "right" %}
+                <div class="wrapper wrapper-right">
+                    <basket-preview
+                        template="#vue-basket-preview"
+                        :basket-data="{{ basket | json_encode() }}">
+                    </basket-preview>
+                </div>
+            {% endif %}
 
             <div class="wrapper wrapper-bottom">
             <!-- LOGIN MODAL -->
@@ -129,6 +134,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
             <!-- ./LOGIN MODAL -->
 
@@ -142,6 +148,36 @@
                                 <h3 class="modal-title">{{ trans("Ceres::Template.accCreateAccount") }}</h3>
                             </div>
                             <div class="modal-body">
+=======
+                <!-- ./LOGIN MODAL -->
+
+                <!-- REGISTRATION MODAL -->
+                <div id="simple-registration-modal-wrapper">
+                    <div class="modal fade" id="registration" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="modal-title h3">
+                                        {{ trans("Ceres::Template.accCreateAccount") }}
+
+                                       <popper v-cloak class="pull-right m-r-1">
+                                            <button slot="handle" class="btn btn-icon btn-secondary btn-sm">
+                                                <i class="fa fa-info"></i>
+                                            </button>
+                                            <div slot="title">
+                                                {{ trans("Ceres::Template.generalContactInformations") }}
+                                            </div>
+                                            <ul slot="content" class='p-l-1'>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText1') }}</li>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText2') }}</li>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText3') }}</li>
+                                                <li>{{ trans('Ceres::Template.generalContactInfoText4') }}</li>
+                                            </ul>
+                                        </popper>
+                                    </div>
+                                </div>
+>>>>>>> 4ea9da9adda8b6d3a19da09fa841eb78e7accb40
                                 <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
                             </div>
                         </div>
@@ -207,7 +243,6 @@
         {{ Translations.add( "Ceres", "Template" ) }}
         {% if config("Ceres.log.performance.level") == 'development' %}
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-vendor.js"></script>
-            <script src="{{ plugin_path('Ceres') }}/js/src/app.config.js"></script>
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-app.js"></script>
         {% else %}
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres.min.js"></script>
