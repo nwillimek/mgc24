@@ -755,53 +755,6 @@
         "default"   : "#"
     },
     {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand9Img",
-        "label"     : "Bild-Pfad für die 9. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
-    },
-    {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand9URL",
-        "label"     : "URL für die 9. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "#"
-    },    
-    {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand9Text",
-        "label"     : "Marken-Name für Alt-Tag für die 9. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "#"
-    },
-    {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand10Img",
-        "label"     : "Bild-Pfad für die 10. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
-    },
-    {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand10URL",
-        "label"     : "URL für die 10. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "#"
-    },    
-    {
-        "tab"       : "footer",
-        "key"       : "footer.topbrand10Text",
-        "label"     : "Marken-Name für Alt-Tag für die 10. Marke auf der Startseite",
-        "type"      : "text",
-        "default"   : "#"
-    },
-
-
-
-
-
-    {
         "tab"       : "SingleItem",
         "key"       : "singleitem.guidelinesId",
         "label"     : "Pflanzenschutzrichtlinien Kategorie ID",

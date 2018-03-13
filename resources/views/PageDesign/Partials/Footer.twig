@@ -119,15 +119,6 @@
             {% set topbrand8Img  = config("meingartencenter24.footer.topbrand8Img") %}
             {% set topbrand8Text  = config("meingartencenter24.footer.topbrand8Text") %}
 
-            {% set topbrand9URL  = config("meingartencenter24.footer.topbrand9URL") %}
-            {% set topbrand9Img  = config("meingartencenter24.footer.topbrand9Img") %}
-            {% set topbrand9Text  = config("meingartencenter24.footer.topbrand9Text") %}
-
-            {% set topbrand10URL  = config("meingartencenter24.footer.topbrand10URL") %}
-            {% set topbrand10Img  = config("meingartencenter24.footer.topbrand10Img") %}
-            {% set topbrand10Text  = config("meingartencenter24.footer.topbrand10Text") %}
-
-
 <div class="footer">
 
     <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
@@ -335,12 +326,6 @@
                     </a>
                     <a href="{{ topbrand8URL }}">
                         <img src="{{ topbrand8Img }}" alt="{{ topbrand8Text }}" class="img-fluid">
-                    </a>
-                    <a href="{{ topbrand9URL }}">
-                        <img src="{{ topbrand9Img }}" alt="{{ topbrand9Text }}" class="img-fluid">
-                    </a>
-                    <a href="{{ topbrand10URL }}">
-                        <img src="{{ topbrand10Img }}" alt="{{ topbrand10Text }}" class="img-fluid">
                     </a>
                 </div>
             </div>
