@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6,
 	}
 	.navbar-toggler {
 		transform: translate(0,-50%);
-		margin-top: .4rem;
+		margin-top: .6rem;
 		color: white;
 		padding: 0;
 		font-size: 1.85rem;
@@ -118,6 +118,9 @@ h1, h2, h3, h4, h5, h6,
     position: relative;
     visibility: hidden;
 	}
+	a:not(.btn) {
+		color: $gray-dark;
+	}	
 	.brand-wrapper {
 		position: relative;
 		padding:0;
@@ -172,6 +175,11 @@ h1, h2, h3, h4, h5, h6,
 	.toggle-basket-preview {
 		color:#575756;
 		font-size: 1.2rem;
+	}
+	.controls-list {
+		.control-user {
+			margin-left: .75rem;
+		}
 	}
 }
 
@@ -251,7 +259,7 @@ h1, h2, h3, h4, h5, h6,
 
 // Footer start
 .footer {	
-	#brands {
+	#brands, .brands {
 		img {
 		filter: grayscale(100%);
 	    transition: all 0.5s ease;

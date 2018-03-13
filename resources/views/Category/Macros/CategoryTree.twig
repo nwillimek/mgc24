@@ -8,7 +8,7 @@
             {% if (child.details | length > 0) %}
                 <li class="level{{ level }}">
                     {% set newScope = currentScopeUrl ~ "/" ~ child.details[0].nameUrl %}
-                    <a href="{{ newScope }}" v-render-category="{ id: {{ child.id }}, type: '{{ child.type }}' }" data-img="/documents/{{ child.details[0].imagePath }}">{{ child.details[0].name }}</a>
+                    <a href="{{ newScope }}" v-render-category="{ id: {{ child.id }}, type: '{{ child.type }}' }">{{ child.details[0].name }}</a>
                     {% if child.children %}
                         {% if level == 1 %}<ul>{% endif %}
                             {{ childlist.get_children(child, newScope, level + 1) }}
@@ -17,7 +17,7 @@
                 </li>
                 {% set counter = counter + 1 %}
                 {% if counter == maxitems[level]%}
-                    <li class="level{{ level }} bt-more"><a href="{{ currentScopeUrl }}" v-render-category="{ id: {{ category.id }}, type: '{{ category.type }}' }" data-img="/documents/{{ category.details[0].imagePath }}">{{ trans("Ceres::Template.itemShowMore") }}...</a></li>
+                    <li class="level{{ level }} bt-more"><a href="{{ currentScopeUrl }}" v-render-category="{ id: {{ category.id }}, type: '{{ category.type }}' }">{{ trans("Ceres::Template.itemShowMore") }}...</a></li>
                 {% endif %}
             {% endif %}
         {% endfor %}
