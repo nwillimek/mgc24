@@ -266,7 +266,16 @@ h1, h2, h3, h4, h5, h6,
 			&:hover {
 				filter: grayscale(0%);
 			}
+			@include media-breakpoint-up(md){
+				filter: grayscale(100%);
+			    transition: all 0.5s ease;
+					&:hover {
+						filter: grayscale(0%);
+					}
+				}	    
+			
 		}
+
 		.carousel-control {
 			width:5%;
 			&.left {left: -15px;}
@@ -286,9 +295,15 @@ h1, h2, h3, h4, h5, h6,
 			color: white;	
 		}
 	}
+	.bckgrother {
+		background-color:$gray-lighter-mgc;
+		p, a, h2, h5, span {
+			color: $gray-mgc;	
+		}
+	}
 	.payment, .delivery {
 		display: block;
-	 img {
+	 	img {
 	    display: inline-block;
 	    position: relative;
 		max-width: 60px;
