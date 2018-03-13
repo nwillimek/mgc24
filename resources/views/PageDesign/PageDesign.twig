@@ -22,7 +22,6 @@
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 {% set guidelinesId = config("meingartencenter24.singleitem.guidelinesId") %}
 
-
 {% if services.template.isCategory() or services.template.isItem() %}
     {% set categoryBreadcrumbs = services.category.getHierarchy() %}
     {{ services.crossSelling.setType(config("Ceres.item.lists.cross_selling_type")) }}
@@ -71,7 +70,7 @@
                 {% include getPartial('footer') %}
 
                 {% block PartialFooter %}
-                {% endblock %}                
+                {% endblock %}
             </div>
 
             {% if basket is not defined %}
@@ -134,7 +133,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
             </div>
             <!-- ./LOGIN MODAL -->
 
@@ -148,36 +146,6 @@
                                 <h3 class="modal-title">{{ trans("Ceres::Template.accCreateAccount") }}</h3>
                             </div>
                             <div class="modal-body">
-=======
-                <!-- ./LOGIN MODAL -->
-
-                <!-- REGISTRATION MODAL -->
-                <div id="simple-registration-modal-wrapper">
-                    <div class="modal fade" id="registration" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <div class="modal-title h3">
-                                        {{ trans("Ceres::Template.accCreateAccount") }}
-
-                                       <popper v-cloak class="pull-right m-r-1">
-                                            <button slot="handle" class="btn btn-icon btn-secondary btn-sm">
-                                                <i class="fa fa-info"></i>
-                                            </button>
-                                            <div slot="title">
-                                                {{ trans("Ceres::Template.generalContactInformations") }}
-                                            </div>
-                                            <ul slot="content" class='p-l-1'>
-                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText1') }}</li>
-                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText2') }}</li>
-                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText3') }}</li>
-                                                <li>{{ trans('Ceres::Template.generalContactInfoText4') }}</li>
-                                            </ul>
-                                        </popper>
-                                    </div>
-                                </div>
->>>>>>> 4ea9da9adda8b6d3a19da09fa841eb78e7accb40
                                 <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
                             </div>
                         </div>
