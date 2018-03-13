@@ -214,46 +214,6 @@ h1, h2, h3, h4, h5, h6,
 		background-color:$gray-lighter-mgc;
 		border-bottom: none;
 	}
-	// 	#mainNavbarCollapsable {
-	// 		ul{
-	// 			&.mainmenu {
-	// 				> li {
-	// 					padding: .75rem 1rem;
-	// 					> a {
-	// 						padding: .25rem;
-	// 						color: $gray-mgc;
-	// 						border-bottom: 2px solid transparent;
-	// 						font-family: $font-family-serif;
-	// 						}
-	// 					&:hover {
-	// 						background-color: $gray-mgc;
-	// 						> a {
-	// 							border-bottom: 2px solid $brand-primary;
-	// 							color: white;
-	// 						}
-	// 					}
-	// 					> ul {
-	// 						background-color: $gray-mgc;	
-	// 						> li {
-	// 							padding: .75rem 1rem;
-	// 							> a {
-	// 								padding: 0 0 .25rem 0;
-	// 								border-bottom: 2px solid transparent;
-	// 								font-family: $font-family-serif;
-	// 								}
-	// 							&:hover {
-	// 								background-color: $gray-mgc;
-	// 								> a {
-	// 									border-bottom: 2px solid $brand-primary;
-	// 								}
-	// 							}		
-	// 						}
-	// 					}	
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 // Header end
 
@@ -261,19 +221,13 @@ h1, h2, h3, h4, h5, h6,
 .footer {	
 	#brands, .brands {
 		img {
-		filter: grayscale(100%);
-	    transition: all 0.5s ease;
-			&:hover {
-				filter: grayscale(0%);
-			}
 			@include media-breakpoint-up(md){
-				filter: grayscale(100%);
-			    transition: all 0.5s ease;
-					&:hover {
-						filter: grayscale(0%);
-					}
-				}	    
-			
+			filter: grayscale(100%);
+		    transition: all 0.5s ease;
+				&:hover {
+					filter: grayscale(0%);
+				}
+			}				
 		}
 
 		.carousel-control {
@@ -871,6 +825,7 @@ body.menu-is-visible {
 	    padding: 1rem;
 	    color: white;
 	    margin: 0;
+	    max-width:80%;
 	}
 	.section-header {
 	    border-bottom: 0;
