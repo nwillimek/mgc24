@@ -76,12 +76,21 @@
     };
 </script>
 
+{% set currentTemplate = services.template.getCurrentTemplate() %}
+{% if services.template.isItem() == "1" %}
+    {% set isItem = true %}
+    {% set fb_view = "ViewContent" %}
+{% else %}
+    {% set isItem = false %}
+    {% set fb_view = "PageView" %}
+{% endif %}
+
 {% if (services.template.isHome == "1") %}
     <meta name="google-site-verification" content="mfxvqJKX81tQeOpODgP6QlwbEU6iwIQdHWtMeP_3vdk" />
 {% endif %}
 
 
-<!-- Facebook Pixel Code -->
+<!-- Facebook Pixel Code {{ currentTemplate }} -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -89,7 +98,7 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '843800752364834');
-fbq('track', {% if (services.template.isItem() == "1") %}'ViewContent'{% else %}'PageView'{% endif %});
+fbq('track', "{{ fb_view }}" );
   {% if (services.template.isMyAccount() == "0") %}
   function fb_addToCart(product_id) {
     window._fbq.push(["track", "AddToCart", { content_ids: [product_id], content_type: "product"}])
@@ -101,7 +110,7 @@ fbq('track', {% if (services.template.isItem() == "1") %}'ViewContent'{% else %}
 <!-- End Facebook Pixel Code -->
 
 <!-- Google Code für ein Remarketing-Tag -->
-{% if services.template.isItem() == "0" %}
+{% if !isItem %}
 <script type="text/javascript">
 if (typeof google_tag_params == "undefined") {
   var google_tag_params = {
