@@ -110,7 +110,7 @@ fbq('track', "{{ fb_view }}" );
 <!-- End Facebook Pixel Code -->
 
 <!-- Google Code für ein Remarketing-Tag -->
-{% if !isItem %}
+{% if isItem == false %}
 <script type="text/javascript">
 if (typeof google_tag_params == "undefined") {
   var google_tag_params = {
