@@ -347,7 +347,10 @@
                 show    : false,
             })
             var myProperties = component.item.properties.map((o) => {return o.property.id == 3});
-            var canBeAdded = component.canBeAddedToBasket;    
+            var canBeAdded = component.canBeAddedToBasket;
+            button.click(function(){
+                fb_addToCart(component.item.item.id);
+            });
             if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                 $(button).css("display", "none");
                 $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
@@ -355,6 +358,7 @@
                 $(".btn-fake-basket").on("click", function(){
                     modal.find(".btn-weiter").one("click", function(){
                         component.addToBasket();
+                        fb_addToCart(component.item.item.id);
                     });
                     modal.modal('show');
                     modal.on('hidden.bs.modal', function () {
