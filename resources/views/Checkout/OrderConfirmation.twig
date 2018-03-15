@@ -55,11 +55,17 @@
     <!-- EXTENDED FOR TRACKING (Tracking-Pixel - Compo) BY NICOLAS WILLIMEK & SIMON SEIDEL -->
     {% set query = "" %}
     {% set index = 0 %}
-    <div class="debug">{{ data.order.orderItems | json_encode() }}</div>
+    <div class="debug order">{{ data.order | json_encode() }}</div>
+    <div class="debug orderItems">{{ data.order.orderItems | json_encode() }}</div>
     {% for item in data.order.orderItems %}
         {% if item.itemVariationId > 0 %}
 
-            {# if ($_item->OrderConfirmationItemProducerID == 6 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 4 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 9 && $_confirm->ReferrerID == 9) %}
+            {# 
+            if (
+            $_item->OrderConfirmationItemProducerID == 6 && $_confirm->ReferrerID == 9 || 
+            $_item->OrderConfirmationItemProducerID == 4 && $_confirm->ReferrerID == 9 || 
+            $_item->OrderConfirmationItemProducerID == 9 && $_confirm->ReferrerID == 9) 
+            %}
                 {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemQuantity ~ '&price[' ~ index ~ ']='~ $_item->OrderConfirmationItemPrice %}
             {% endif #}
 
