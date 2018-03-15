@@ -69,7 +69,7 @@
             %}
                 {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemQuantity ~ '&price[' ~ index ~ ']='~ $_item->OrderConfirmationItemPrice %}
             {% endif #}
-                {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ item.quantity ~ '&price[' ~ index ~ ']='~ item.amounts.priceGross %}
+                {% set query = query ~ '&ean[' ~ index ~ ']=' ~ "00000000" ~ '&sale[' ~ index ~ ']=' ~ item.quantity ~ '&price[' ~ index ~ ']='~ item.amounts.priceGross %}
                 {% set index = index + 1 %}
             {% endif %}
         {% endif %}
