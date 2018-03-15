@@ -1,0 +1,72 @@
+{% extends getPartial('page-design') %}
+{% import "Ceres::Checkout.Macros.Address" as address %}
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% block PartialHead %}
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>{{ trans("Ceres::Template.orderConfirmation") }} | {{ config("Ceres.header.company_name") }}</title>
+{% endblock %}
+
+{% block PageBody %}
+
+    {{ component( "Ceres::MyAccount.Components.ChangePaymentMethod" ) }}
+
+    {% set overrideConfirmation = LayoutContainer.show("Ceres::OrderConfirmation.Override") %}
+
+    {% if overrideConfirmation|trim is empty %}
+        <div class="page-content myaccount container-max m-b-3 m-t-1 p-b-3">
+            <div class="row m-b-3">
+                <div class="col-xs-12">
+                    <h1 class="h2">{{ trans("Ceres::Template.generalThanks") }}</h1>
+                    <p>{{ trans("Ceres::Template.orderWillBeProcessed") }}</p>
+                </div>
+            </div>
+
+            {{ LayoutContainer.show("Ceres::OrderConfirmation.BeforeOrderDetails", data.order) }}
+
+            <!-- EXTENDED FOR TRACKING (Tracking-Pixel - Compo) BY NICOLAS WILLIMEK & SIMON SEIDEL -->
+            {% set query = "" %}
+            {% set index = 0 %}
+            {% for item in data.order.orderItems %}
+                {% if item.itemVariationId > 0 %}        
+                    {# if ($_item->OrderConfirmationItemProducerID == 6 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 4 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 9 && $_confirm->ReferrerID == 9) %}
+                        {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemQuantity ~ '&price[' ~ index ~ ']='~ $_item->OrderConfirmationItemPrice %}
+                    {% endif #}
+                        {% set query = query ~ '[' ~ item.orderItemName ~ ']' %}
+                        {% set index = index + 1 %}
+                {% endif %}
+            {% endfor %}
+            {% set src = 'http://www.commerce-connector.com/tracking/tracking.gif?shop=0RuEPt1za1uX1sxiKTLyjZefDQ4Py9g0' %}
+            {% if query|length %}
+                <img height="1" width="1" border="0" alt="" src="' . {{ src }} . {{ query }} .'"/>
+            {% endif %}
+
+            {% include "Ceres::Checkout.OrderDetails" with { orderData: data } %}
+
+            <hr>
+            <div class="row">
+                {% set loggedIn = frontend.Account.getIsAccountLoggedIn %}
+                <div class="col-xs-6 col-md-4 {% if loggedIn %}offset-md-2{% else %}offset-xs-3 offset-md-4{% endif %}">
+                    <a v-waiting-animation-infinite href="/" type="" class="btn btn-primary btn-block bg-primary">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        {{ trans("Ceres::Template.generalHomepage") }}
+                    </a>
+                </div>
+
+
+                {% if loggedIn %}
+                    <div class="col-xs-6 col-md-4">
+                        <a v-waiting-animation-infinite href="/my-account" type="" class="btn btn-primary btn-block bg-primary">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            {{ trans("Ceres::Template.accMyAccount") }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    {% else %}
+        {{ overrideConfirmation }}
+    {% endif %}
+
+{% endblock %}

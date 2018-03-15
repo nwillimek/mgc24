@@ -87,24 +87,6 @@
 
 {% if (currentTemplate == "tpl.confirmation") %}
     {% set fb_view = "Purchase" %}
-    <!-- EXTENDED FOR TRACKING (Tracking-Pixel - Compo) BY NICOLAS WILLIMEK & SIMON SEIDEL -->
-    {% set query = "" %}
-    {% set index = 0 %}
-    {% for item in orderData.order.orderItems %}
-        {% if item.itemVariationId > 0 %}        
-            {# if ($_item->OrderConfirmationItemProducerID == 6 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 4 && $_confirm->ReferrerID == 9 || $_item->OrderConfirmationItemProducerID == 9 && $_confirm->ReferrerID == 9) %}
-                {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemQuantity ~ '&price[' ~ index ~ ']='~ $_item->OrderConfirmationItemPrice %}
-            {% endif #}
-                {% set query = query ~ '[' ~ item.orderItemName ~ ']' %}
-                {% set index = index + 1 %}
-        {% endif %}
-    {% endfor %}
-    
-    {% set src = 'http://www.commerce-connector.com/tracking/tracking.gif?shop=0RuEPt1za1uX1sxiKTLyjZefDQ4Py9g0' %}
-    {% if query|length %}
-        <img height="1" width="1" border="0" alt="" src="' . {{ src }} . {{ query }} .'"/>
-    {% endif %}
-
 {% elseif (services.template.isHome == "1") %}
     <meta name="google-site-verification" content="mfxvqJKX81tQeOpODgP6QlwbEU6iwIQdHWtMeP_3vdk" />
 {% endif %}
