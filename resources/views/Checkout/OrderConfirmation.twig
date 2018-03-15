@@ -59,27 +59,27 @@
     </div>
     </noscript>
 
-<!-- Facebook Conversion Tracker TrafficDesign -->
-<script>
+    <!-- Facebook Conversion Tracker TrafficDesign -->
+    <script>
 
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','//connect.facebook.net/en_US/fbevents.js');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '843800752364834'); /* Code TrafficDesign */
-    fbq('init', '196753834012741'); /* Code Compo */
-    fbq('track', "PageView");
-    fbq('track', 'Purchase', {
-    content_ids: [{{ itemIDs }}],
-    content_type: 'product',
-    value:  {{ priceNet }}, 
-  currency: 'EUR'
-  
-});</script>
+        fbq('init', '843800752364834'); /* Code TrafficDesign */
+        fbq('init', '196753834012741'); /* Code Compo */
+        fbq('track', "PageView");
+        fbq('track', 'Purchase', {
+        content_ids: [{{ itemIDs }}],
+        content_type: 'product',
+        value:  {{ priceNet }}, 
+      currency: 'EUR'
+      
+    });</script>
 
-<!-- Facebook Conversion Tracker TrafficDesign END -->
+    <!-- Facebook Conversion Tracker TrafficDesign END -->
 
 {% endblock %}
 
@@ -90,7 +90,7 @@ document,'script','//connect.facebook.net/en_US/fbevents.js');
     {% set overrideConfirmation = LayoutContainer.show("Ceres::OrderConfirmation.Override") %}
 
     {% if overrideConfirmation|trim is empty %}
-        <div class="page-content myaccount container-max m-b-3 m-t-1 p-b-3">
+        <div class="page-content myaccount container-max m-b-3 m-t-1 p-b-3" data-plim="{{ data.order.amounts.netTotal }}">
             <div class="row m-b-3">
                 <div class="col-xs-12">
                     <h1 class="h2">{{ trans("Ceres::Template.generalThanks") }}</h1>
