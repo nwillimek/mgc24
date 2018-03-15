@@ -760,5 +760,19 @@
         "label"     : "Pflanzenschutzrichtlinien Kategorie ID",
         "type"      : "text",
         "default"   : "484"
+    },
+    {
+        "tab"       : "Tracking",
+        "key"       : "tracking.refererID",
+        "label"     : "Tracking-Pixel - Compo refererID",
+        "type"      : "text",
+        "default"   : "9"
+    },
+    {
+        "tab"       : "Tracking",
+        "key"       : "tracking.OrderConfirmationItemProducerID",
+        "label"     : "Tracking-Pixel - Compo OrderConfirmationItemProducerID",
+        "type"      : "text",
+        "default"   : "9"
     }
 ]
