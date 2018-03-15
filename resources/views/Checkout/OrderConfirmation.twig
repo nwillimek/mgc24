@@ -55,7 +55,7 @@
     <!-- EXTENDED FOR TRACKING (Tracking-Pixel - Compo) BY NICOLAS WILLIMEK & SIMON SEIDEL -->
     {% set query = "" %}
     {% set index = 0 %}
-    {{ data.order.orderItems | json_encode() }}
+    <div class="debug">{{ data.order.orderItems | json_encode() }}</div>
     {% for item in data.order.orderItems %}
         {% if item.itemVariationId > 0 %}
 
