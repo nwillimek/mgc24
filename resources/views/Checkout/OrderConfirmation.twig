@@ -38,7 +38,7 @@
     {% endif %}
 
     <!-- Google Code for Einkauf Conversion Page (Std Konto) -->
-    {% set priceNet = data.order.amounts.netTotal /(119)*100|number_format(2, ".", "") %}
+    {% set priceNet = data.order.amounts[0].netTotal /(119)*100|number_format(2, ".", "") %}
     <script type="text/javascript">
     var google_conversion_id = 992652525;
     var google_conversion_language = "en";
