@@ -26,7 +26,7 @@
             %}
                 {% set query = query ~ '&ean[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemEAN ~ '&sale[' ~ index ~ ']=' ~ $_item->OrderConfirmationItemQuantity ~ '&price[' ~ index ~ ']='~ $_item->OrderConfirmationItemPrice %}
             {% endif #}
-                {% set query = query ~ '&ean[' ~ index ~ ']=' ~ "00000000" ~ '&sale[' ~ index ~ ']=' ~ item.quantity ~ '&price[' ~ index ~ ']='~ item.amounts.priceGross %}
+                {% set query = query ~ '&ean[' ~ index ~ ']=' ~ "00000000" ~ '&sale[' ~ index ~ ']=' ~ item.quantity ~ '&price[' ~ index ~ ']='~ item.amounts[0].priceGross %}
                 {% set index = index + 1 %}
                 {% set itemIDs = itemIDs ~ item.itemVariationId ~ "," %}
             {% endif %}
@@ -38,7 +38,7 @@
     {% endif %}
 
     <!-- Google Code for Einkauf Conversion Page (Std Konto) -->
-    {% set priceNet = data.order.amounts[0].netTotal /(119)*100|number_format(2, ".", "") %}
+    {% set priceNet = data.order.amounts[0].netTotal|number_format(2, ".", "") %}
     <script type="text/javascript">
     var google_conversion_id = 992652525;
     var google_conversion_language = "en";
