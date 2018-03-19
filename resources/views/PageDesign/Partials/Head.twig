@@ -2,6 +2,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+{% if (services.template.isHome == "1") %}
+    <meta name="google-site-verification" content="mfxvqJKX81tQeOpODgP6QlwbEU6iwIQdHWtMeP_3vdk" />
+{% endif %}
+
 {% set lang = services.sessionStorage.getLang() %}
 {% set favicon = url ~ '/tpl/favicon_' ~ services.webstoreConfig.getWebstoreConfig().webstoreId ~ '.ico' %}
 <link rel="icon" type="img/ico" href="{{ favicon }}">
@@ -83,10 +87,6 @@
 {% else %}
     {% set isItem = false %}
     {% set fb_view = "PageView" %}
-{% endif %}
-
-{% if (services.template.isHome == "1") %}
-    <meta name="google-site-verification" content="mfxvqJKX81tQeOpODgP6QlwbEU6iwIQdHWtMeP_3vdk" />
 {% endif %}
 
 {% if (currentTemplate == "tpl.confirmation") %}
