@@ -338,6 +338,7 @@
             }
         </script>
 
+        {% if services.template.isCurrentTemplate('tpl.item') %}
         <!-- FS_Changed -->
         <script type="text/javascript">
         $(document).ready(function() {
@@ -365,6 +366,7 @@
         });
         </script>
         <!-- FS_Changed  // END -->
-        
+        {% endif %}
+
     </body>
 </html>
