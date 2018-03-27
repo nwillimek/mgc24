@@ -92,9 +92,13 @@
                 <div class="prices">
                     {% if item.data.prices.rrp is defined and item.data.prices.rrp.price.value != 0 %}
                         <div class="price-view-port">
-                            <span class="crossprice">
-                                {{ item.data.prices.rrp.price.formatted }}
-                            </span>
+                            {% if item.data.prices.rrp.price >= item.data.prices.default.price %}
+                                {% if item.data.prices.rrp.price != item.data.prices.default.price %}
+                                <span class="crossprice">
+                                    {{ item.data.prices.rrp.price.formatted }}
+                                </span>
+                                {% endif %}
+                            {% endif %}
                         </div>
                     {% endif %}
 

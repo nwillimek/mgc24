@@ -557,6 +557,13 @@ $menu-color-sm 			: $white;
 $menu-font-s-sm  		: 1.2em;
 $menu-font-f-sm  		: $font-family-serif;
 
+//big-menu
+$menu-big-menu-bg 				: darken($brand-primary,10%);
+$menu-big-menu-li-bg			: transparent;
+$menu-big-menu-li-bg-hover		: $gray-mgc;
+$menu-big-menu-li-color			: $white;
+$menu-big-menu-li-color-hover	: $white;
+
 // desktop
 $menu-h-lg  			: 100%;
 $menu-w-lg  			: 100%;
@@ -716,7 +723,7 @@ body.menu-is-visible {
 						text-align  : initial;
 						align-self 	: flex-start;
 						padding 	: 0;
-						
+
 						&.menu-cat-img {
 							position : absolute;
 							right 	 : 0;
