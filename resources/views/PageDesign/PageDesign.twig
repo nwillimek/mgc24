@@ -10,30 +10,6 @@
 
 <!DOCTYPE html>
 
-{% set lang = services.sessionStorage.getLang() %}
-
-{% set metaLang = "de" %}
-{% if lang == "de" or lang == "en" %}
-    {% set metaLang = lang %}
-{% endif %}
-
-{% set fixNavBarPos = config("Ceres.header.fixed_navbar") %}
-{% set basketAddInformation = config("Ceres.basket.add_item_to_basket_confirm") %}
-{% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
-{% set guidelinesId = config("meingartencenter24.singleitem.guidelinesId") %}
-
-{% if services.template.isCategory() or services.template.isItem() %}
-    {% set categoryBreadcrumbs = services.category.getHierarchy() %}
-    {{ services.crossSelling.setType(config("Ceres.item.lists.cross_selling_type")) }}
-{% endif %}
-
-{% set showCategoryTypes = config('Ceres.header.show_category_types') %}
-{% if showCategoryTypes | trim is empty %}
-    {% set showCategoryTypes = "all" %}
-{% endif %}
-
-{% set categories = services.category.getNavigationTree(showCategoryTypes, lang, 6) %}
-
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
 
     <head>
@@ -48,17 +24,27 @@
     </head>
 
     <body>
+        <script>
+            if('ontouchstart' in document.documentElement)
+            {
+                document.body.classList.add("touch");
+            }
+            else
+            {
+                document.body.classList.add("no-touch");
+            }
+        </script>
         <div id="vue-app">
             <div class="wrapper wrapper-top">
                 <!-- messages -->
-                <notifications template="#vue-notifications" :initial-notifications="{{ services.notifications.getNotifications() | json_encode() }}"></notifications>
+                <notifications template="#vue-notifications" :initial-notifications="{{ notifications | json_encode() }}"></notifications>
             </div>
 
             <div class="wrapper wrapper-left">
                 <!-- filters -->
             </div>
 
-            <div class="wrapper wrapper-main {% if fixNavBarPos == 'true' %}isSticky{% endif %}">
+            <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
                 {% include getPartial('header') %}
 
                 <div id="page-body" class="main">
@@ -76,7 +62,7 @@
             {% if basket is not defined %}
                 {% set basket = services.basket.getBasketForTemplate() %}
             {% endif %}
-            {% if config("Ceres.basket.preview_type") == "right" %}
+            {% if ceresConfig.basket.previewType == "right" %}
                 <div class="wrapper wrapper-right">
                     <basket-preview
                         template="#vue-basket-preview"
@@ -86,76 +72,57 @@
             {% endif %}
 
             <div class="wrapper wrapper-bottom">
-            <!-- LOGIN MODAL -->
-            <div id="login-modal-wrapper">
-                <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">                            
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
+                <!-- LOGIN MODAL -->
+                <div id="login-modal-wrapper">
+                    <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="modal-title h3">{{ trans("Ceres::Template.accLogin") }}</div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" href="#tab-login" role="tab" aria-expanded="true">Anmelden</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#tab-register" role="tab" aria-expanded="false">Registrieren</a>
-                                            </li>               
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="tab-login" role="tabpanel" aria-expanded="true">
-                                                <div class="m-y-2">
-                                                    <login template="#vue-login" modal-element="login-modal-wrapper"></login>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane" id="tab-register" role="tabpanel" aria-expanded="false">
-                                                <div class="m-y-2">
-                                                    <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--<div class="col-md-6">
-                                        <h3 class="modal-title">Anmelden</h3>
-                                        <login template="#vue-login" modal-element="login-modal-wrapper"></login>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h3 class="modal-title">Registrieren</h3>
-                                        <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
-                                    </div>-->
-                                </div>
+                                <login template="#vue-login" modal-element="login-modal-wrapper"></login>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- ./LOGIN MODAL -->
+                <!-- ./LOGIN MODAL -->
 
-            <!-- REGISTRATION MODAL -->
-            <div id="simple-registration-modal-wrapper">
-                <div class="modal fade" id="registration" tabindex="-1" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h3 class="modal-title">{{ trans("Ceres::Template.accCreateAccount") }}</h3>
-                            </div>
-                            <div class="modal-body">
+                <!-- REGISTRATION MODAL -->
+                <div id="simple-registration-modal-wrapper">
+                    <div class="modal fade" id="registration" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="modal-title h3">
+                                        {{ trans("Ceres::Template.accCreateAccount") }}
+
+                                       <popper v-cloak class="pull-right m-r-1">
+                                            <button slot="handle" class="btn btn-icon btn-secondary btn-sm">
+                                                <i class="fa fa-info"></i>
+                                            </button>
+                                            <div slot="title">
+                                                {{ trans("Ceres::Template.generalContactInformations") }}
+                                            </div>
+                                            <ul slot="content" class='p-l-1'>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText1') }}</li>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText2') }}</li>
+                                                <li class='m-b-1'>{{ trans('Ceres::Template.generalContactInfoText3') }}</li>
+                                                <li>{{ trans('Ceres::Template.generalContactInfoText4') }}</li>
+                                            </ul>
+                                        </popper>
+                                    </div>
+                                </div>
                                 <registration template="#vue-registration" :is-simple-registration="true" modal-element="simple-registration-modal-wrapper"></registration>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- ./REGISTRATION MODAL -->
+                <!-- ./REGISTRATION MODAL -->
 
                 <!-- BASKET MODAL -->
-                <add-item-to-basket-overlay template="#vue-add-item-to-basket-overlay" :basket-add-information="{{ basketAddInformation | json_encode() }}"></add-item-to-basket-overlay>
+                <add-item-to-basket-overlay template="#vue-add-item-to-basket-overlay" :basket-add-information="{{ ceresConfig.basket.addItemToBasketConfirm | json_encode() }}"></add-item-to-basket-overlay>
                 <!-- ./BASKET MODAL -->
 
                 <!-- SHIPPINGCOSTS MODAL -->
@@ -168,35 +135,13 @@
                                     <div class="modal-title h3">{{ trans('Ceres::Template.itemShippingCosts') }}</div>
                                 </div>
                                 <div class="modal-body">
-                                    {% include category_template(shippingCat, lang, services.webstoreConfig.getWebstoreConfig().webstoreId) ignore missing %}
+                                    {% include category_template(ceresConfig.global.shippingCostsCategoryId, lang, webstoreConfig.webstoreId) ignore missing %}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- ./SHIPPINGCOSTS MODAL -->
-
-                <!-- guidelines MODAL -->
-                <div id="guidelines-modal-wrapper">
-                    {% set category = services.category.get(guidelinesId, lang) %}
-                    <div class="modal fade" id="guidelines" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <div class="modal-title h3">{{ category.details[0].shortDescription | raw }}</div>
-                                </div>
-                                <div class="modal-body">
-                                    <div>{{ category.details[0].description | raw }}</div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./guidelines MODAL -->
             </div>
         </div>
 
@@ -209,7 +154,7 @@
         {{ LayoutContainer.show("Ceres::Script.Loader") }}
 
         {{ Translations.add( "Ceres", "Template" ) }}
-        {% if config("Ceres.log.performance.level") == 'development' %}
+        {% if ceresConfig.log.performanceLevel  == 'development' %}
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-vendor.js"></script>
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-app.js"></script>
         {% else %}
@@ -223,95 +168,6 @@
         {{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
 
         {{ get_filtered_tags() }}
-        
-        <script>
-        $( document ).ready(function() {
-        $('#brands').owlCarousel({
-            autoHeight       : true,
-            dots             : false,
-            items            : 4,
-            lazyLoad         : false,
-            loop             : true,
-            margin           : 10,
-            mouseDrag        : true,
-            nav              : true,
-            navClass         : [
-                "owl-single-item-nav left carousel-control list-control-special",
-                "owl-single-item-nav right carousel-control list-control-special"
-            ],
-            navContainerClass: "",
-            navText          : [
-                "<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>",
-                "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"
-            ],
-            smartSpeed       : 350,
-                responsive : {
-                    // breakpoint from 0 up
-                    0 : {
-                        items            : 2,
-                        slideBy          : 2
-                    },
-                    // breakpoint from 544 up
-                    544 : {
-                        items            : 4,
-                        slideBy          : 4
-                    },
-                    // breakpoint from 768 up
-                    768 : {
-                        items            : 6,
-                        slideBy          : 6
-                    }
-                }
-            });
-        });
-        </script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $( "ul.mainmenu > li > ul > li" ).hover(function() {
-                $(this).siblings("li.menu-cat-img").find("img").attr("src", $( this ).find("a").attr( "data-img" ));
-            });
-
-            $( "ul.mainmenu > li > ul > li" ).mouseout(function() {
-                $(this).siblings("li.menu-cat-img").find("img").attr("src", $(this).parents("li").find("a").attr("data-img"));
-            });
-         });
-        </script>
-        <script type="text/javascript">
-            
-            var didScroll;
-            var lastScrollTop = 0;
-            var delta = 5;
-            var navbarHeight = $('#MagicMenu').outerHeight();
-
-            $(window).scroll(function(event){
-                didScroll = true;
-            });
-
-            setInterval(function() {
-                if (didScroll) {
-                    hasScrolled();
-                    didScroll = false;
-                }
-            }, 250);
-
-            function hasScrolled() {
-                var st = $(this).scrollTop();
-                
-                // Make sure they scroll more than delta
-                if(Math.abs(lastScrollTop - st) <= delta)
-                    return;
-                
-                if (st > lastScrollTop && st > navbarHeight){                    
-                    $( "#MagicMenu" ).slideUp( "fast");
-                } else {                
-                    if(st + $(window).height() < $(document).height()) {
-                        $( "#MagicMenu" ).slideDown( "fast");
-                    }
-                }
-                
-                lastScrollTop = st;
-            }
-        </script>
 
         <script>
             var rootElement = document.getElementById("vue-app");
@@ -337,36 +193,5 @@
                 errorElement.parentNode.removeChild(errorElement);
             }
         </script>
-
-        {% if services.template.isCurrentTemplate('tpl.item') %}
-        <!-- FS_Changed -->
-        <script type="text/javascript">
-        $(document).ready(function() {
-            var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
-            var button = $(component.$el).find(".fa-shopping-cart").parent("button");
-            var modal = $('#guidelines').modal({
-                show    : false,
-            })
-            var myProperties = component.item.properties.map((o) => {return o.property.id == 3});
-            var canBeAdded = component.canBeAddedToBasket;
-            if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                $(button).css("display", "none");
-                $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
-
-                $(".btn-fake-basket").on("click", function(){
-                    modal.find(".btn-weiter").one("click", function(){
-                        component.addToBasket();
-                    });
-                    modal.modal('show');
-                    modal.on('hidden.bs.modal', function () {
-                        modal.find(".btn-weiter").off("click");
-                    });
-                });
-            }
-        });
-        </script>
-        <!-- FS_Changed  // END -->
-        {% endif %}
-
     </body>
 </html>

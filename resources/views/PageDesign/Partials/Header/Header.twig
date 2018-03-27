@@ -185,6 +185,14 @@
                                 <span class="badge" v-basket-item-sum="this.$store.state.basket.data.itemSum">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
                             {% endif %}
                         </a>
+                    
+                        {% if config("Ceres.basket.preview_type") != "right" %}
+                            <basket-preview
+                                template="#vue-basket-preview-hover"
+                                :basket-data="{{ services.basket.getBasketForTemplate() | json_encode() }}">
+                            </basket-preview>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>        
