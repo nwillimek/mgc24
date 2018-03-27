@@ -13,6 +13,7 @@
     "phone"             : "+49 40 851 792 84 30",
     "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "frontend studios"],
     "type"              : "theme",
+    "isClosedSource"    : true,
     "require"           : ["Ceres", "IO"],
     "namespace"         : "meingartencenter24",
     "serviceProvider"   : "meingartencenter24\\Providers\\meingartencenter24ServiceProvider",
