@@ -724,6 +724,13 @@ body.menu-is-visible {
 						align-self 	: flex-start;
 						padding 	: 0;
 
+						.no-touch &:hover,
+						.touch &.hover {
+							background  	: $menu-big-menu-li-bg-hover;
+							color 			: $menu-big-menu-li-color;
+							text-decoration : none;
+						}
+
 						&.menu-cat-img {
 							position : absolute;
 							right 	 : 0;
@@ -752,17 +759,24 @@ body.menu-is-visible {
 					}
 				}
 
+			
+
 				&:hover {					
 					color 			 : $menu-li-color-hover;
 					transition 		 : all .1s ease;
 					background-color:$gray-mgc;
-					color:white;					
-					>ul {
-						visibility 		: visible;
-						opacity 		: 1;
-						transition 		: all .1s ease;
-					}					
-
+					color:white;
+						.no-touch &:hover,
+						.touch &.hover {
+							background-color : $menu-li-bg-hover;
+							color 			 : $menu-li-color-hover;
+							transition 		 : all .1s ease;					
+						>ul {
+							visibility 		: visible;
+							opacity 		: 1;
+							transition 		: all .1s ease;
+						}					
+					}
 				}
 				&.ddown>a { transition: all 0s; }
 				&.ddown>a:after {
