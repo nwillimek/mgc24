@@ -935,3 +935,15 @@ body.menu-is-visible {
 	}
 }
 // SIngle Item end
+
+//Filter Start
+#filterCollapse {
+	.card-columns {
+		column-count: 1;
+		.form-check {
+			float: left;
+			width: 20%;
+		}
+	}
+}
+//Filter End
