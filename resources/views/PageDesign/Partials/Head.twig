@@ -43,7 +43,7 @@
 
 {{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
 
-<!-- Extend the existing style with a template THEME HEAD -->
+<!-- Extend the existing style with a template -->
 {{ LayoutContainer.show("Ceres::Template.Style") }}
 
 <script>
@@ -80,6 +80,7 @@
         language: "{{ lang }}"
     };
 </script>
+
 
 {% set currentTemplate = services.template.getCurrentTemplate() %}
 {% if services.template.isItem() == "1" %}
