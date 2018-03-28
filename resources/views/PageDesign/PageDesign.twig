@@ -145,7 +145,7 @@
             </div>
         </div>
 
-        <div id="vue-error" style="display:none">
+         <div id="vue-error" style="display:none">
             {% include "Ceres::PageDesign.Partials.VueError" %}
         </div>
 
@@ -168,6 +168,31 @@
         {{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
 
         {{ get_filtered_tags() }}
+
+        <script>
+            var rootElement = document.getElementById("vue-app");
+            var errorElement = document.getElementById("vue-error");
+
+            Vue.options.delimiters = ['${', '}'];
+
+            var vueEventHub = new Vue();
+
+            var vueApp = new Vue({
+                store: window.ceresStore
+            });
+            vueApp.$mount( rootElement.cloneNode(true) );
+
+            if ( vueApp.$el.id !== "vue-app")
+            {
+                rootElement.parentNode.removeChild(rootElement);
+                errorElement.style.display = "block";
+            }
+            else
+            {
+                document.body.replaceChild( vueApp.$el, rootElement );
+                errorElement.parentNode.removeChild(errorElement);
+            }
+        </script>
 
         <script>
         $( document ).ready(function() {
@@ -284,33 +309,6 @@
             }
         });
         </script>
-        <!-- FS_Changed  // END -->
-
-        <script>
-            var rootElement = document.getElementById("vue-app");
-            var errorElement = document.getElementById("vue-error");
-
-            Vue.options.delimiters = ['${', '}'];
-
-            var vueEventHub = new Vue();
-
-            var vueApp = new Vue({
-                store: window.ceresStore
-            });
-            vueApp.$mount( rootElement.cloneNode(true) );
-
-            if ( vueApp.$el.id !== "vue-app")
-            {
-                rootElement.parentNode.removeChild(rootElement);
-                errorElement.style.display = "block";
-            }
-            else
-            {
-                document.body.replaceChild( vueApp.$el, rootElement );
-                errorElement.parentNode.removeChild(errorElement);
-            }
-        </script>
-
-        
+        <!-- FS_Changed  // END --> 
     </body>
 </html>
