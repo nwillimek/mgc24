@@ -300,6 +300,7 @@
                 $(".btn-fake-basket").on("click", function(){
                     modal.find(".btn-weiter").one("click", function(){
                         component.addToBasket();
+                        fb_addToCart();
                     });
                     modal.modal('show');
                     modal.on('hidden.bs.modal', function () {
