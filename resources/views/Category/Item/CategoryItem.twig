@@ -4,13 +4,13 @@
 
 {% block PageBody %}
 
+    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
+    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
     {{ component( "Ceres::ItemList.Components.ItemList") }}
+    {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
     {{ component( "Ceres::ItemList.Components.ItemListSorting") }}
     {{ component( "Ceres::ItemList.Components.ItemsPerPage") }}
     {{ component( "Ceres::ItemList.Components.Pagination") }}
-    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterList") }}
-    {{ component( "Ceres::ItemList.Components.Filter.ItemFilterTagList") }}
-    {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
 
     {% if ceresConfig.item.showCategoryImage %}
         {% include "meingartencenter24::Category.Item.Partials.CategoryParallaxImage" with { 'category': category } %}
