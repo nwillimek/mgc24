@@ -4,95 +4,95 @@
         "key"       : "homepage.homepageImageFirstSlide",
         "label"     : "Bildpfad für den ersten Slide",
         "type"      : "text",
-        "default"   : "http://placehold.it/850x485"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/slider/weber-aktion-genesis-II.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductLinkFirstSlide",
         "label"     : "Produkt-URL für den ersten Slide",
         "type"      : "text",
-        "default"   : "/"
+        "default"   : "/weber-world-grill-shop/weber-fruehlingsstart/"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductNameFirstSlide",
         "label"     : "Produkt-Name für den ersten Slide",
         "type"      : "text",
-        "default"   : "Produktname"
+        "default"   : "Jetzt teilnehmen und sparen"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageImageSecondSlide",
         "label"     : "Bildpfad für den zweiten Slide",
         "type"      : "text",
-        "default"   : "http://placehold.it/850x485"
+        "default"   : "/images/gallery/Startseite/VogelBanner-Fruehling_1000x550.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductLinkSecondSlide",
         "label"     : "Produkt-URL für den zweiten Slide",
         "type"      : "text",
-        "default"   : "/"
+        "default"   : "/tierwelt/wildtiere/voegel"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductNameSecondSlide",
         "label"     : "Produkt-Name für den zweiten Slide",
         "type"      : "text",
-        "default"   : "Produktname"
+        "default"   : "Vogelfutter ganzjährig füttern"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageImageThirdSlide",
         "label"     : "Bildpfad für den dritten Slide",
         "type"      : "text",
-        "default"   : "http://placehold.it/850x485"
+        "default"   : "/images/gallery/Startseite/Fiskars_Aexte_1000x550_Banner.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductLinkThirdSlide",
         "label"     : "Produkt-URL für den dritten Slide",
         "type"      : "text",
-        "default"   : "/"
+        "default"   : "/markenwelt/fiskars"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageProductNameThirdSlide",
         "label"     : "Produkt-Name für den dritten Slide",
         "type"      : "text",
-        "default"   : "Produktname"
+        "default"   : "Fiskars Produkte zum Spitzenpreis"
 	},	
 	{
         "tab"       : "Homepage",
         "key"       : "homepage.homeXtraImg",
         "label"     : "Bildpfad für den rechten statischen Bereich",
         "type"      : "text",
-        "default"   : "https://placekitten.com/g/325/475"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/slider/r_weber-certified-store-2018.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homeXtraLink",
         "label"     : "URL für den rechten statischen Bereich",
         "type"      : "text",
-        "default"   : "/"
+        "default"   : "/weber-world-grill-shop"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homeXtraText",
         "label"     : "Text für den rechten statischen Bereich",
         "type"      : "text",
-        "default"   : "Produktname oder Text"
+        "default"   : "Zum Weber Store"
 	},
 	{
        "tab"        : "Homepage",
        "key"        : "Homepage.seotextID",
-       "label"      : "Kategorie für SEOText",
+       "label"      : "Kategorie für SEOText (ID 656)",
        "type"       : "category_select"
     },
 	{
         "tab"       : "Homepage",
         "key"       : "homepage.homepageCategory1",
-        "label"     : "Artikel der ersten Kategorie (unterhalb des SEO texts)",
+        "label"     : "Artikel der ersten Kategorie (unterhalb des SEO texts) (ID 829)",
         "type"      : "category_select"
     },	
 
@@ -101,47 +101,47 @@
         "key"       : "homepage.homepageStaticLeftImg",
         "label"     : "Bild-Pfad für den linken statischen Bereich 1/3",
         "type"      : "text",
-        "default"   : "https://placekitten.com/g/350/250"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_category/rasen.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageStaticLeftText",
         "label"     : "Text für den linken statischen Bereich 1/3",
         "type"      : "text",
-        "default"   : "Textinhalt"
+        "default"   : "Alles für Ihren Rasen"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageStaticLeftURL",
         "label"     : "URL für den linken statischen Bereich 1/3",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/gartenwelt/duenger"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageStaticRightImg",
         "label"     : "Bild-Pfad für den rechten statischen Bereich 2/3",
         "type"      : "text",
-        "default"   : "https://placekitten.com/g/750/250"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_category/teich.jpg"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageStaticRightText",
         "label"     : "Text für den rechten statischen Bereich 2/3",
         "type"      : "text",
-        "default"   : "Textinhalt"
+        "default"   : "Alles für Ihren Teich"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageStaticRightURL",
         "label"     : "URL für den rechten statischen Bereich 2/3",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/gartenwelt/teich"
     },
     {
         "tab"       : "Homepage",
         "key"       : "homepage.homepageCategory2",
-        "label"     : "Artikel der zweiten Kategorie (unterhalb der statischen Bilder)",
+        "label"     : "Artikel der zweiten Kategorie (unterhalb der statischen Bilder) (ID 85)",
         "type"      : "category_select"
     },
     {
@@ -149,14 +149,14 @@
         "key"       : "brands.brand1Img",
         "label"     : "Bild-Pfad für die 1. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_weberstephen.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand1URL",
         "label"     : "URL für die 1. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/weber-world-grill-shop"
     },    
     {
         "tab"       : "brands",
@@ -170,14 +170,14 @@
         "key"       : "brands.brand2Img",
         "label"     : "Bild-Pfad für die 2. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_neudorff.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand2URL",
         "label"     : "URL für die 2. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/nedorff"
     },    
     {
         "tab"       : "brands",
@@ -191,14 +191,14 @@
         "key"       : "brands.brand3Img",
         "label"     : "Bild-Pfad für die 3. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_fiskars.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand3URL",
         "label"     : "URL für die 3. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/fiskars"
     },    
     {
         "tab"       : "brands",
@@ -212,14 +212,14 @@
         "key"       : "brands.brand4Img",
         "label"     : "Bild-Pfad für die 4. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_sperli.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand4URL",
         "label"     : "URL für die 4. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/sperli"
     },    
     {
         "tab"       : "brands",
@@ -233,14 +233,14 @@
         "key"       : "brands.brand5Img",
         "label"     : "Bild-Pfad für die 5. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_wolf.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand5URL",
         "label"     : "URL für die 5. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/wolf"
     },    
     {
         "tab"       : "brands",
@@ -254,14 +254,14 @@
         "key"       : "brands.brand6Img",
         "label"     : "Bild-Pfad für die 6. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_sera.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand6URL",
         "label"     : "URL für die 6. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/sera"
     },    
     {
         "tab"       : "brands",
@@ -275,14 +275,14 @@
         "key"       : "brands.brand7Img",
         "label"     : "Bild-Pfad für die 7. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_gardena.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand7URL",
         "label"     : "URL für die 7. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/gardena"
     },    
     {
         "tab"       : "brands",
@@ -296,14 +296,14 @@
         "key"       : "brands.brand8Img",
         "label"     : "Bild-Pfad für die 8. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_cuxin.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand8URL",
         "label"     : "URL für die 8. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/cuxin"
     },    
     {
         "tab"       : "brands",
@@ -317,14 +317,14 @@
         "key"       : "brands.brand9Img",
         "label"     : "Bild-Pfad für die 9. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_emsa.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand9URL",
         "label"     : "URL für die 9. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/emsa"
     },    
     {
         "tab"       : "brands",
@@ -338,14 +338,14 @@
         "key"       : "brands.brand10Img",
         "label"     : "Bild-Pfad für die 10. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_dennerle.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand10URL",
         "label"     : "URL für die 10. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/dennerle"
     },    
     {
         "tab"       : "brands",
@@ -359,7 +359,7 @@
         "key"       : "brands.brand11Img",
         "label"     : "Bild-Pfad für die 11. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_e-nema.svg"
     },
     {
         "tab"       : "brands",
@@ -380,14 +380,14 @@
         "key"       : "brands.brand12Img",
         "label"     : "Bild-Pfad für die 12. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_kettler.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand12URL",
         "label"     : "URL für die 12. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/kettler"
     },    
     {
         "tab"       : "brands",
@@ -401,14 +401,14 @@
         "key"       : "brands.brand13Img",
         "label"     : "Bild-Pfad für die 13. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_lechuza.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand13URL",
         "label"     : "URL für die 13. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/lechuza"
     },    
     {
         "tab"       : "brands",
@@ -422,14 +422,14 @@
         "key"       : "brands.brand14Img",
         "label"     : "Bild-Pfad für die 14. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_felco.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand14URL",
         "label"     : "URL für die 14. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/felco"
     },    
     {
         "tab"       : "brands",
@@ -443,14 +443,14 @@
         "key"       : "brands.brand15Img",
         "label"     : "Bild-Pfad für die 15. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_kiepenkerl.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand15URL",
         "label"     : "URL für die 15. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/kiepenkerl"
     },    
     {
         "tab"       : "brands",
@@ -464,14 +464,14 @@
         "key"       : "brands.brand16Img",
         "label"     : "Bild-Pfad für die 16. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_romberg.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand16URL",
         "label"     : "URL für die 16. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/romberg"
     },    
     {
         "tab"       : "brands",
@@ -485,7 +485,7 @@
         "key"       : "brands.brand17Img",
         "label"     : "Bild-Pfad für die 17. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_alko.svg"
     },
     {
         "tab"       : "brands",
@@ -506,14 +506,14 @@
         "key"       : "brands.brand18Img",
         "label"     : "Bild-Pfad für die 18. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_celaflor.svg"
     },
     {
         "tab"       : "brands",
         "key"       : "brands.brand18URL",
         "label"     : "URL für die 18. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "#"
+        "default"   : "/markenwelt/celaflor"
     },    
     {
         "tab"       : "brands",
@@ -527,7 +527,7 @@
         "key"       : "brands.brand19Img",
         "label"     : "Bild-Pfad für die 19. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_mgc24.svg"
     },
     {
         "tab"       : "brands",
@@ -548,7 +548,7 @@
         "key"       : "brands.brand20Img",
         "label"     : "Bild-Pfad für die 20. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_esschert.svg"
     },
     {
         "tab"       : "brands",
@@ -569,7 +569,7 @@
         "key"       : "brands.brand21Img",
         "label"     : "Bild-Pfad für die 21. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_geli.svg"
     },
     {
         "tab"       : "brands",
@@ -591,7 +591,7 @@
         "key"       : "footer.topbrand1Img",
         "label"     : "Bild-Pfad für die 1. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_weberstephen.svg"
     },
     {
         "tab"       : "footer",
@@ -612,7 +612,7 @@
         "key"       : "footer.topbrand2Img",
         "label"     : "Bild-Pfad für die 2. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_neudorff.svg"
     },
     {
         "tab"       : "footer",
@@ -633,7 +633,7 @@
         "key"       : "footer.topbrand3Img",
         "label"     : "Bild-Pfad für die 3. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_fiskars.svg"
     },
     {
         "tab"       : "footer",
@@ -654,7 +654,7 @@
         "key"       : "footer.topbrand4Img",
         "label"     : "Bild-Pfad für die 4. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_wolf.svg"
     },
     {
         "tab"       : "footer",
@@ -675,7 +675,7 @@
         "key"       : "footer.topbrand5Img",
         "label"     : "Bild-Pfad für die 5. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_kettler.svg"
     },
     {
         "tab"       : "footer",
@@ -696,7 +696,7 @@
         "key"       : "footer.topbrand6Img",
         "label"     : "Bild-Pfad für die 6. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_lechuza.svg"
     },
     {
         "tab"       : "footer",
@@ -717,7 +717,7 @@
         "key"       : "footer.topbrand7Img",
         "label"     : "Bild-Pfad für die 7. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_emsa.svg"
     },
     {
         "tab"       : "footer",
@@ -738,7 +738,7 @@
         "key"       : "footer.topbrand8Img",
         "label"     : "Bild-Pfad für die 8. Marke auf der Startseite",
         "type"      : "text",
-        "default"   : "http://placehold.it/150x75"
+        "default"   : "https://cdn02.plentymarkets.com/gw81lpaq889b/frontend/webshop/images/start_top_brands/mgc24_mgc24.svg"
     },
     {
         "tab"       : "footer",
@@ -759,6 +759,6 @@
         "key"       : "singleitem.guidelinesId",
         "label"     : "Pflanzenschutzrichtlinien Kategorie ID",
         "type"      : "text",
-        "default"   : "484"
+        "default"   : "833"
     }
 ]
