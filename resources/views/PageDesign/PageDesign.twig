@@ -8,6 +8,8 @@
 {{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
 {{ component( "Ceres::PageDesign.Components.Popper" ) }}
 
+{% set guidelinesId = config("meingartencenter24.singleitem.guidelinesId") %}
+
 <!DOCTYPE html>
 
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
@@ -142,6 +144,29 @@
                     </div>
                 </div>
                 <!-- ./SHIPPINGCOSTS MODAL -->
+
+                <!-- guidelines MODAL -->
+                <div id="guidelines-modal-wrapper">
+                    {% set category = services.category.get(guidelinesId, lang) %}
+                    <div class="modal fade" id="guidelines" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <div class="modal-title h3">{{ category.details[0].shortDescription | raw }}</div>
+                                </div>
+                                <div class="modal-body">
+                                    <div>{{ category.details[0].description | raw }}</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary btn-weiter" data-dismiss="modal">Weiter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./guidelines MODAL -->
+                
             </div>
         </div>
 
