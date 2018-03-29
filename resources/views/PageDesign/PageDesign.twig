@@ -312,6 +312,12 @@
         $(document).ready(function() {
             var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
             var button = $(component.$el).find(".fa-shopping-cart").parent("button");
+            $(button).one("click", function(){
+                var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
+                console.log("price", price);
+                fb_addToCart(price);
+            });
+                
             var modal = $('#guidelines').modal({
                 show    : false,
             })
@@ -320,12 +326,6 @@
             if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
                 $(button).css("display", "none");
                 $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
-
-                $(button).one("click", function(){
-                    var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
-                    console.log("price", price);
-                    fb_addToCart(price);
-                });
 
                 $(".btn-fake-basket").on("click", function(){
                     modal.find(".btn-weiter").one("click", function(){
