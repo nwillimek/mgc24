@@ -321,7 +321,7 @@
                 $(button).css("display", "none");
                 $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
 
-                $(button).one("click", function(){
+                button.click( function(){
                     var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
                     console.log("price", price);
                     fb_addToCart(price);
