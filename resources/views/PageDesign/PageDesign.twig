@@ -321,10 +321,18 @@
                 $(button).css("display", "none");
                 $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
 
+                $(button).one("click", function(){
+                    var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
+                    console.log("price", price);
+                    fb_addToCart(price);
+                });
+
                 $(".btn-fake-basket").on("click", function(){
                     modal.find(".btn-weiter").one("click", function(){
+                        var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
+                        console.log("price", price);
                         component.addToBasket();
-                        fb_addToCart();
+                        fb_addToCart(price);
                     });
                     modal.modal('show');
                     modal.on('hidden.bs.modal', function () {
