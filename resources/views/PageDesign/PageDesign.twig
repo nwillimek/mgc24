@@ -311,7 +311,7 @@
         <script type="text/javascript">
         $(document).ready(function() {
             var singleItem = vueApp.$children.find(o => {return o.$options.name === "single-item"} );
-            if (singleItem.length) {
+            if (singleItem) {
                 var component = singleItem.$children.find(o => {return o.$options.name === "add-to-basket"});
                 var button = $(component.$el).find(".fa-shopping-cart").parent("button");
                 $(button).one("click", function(){
