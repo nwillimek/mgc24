@@ -310,36 +310,39 @@
          <!-- FS_Changed -->
         <script type="text/javascript">
         $(document).ready(function() {
-            var component = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).$children.find(o => {return o.$options.name === "add-to-basket"});
-            var button = $(component.$el).find(".fa-shopping-cart").parent("button");
-            $(button).one("click", function(){
-                var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
-                console.log("price", price);
-                fb_addToCart(price);
-            });
-                
-            var modal = $('#guidelines').modal({
-                show    : false,
-            })
-            var myProperties = component.item.properties.map((o) => {return o.property.id == 3});
-            var canBeAdded = component.canBeAddedToBasket;    
-            if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
-                $(button).css("display", "none");
-                $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
-
-                $(".btn-fake-basket").on("click", function(){
-                    modal.find(".btn-weiter").one("click", function(){
-                        var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
-                        console.log("price", price);
-                        component.addToBasket();
-                        fb_addToCart(price);
-                    });
-                    modal.modal('show');
-                    modal.on('hidden.bs.modal', function () {
-                        modal.find(".btn-weiter").off("click");
-                    });
+            var singleItem = vueApp.$children.find(o => {return o.$options.name === "single-item"} );
+            if (singleItem.length) {
+                var component = singleItem.$children.find(o => {return o.$options.name === "add-to-basket"});
+                var button = $(component.$el).find(".fa-shopping-cart").parent("button");
+                $(button).one("click", function(){
+                    var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
+                    console.log("price", price);
+                    fb_addToCart(price);
                 });
-            }
+                    
+                var modal = $('#guidelines').modal({
+                    show    : false,
+                })
+                var myProperties = component.item.properties.map((o) => {return o.property.id == 3});
+                var canBeAdded = component.canBeAddedToBasket;    
+                if (($.inArray(true, myProperties)>-1)&&(canBeAdded)) {
+                    $(button).css("display", "none");
+                    $(button).clone().addClass("btn-fake-basket").appendTo(button.parent()).css("display", "block");
+
+                    $(".btn-fake-basket").on("click", function(){
+                        modal.find(".btn-weiter").one("click", function(){
+                            var price = vueApp.$children.find(o => {return o.$options.name === "single-item"} ).variationTotalPrice;
+                            console.log("price", price);
+                            component.addToBasket();
+                            fb_addToCart(price);
+                        });
+                        modal.modal('show');
+                        modal.on('hidden.bs.modal', function () {
+                            modal.find(".btn-weiter").off("click");
+                        });
+                    });
+                }
+            } //is SingleItemView
         });
         </script>
         <!-- FS_Changed  // END --> 
