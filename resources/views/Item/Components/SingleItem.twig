@@ -123,7 +123,7 @@
                 <template v-if="prop.property" v-for="(prop, index) in currentVariation.properties">
                     <h3 v-if="prop.property.id == 10 || prop.property.id == 11" class="m-t-2 text-xs-center prop-headline" :data-index="index">Downloads</h3>   
                 </template>
-                 <div class="m-b-3 prop-container">
+                 <div class="m-b-3 m-t-2 prop-container">
                     <template v-if="prop.group" v-for="prop in currentVariation.properties">
                         <div v-if="prop.group.names.propertyGroupId == 4" class="item-files m-r-2 text-xs-center">
                             <h5><b><a :href="prop.texts.value" target="_blank">${ prop.property.names.name }</a></b></h5>
