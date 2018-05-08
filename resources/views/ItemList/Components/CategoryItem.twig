@@ -38,8 +38,8 @@
 
             <!-- STORE SPECIALS -->
             {% if storeSpecial.id == 1 %}
-                <div class="">sale</div>
-            {% else %}
+                <div class="plim">sale</div>
+            {% elseif storeSpecial.id > 1 %}
             <item-store-special v-if="storeSpecial" :store-special="storeSpecial"
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
