@@ -50,22 +50,16 @@
             <div class="special-tags">
                 {% if  item.data.item.storeSpecial.id == 1 %}
 
-                    {% set storeSpecialColor = 'danger' %} 
+                    {% set storeSpecialColor = 'danger' %}
                     {% set percent = 0 %}
                     {% if item.data.prices.rrp is defined %}
                         {% set percent = (1 - item.data.prices.default.unitPrice.value / item.data.prices.rrp.price.value ) * -100 %}
                     {% endif %}
 
                     {% if percent <= 0 %}
-                        {% if percent >= -10 %}
-                            {% set dezimalcount = ceresConfig.item.storeSpecial %}
-                            {% set percent = percent | number_format(dezimalcount, ',', '.') %}
-                            {% set storeSpecial = "sale" %}                        {% if percent >= -10 %}
-                        {% else %}
-                            {% set dezimalcount = ceresConfig.item.storeSpecial %}
-                            {% set percent = percent | number_format(dezimalcount, ',', '.') %}
-                            {% set storeSpecial = percent ~"%" %}
-                        {% endif %}
+                        {% set dezimalcount = ceresConfig.item.storeSpecial %}
+                        {% set percent = percent | number_format(dezimalcount, ',', '.') %}
+                        {% set storeSpecial = percent ~"%" %}
                     {% endif %}
 
                 {% elseif  item.data.item.storeSpecial.id == 2 %}
