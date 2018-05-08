@@ -56,10 +56,14 @@
                         {% set percent = (1 - item.data.prices.default.unitPrice.value / item.data.prices.rrp.price.value ) * -100 %}
                     {% endif %}
 
-                    {% if percent <= 0 %}
+                    {% if percent <= 0 and percent >= -10 %}
                         {% set dezimalcount = ceresConfig.item.storeSpecial %}
                         {% set percent = percent | number_format(dezimalcount, ',', '.') %}
                         {% set storeSpecial = percent ~"%" %}
+                    {% elseif percent < -10 %}
+                        {% set dezimalcount = ceresConfig.item.storeSpecial %}
+                        {% set percent = percent | number_format(dezimalcount, ',', '.') %}
+                        {% set storeSpecial = "sale" %}
                     {% endif %}
 
                 {% elseif  item.data.item.storeSpecial.id == 2 %}
