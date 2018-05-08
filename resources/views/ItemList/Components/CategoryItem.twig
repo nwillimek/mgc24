@@ -41,6 +41,16 @@
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
                                 :decimal-count="decimalCount"></item-store-special>
+
+            <item-store-special v-else-if="storeSpecial && storeSpecial.id == 1 && ((1 - itemData.prices.default / itemData.prices.rrp ) * -100) < -10" :store-special="storeSpecial"
+                                :recommended-retail-price="itemData.prices.rrp"
+                                :variation-retail-price="itemData.prices.default"
+                                :decimal-count="decimalCount"></item-store-special>
+
+            <div class="special-tags" v-else-if="storeSpecial">
+                <span class="tag bg-danger">SALE</span> 
+            </div>
+
             <!-- ./STORE SPECIALS -->
             <!-- ITEM DETAILS -->
             <div class="thumb-content">
