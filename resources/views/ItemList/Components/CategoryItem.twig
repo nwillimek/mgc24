@@ -37,12 +37,15 @@
             </div>
 
             <!-- STORE SPECIALS -->
+            {% if storeSpecial.id == 1 %}
+                <div class="">sale</div>
+            {% else %}
             <item-store-special v-if="storeSpecial" :store-special="storeSpecial"
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
                                 :decimal-count="decimalCount"></item-store-special>
             <!-- ./STORE SPECIALS -->
-
+            {% endif %}
             <!-- ITEM DETAILS -->
             <div class="thumb-content">
                 <a :href="itemData | itemURL" class="thumb-title small">
