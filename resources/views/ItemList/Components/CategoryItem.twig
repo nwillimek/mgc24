@@ -37,6 +37,7 @@
             </div>
 
             <!-- STORE SPECIALS -->
+            {% prc = itemData.prices.default %}
             <item-store-special v-if="storeSpecial && storeSpecial.id != 1 " :store-special="storeSpecial"
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
@@ -48,7 +49,7 @@
                                 :decimal-count="decimalCount"></item-store-special>
 
             <div class="special-tags" v-else-if="storeSpecial">
-                <span class="tag bg-danger">SALE: ${((1 - itemData.prices.default / itemData.prices.rrp ) * -100)}</span> 
+                <span class="tag bg-danger">SALE: ${prc}</span> 
             </div>
 
             <!-- ./STORE SPECIALS -->
