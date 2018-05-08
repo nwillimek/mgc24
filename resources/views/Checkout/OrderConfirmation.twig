@@ -50,13 +50,11 @@
     var google_remarketing_only = false; 
     </script> 
 
-    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-    </script>
-
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
     <noscript>
-    <div style="display:inline;">
-    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992652525/?value={{ priceNet }}&amp;currency_code=EUR&amp;label=fnbDCPOL5gcQ7dmq2QM&amp;guid=ON&amp;script=0"/>
-    </div>
+        <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992652525/?value={{ priceNet }}&amp;currency_code=EUR&amp;label=fnbDCPOL5gcQ7dmq2QM&amp;guid=ON&amp;script=0"/>
+        </div>
     </noscript>
 
     <!-- Facebook Conversion Tracker TrafficDesign -->
@@ -78,9 +76,14 @@
       currency: 'EUR'
       
     });</script>
-
     <!-- Facebook Conversion Tracker TrafficDesign END -->
 
+    <!-- BING CHECKOUT TRACKING BY NICOLAS WILLIMEK-->
+    <script>
+        window.uetq = window.uetq || [];
+        window.uetq.push({ 'ec':'conversion', 'el':'purchase', 'ev':'{{ priceNet }}' });
+    </script>
+    <!-- BING CHECKOUT TRACKING BY NICOLAS WILLIMEK-->    
 {% endblock %}
 
 {% block PageBody %}
