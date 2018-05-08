@@ -57,9 +57,15 @@
                     {% endif %}
 
                     {% if percent <= 0 %}
-                        {% set dezimalcount = ceresConfig.item.storeSpecial %}
-                        {% set percent = percent | number_format(dezimalcount, ',', '.') %}
-                        {% set storeSpecial = percent ~"%" %}
+                        {% if percent >= -10 %}
+                            {% set dezimalcount = ceresConfig.item.storeSpecial %}
+                            {% set percent = percent | number_format(dezimalcount, ',', '.') %}
+                            {% set storeSpecial = "sale" %}                        {% if percent >= -10 %}
+                        {% else %}
+                            {% set dezimalcount = ceresConfig.item.storeSpecial %}
+                            {% set percent = percent | number_format(dezimalcount, ',', '.') %}
+                            {% set storeSpecial = percent ~"%" %}
+                        {% endif %}
                     {% endif %}
 
                 {% elseif  item.data.item.storeSpecial.id == 2 %}
