@@ -50,7 +50,7 @@
             <div class="special-tags">
                 {% if  item.data.item.storeSpecial.id == 1 %}
 
-                    {% set storeSpecialColor = 'danger' %}
+                    {% set storeSpecialColor = 'danger' %} 
                     {% set percent = 0 %}
                     {% if item.data.prices.rrp is defined %}
                         {% set percent = (1 - item.data.prices.default.unitPrice.value / item.data.prices.rrp.price.value ) * -100 %}
