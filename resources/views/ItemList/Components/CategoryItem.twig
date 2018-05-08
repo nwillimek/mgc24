@@ -37,7 +37,7 @@
             </div>
 
             <!-- STORE SPECIALS -->
-            {% prc = itemData.prices.default %}
+            {% set prc = itemData.prices.default %}
             <item-store-special v-if="storeSpecial && storeSpecial.id != 1 " :store-special="storeSpecial"
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
