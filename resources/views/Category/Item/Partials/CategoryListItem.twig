@@ -59,11 +59,11 @@
                     {% if percent <= 0 and percent >= -10 %}
                         {% set dezimalcount = ceresConfig.item.storeSpecial %}
                         {% set percent = percent | number_format(dezimalcount, ',', '.') %}
-                        {% set storeSpecial = percent ~"%" %}
+                        {% set storeSpecial = "sale" %}
                     {% elseif percent < -10 %}
                         {% set dezimalcount = ceresConfig.item.storeSpecial %}
                         {% set percent = percent | number_format(dezimalcount, ',', '.') %}
-                        {% set storeSpecial = "sale" %}
+                        {% set storeSpecial = percent ~"%" %}
                     {% endif %}
 
                 {% elseif  item.data.item.storeSpecial.id == 2 %}
