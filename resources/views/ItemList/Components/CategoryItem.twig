@@ -37,9 +37,7 @@
             </div>
 
             <!-- STORE SPECIALS -->
-            <div class="PLIM">{{ storeSpecial }}</div
-            <div class="PLIM1">{{ storeSpecial.id }}</div
-            <div class="PLIM2">{{ storeSpecial["id"] }}</div
+            <div class="PLIM" style="display:none">{{ itemData.item.storeSpecial|json_encode }}</div
             <item-store-special v-if="storeSpecial" :store-special="storeSpecial"
                                 :recommended-retail-price="itemData.prices.rrp"
                                 :variation-retail-price="itemData.prices.default"
