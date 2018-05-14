@@ -36,12 +36,6 @@ class meingartencenter24ServiceProvider extends ServiceProvider
             return false;
         });
 
-        // provide template to use for confirmation
-        // $eventDispatcher->listen('IO.tpl.confirmation', function(TemplateContainer $container, $templateData) {
-        //     $container->setTemplate("meingartencenter24::Checkout.OrderConfirmation");
-        //     return false;
-        // });
-
         //partial replacement
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
             //$partial->set('head', 'meingartencenter24::PageDesign.Partials.Head');
