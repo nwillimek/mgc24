@@ -24,16 +24,14 @@
                     </h1>
 
                     {% if ('item.shortDescription' in itemData or 'all' in itemData)%}
-                        {% autoescape false %}                        
-                            <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''">${ currentVariation.texts.shortDescription }</p>
-                        {% endautoescape %}
+                        <p class="single-description" v-if="currentVariation.texts.shortDescription !== ''" v-html="currentVariation.texts.shortDescription"></p>
                     {% endif %}
 
                     <hr>
 
                     <div class="m-b-3">
                         <span class="articlenumber small text-muted">
-                            <b>{{ trans("Ceres::Template.itemNumber") }}</b>
+                            <b>{{ trans("Ceres::Template.singleItemNumber") }}</b>
                             <span>${ currentVariation.variation.number }</span>
                         </span>
                         <span class="articlenumber small text-muted" v-if="currentVariation.filter.hasManufacturer">
@@ -48,14 +46,14 @@
 
                     <!-- Variation -->
                     <div class="row m-b-1" v-if="variations.length > 0">
-                        <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variations="variations" :preselect="currentVariation.variation.id"></variation-select>
+                        <variation-select template="#vue-variation-select" :attributes="attributeNameMap" :variations="variations" :preselect="currentVariation.variation.id" @is-valid-change="isVariationSelected = $event"></variation-select>
                     </div>
                     <!-- /Variation -->
 
                     <slot name="BeforePrice"></slot>
 
-                    <div class="row">
-                        <order-properties template="#vue-order-properties" v-if="currentVariation.filter.isSalable"></order-properties>
+                    <div class="row" v-if="currentVariation.filter.isSalable && variationGroupedProperties.length">
+                        <order-property-list></order-property-list>
                     </div>
 
                     <graduated-prices template="#vue-graduated-prices"></graduated-prices>
@@ -76,12 +74,12 @@
 
                     <div class="base-price text-muted m-y-1" v-if="currentVariation.unit && !(currentVariation.unit.unitOfMeasurement === 'C62' && currentVariation.unit.content === 1)">
                         <div>
-                            {{ trans("Ceres::Template.itemContent") }}
-                            <span>${ currentVariation.unit.content }</span>
+                            {{ trans("Ceres::Template.singleItemContent") }}
+                            <span>${ currentVariation.unit.content | numberFormat }</span>
                             <span>${ currentVariation.unit.names.name }</span>
                         </div>
                         <div v-if="currentVariation.variation.mayShowUnitPrice">
-                            {{ trans("Ceres::Template.itemUnitPrice") }}
+                            {{ trans("Ceres::Template.singleItemUnitPrice") }}
                             <span class="base-price-value">
                                 ${ variationGraduatedPrice.basePrice }
                             </span>
@@ -98,7 +96,13 @@
 
                     <div class="row m-y-1">
                         <slot name="BeforeAddToBasket"></slot>
-                        <add-to-basket template="#vue-add-to-basket" v-if="currentVariation.filter.isSalable" :item="$store.state.item.variation.documents[0].data" :show-quantity="true"></add-to-basket>
+                        <add-to-basket
+                                template="#vue-add-to-basket"
+                                v-if="currentVariation.filter.isSalable"
+                                :item="$store.state.item.variation.documents[0].data"
+                                :show-quantity="true"
+                                :missing-order-properties="variationMissingProperties"
+                                :is-variation-selected="isVariationSelected"></add-to-basket>
                         <slot name="AfterAddToBasket"></slot>
                     </div>
 
@@ -114,8 +118,8 @@
                     <hr>
 
                     <span class="vat small text-muted">
-                        * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.itemExclVAT") }}{% else %}{{ trans("Ceres::Template.itemInclVAT") }}{% endif %} {{ trans("Ceres::Template.itemExclusive") }}
-                        <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
+                        * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
+                        <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
                     </span>
 
                    <slot name="AdditionalContentAfterVAT"></slot>
@@ -140,13 +144,13 @@
                     <ul class="nav nav-tabs" role="tablist">
                         {% if 'item.description' in itemData or 'all' in itemData %}
                             <li class="nav-item" v-if="isDescriptionTabActive">
-                                <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.itemDescription") }}</a>
+                                <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemDescription") }}</a>
                             </li>
                         {% endif %}
 
                         {% if 'item.technical_data' in itemData or 'all' in itemData %}
                             <li class="nav-item" v-if="isTechnicalDataTabActive">
-                                <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.itemTechnicalData") }}</a>
+                                <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemTechnicalData") }}</a>
                             </li>
                         {% endif %}
 
